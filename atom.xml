@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-17T10:43:38.387Z</updated>
+  <updated>2024-06-20T16:08:09.528Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
+    <link href="http://example.com/posts/9a1684cf/"/>
+    <id>http://example.com/posts/9a1684cf/</id>
+    <published>2024-06-20T15:19:12.000Z</published>
+    <updated>2024-06-20T16:08:09.528Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="技多不压身！少年，来此学一技！这里有100本秘籍"><a href="#技多不压身！少年，来此学一技！这里有100本秘籍" class="headerlink" title="技多不压身！少年，来此学一技！这里有100本秘籍"></a>技多不压身！少年，来此学一技！这里有100本秘籍</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="技能" scheme="http://example.com/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
+    <link href="http://example.com/posts/f887fa47/"/>
+    <id>http://example.com/posts/f887fa47/</id>
+    <published>2024-06-20T15:18:56.000Z</published>
+    <updated>2024-06-20T16:06:12.477Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="羡慕会讲故事的人吗？想成为他们吗？来看这里！"><a href="#羡慕会讲故事的人吗？想成为他们吗？来看这里！" class="headerlink" title="羡慕会讲故事的人吗？想成为他们吗？来看这里！"></a>羡慕会讲故事的人吗？想成为他们吗？来看这里！</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="故事" scheme="http://example.com/tags/%E6%95%85%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+    <link href="http://example.com/posts/7cd83df9/"/>
+    <id>http://example.com/posts/7cd83df9/</id>
+    <published>2024-06-20T15:17:29.000Z</published>
+    <updated>2024-06-20T16:04:47.286Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="就在这里！每个安卓开发都要掌握的知识大纲！"><a href="#就在这里！每个安卓开发都要掌握的知识大纲！" class="headerlink" title="就在这里！每个安卓开发都要掌握的知识大纲！"></a>就在这里！每个安卓开发都要掌握的知识大纲！</h1><p>此文适用于所有安卓开发和想从事安卓开发的人</p><h2 id="一、学会Java语言"><a href="#一、学会Java语言" class="headerlink" title="一、学会Java语言"></a>一、学会Java语言</h2><h2 id="二、学会写安卓"><a href="#二、学会写安卓" class="headerlink" title="二、学会写安卓"></a>二、学会写安卓</h2><h2 id="三、学会使用开源库"><a href="#三、学会使用开源库" class="headerlink" title="三、学会使用开源库"></a>三、学会使用开源库</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="开发" scheme="http://example.com/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>测试文章</title>
