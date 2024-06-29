@@ -3,11 +3,11 @@
   <title>抚鳞居</title>
   
   <subtitle>古来圣贤皆寂寞，惟有饮者留其名</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://fulinju.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2024-06-26T14:55:08.079Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://fulinju.github.io/"/>
+  <updated>2024-06-26T16:12:58.057Z</updated>
+  <id>https://fulinju.github.io/</id>
   
   <author>
     <name>抚鳞居士</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>学Android？四大组件先了解一下(容易)</title>
-    <link href="http://example.com/posts/7de02b33/"/>
-    <id>http://example.com/posts/7de02b33/</id>
+    <link href="https://fulinju.github.io/post/android-base-1.html"/>
+    <id>https://fulinju.github.io/post/android-base-1.html</id>
     <published>2024-06-26T14:51:48.000Z</published>
-    <updated>2024-06-26T14:55:08.079Z</updated>
+    <updated>2024-06-26T16:12:58.057Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
     
@@ -33,17 +33,23 @@
     
     
     
+    <category term="Android" scheme="https://fulinju.github.io/categories/Android/"/>
+    
+    
+    <category term="Android" scheme="https://fulinju.github.io/tags/Android/"/>
+    
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>学Java？基础语法先了解一下(容易)</title>
-    <link href="http://example.com/posts/cd3e15c9/"/>
-    <id>http://example.com/posts/cd3e15c9/</id>
+    <link href="https://fulinju.github.io/post/java-base-1.html"/>
+    <id>https://fulinju.github.io/post/java-base-1.html</id>
     <published>2024-06-26T14:42:33.000Z</published>
-    <updated>2024-06-26T14:55:08.081Z</updated>
+    <updated>2024-06-29T16:48:00.987Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><p>看懂这篇即可：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure><p>扩展：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>]]></content>
     
     
       
@@ -53,19 +59,19 @@
     
     
     
-    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    <category term="Java" scheme="https://fulinju.github.io/categories/Java/"/>
     
     
-    <category term="开发" scheme="http://example.com/tags/%E5%BC%80%E5%8F%91/"/>
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    <category term="Java" scheme="https://fulinju.github.io/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
-    <link href="http://example.com/posts/9a1684cf/"/>
-    <id>http://example.com/posts/9a1684cf/</id>
+    <link href="https://fulinju.github.io/post/9a1684cf.html"/>
+    <id>https://fulinju.github.io/post/9a1684cf.html</id>
     <published>2024-06-20T15:19:12.000Z</published>
     <updated>2024-06-26T16:03:59.624Z</updated>
     
@@ -79,23 +85,23 @@
     
     
     
-    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
     
     
-    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
     
-    <category term="技能" scheme="http://example.com/tags/%E6%8A%80%E8%83%BD/"/>
+    <category term="技能" scheme="https://fulinju.github.io/tags/%E6%8A%80%E8%83%BD/"/>
     
   </entry>
   
   <entry>
     <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
-    <link href="http://example.com/posts/f887fa47/"/>
-    <id>http://example.com/posts/f887fa47/</id>
+    <link href="https://fulinju.github.io/post/f887fa47.html"/>
+    <id>https://fulinju.github.io/post/f887fa47.html</id>
     <published>2024-06-20T15:18:56.000Z</published>
-    <updated>2024-06-26T16:03:38.353Z</updated>
+    <updated>2024-06-29T16:48:28.465Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="羡慕会讲故事的人吗？想成为他们吗？来看这里！"><a href="#羡慕会讲故事的人吗？想成为他们吗？来看这里！" class="headerlink" title="羡慕会讲故事的人吗？想成为他们吗？来看这里！"></a>羡慕会讲故事的人吗？想成为他们吗？来看这里！</h1><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p><p>这些故事大多是书上看的转化的，先记录，再升华。</p><ol><li>诗仙李白的一生</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="羡慕会讲故事的人吗？想成为他们吗？来看这里！"><a href="#羡慕会讲故事的人吗？想成为他们吗？来看这里！" class="headerlink" title="羡慕会讲故事的人吗？想成为他们吗？来看这里！"></a>羡慕会讲故事的人吗？想成为他们吗？来看这里！</h1><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p><p>这些故事大多是书上看的转化的，先记录，再升华。</p><ol><li><p>诗仙李白的一生</p></li><li><p>杀死一只知更鸟</p></li></ol>]]></content>
     
     
       
@@ -105,23 +111,23 @@
     
     
     
-    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
     
     
-    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
     
-    <category term="故事" scheme="http://example.com/tags/%E6%95%85%E4%BA%8B/"/>
+    <category term="故事" scheme="https://fulinju.github.io/tags/%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
   <entry>
     <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <link href="http://example.com/posts/7cd83df9/"/>
-    <id>http://example.com/posts/7cd83df9/</id>
+    <link href="https://fulinju.github.io/post/android-main-point.html"/>
+    <id>https://fulinju.github.io/post/android-main-point.html</id>
     <published>2024-06-20T15:17:29.000Z</published>
-    <updated>2024-06-26T16:08:57.987Z</updated>
+    <updated>2024-06-26T16:15:23.592Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="就在这里！每个安卓开发都要掌握的知识大纲！"><a href="#就在这里！每个安卓开发都要掌握的知识大纲！" class="headerlink" title="就在这里！每个安卓开发都要掌握的知识大纲！"></a>就在这里！每个安卓开发都要掌握的知识大纲！</h1><p>此文适用于所有安卓开发和想从事安卓开发的人</p><h2 id="一、学会Java语言"><a href="#一、学会Java语言" class="headerlink" title="一、学会Java语言"></a>一、学会Java语言</h2><ol><li><a href="/posts/cd3e15c9/" title="学Java？基础语法先了解一下(容易)">学Java？基础语法先了解一下(简单)</a></li><li>学Java？面向对象了解一下(简单)</li><li>学Java？先学会用API吧(简单)</li></ol><h2 id="二、学会写安卓"><a href="#二、学会写安卓" class="headerlink" title="二、学会写安卓"></a>二、学会写安卓</h2><ol><li>学Android？四大组件先了解一下(简单)</li><li>学Android？在了解一下布局(简单)</li><li>学Android？自定义View了解一下(中等)</li><li>学Android？Handler了解一下(中等)</li><li>学Android？事件分发了解一下(中等)</li></ol><h2 id="三、学会使用开源库"><a href="#三、学会使用开源库" class="headerlink" title="三、学会使用开源库"></a>三、学会使用开源库</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="就在这里！每个安卓开发都要掌握的知识大纲！"><a href="#就在这里！每个安卓开发都要掌握的知识大纲！" class="headerlink" title="就在这里！每个安卓开发都要掌握的知识大纲！"></a>就在这里！每个安卓开发都要掌握的知识大纲！</h1><p>此文适用于所有安卓开发和想从事安卓开发的人</p><h2 id="一、学会Java语言"><a href="#一、学会Java语言" class="headerlink" title="一、学会Java语言"></a>一、学会Java语言</h2><ol><li><a href="/post/java-base-1.html" title="学Java？基础语法先了解一下(容易)">学Java？基础语法先了解一下(简单)</a></li><li>学Java？面向对象了解一下(简单)</li><li>学Java？先学会用API吧(简单)</li></ol><h2 id="二、学会写安卓"><a href="#二、学会写安卓" class="headerlink" title="二、学会写安卓"></a>二、学会写安卓</h2><ol><li><a href="/post/android-base-1.html" title="学Android？四大组件先了解一下(容易)">学Android？四大组件先了解一下(简单)</a></li><li>学Android？在了解一下布局(简单)</li><li>学Android？自定义View了解一下(中等)</li><li>学Android？Handler了解一下(中等)</li><li>学Android？事件分发了解一下(中等)</li></ol><h2 id="三、学会使用开源库"><a href="#三、学会使用开源库" class="headerlink" title="三、学会使用开源库"></a>三、学会使用开源库</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
     
     
       
@@ -131,19 +137,19 @@
     
     
     
-    <category term="大纲" scheme="http://example.com/categories/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
     
     
-    <category term="大纲" scheme="http://example.com/tags/%E5%A4%A7%E7%BA%B2/"/>
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
     
-    <category term="开发" scheme="http://example.com/tags/%E5%BC%80%E5%8F%91/"/>
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/posts/4a17b156/"/>
-    <id>http://example.com/posts/4a17b156/</id>
+    <link href="https://fulinju.github.io/post/4a17b156.html"/>
+    <id>https://fulinju.github.io/post/4a17b156.html</id>
     <published>2024-06-18T14:57:28.240Z</published>
     <updated>2024-06-18T14:57:28.240Z</updated>
     
@@ -157,23 +163,23 @@
     
     
     
-    <category term="示例文章" scheme="http://example.com/categories/%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A0/"/>
+    <category term="示例文章" scheme="https://fulinju.github.io/categories/%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A0/"/>
     
     
-    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://fulinju.github.io/tags/hexo/"/>
     
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <category term="命令行" scheme="https://fulinju.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>测试文章</title>
-    <link href="http://example.com/posts/7a6a6b5a/"/>
-    <id>http://example.com/posts/7a6a6b5a/</id>
+    <link href="https://fulinju.github.io/post/7a6a6b5a.html"/>
+    <id>https://fulinju.github.io/post/7a6a6b5a.html</id>
     <published>2024-06-10T15:42:54.000Z</published>
     <updated>2024-06-18T14:57:28.241Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>引用图片:</p><img src="/posts/7a6a6b5a/test.png" class="" title="图片引用方法一">]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>引用图片:</p><img src="/post/7a6a6b5a/test.png" class="" title="图片引用方法一">]]></content>
     
     
       
@@ -183,10 +189,10 @@
     
     
     
-    <category term="测试文章" scheme="http://example.com/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <category term="测试文章" scheme="https://fulinju.github.io/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
     
     
-    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="测试" scheme="https://fulinju.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   

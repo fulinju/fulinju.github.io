@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/posts/7cd83df9/</loc>
+    <loc>https://fulinju.github.io/post/f887fa47.html</loc>
+    
+    <lastmod>2024-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/post/java-base-1.html</loc>
+    
+    <lastmod>2024-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/post/android-main-point.html</loc>
     
     <lastmod>2024-06-26</lastmod>
     
@@ -11,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/9a1684cf/</loc>
+    <loc>https://fulinju.github.io/post/android-base-1.html</loc>
     
     <lastmod>2024-06-26</lastmod>
     
@@ -20,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/f887fa47/</loc>
+    <loc>https://fulinju.github.io/post/9a1684cf.html</loc>
     
     <lastmod>2024-06-26</lastmod>
     
@@ -29,25 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/cd3e15c9/</loc>
-    
-    <lastmod>2024-06-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/posts/7de02b33/</loc>
-    
-    <lastmod>2024-06-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/about/index.html</loc>
+    <loc>https://fulinju.github.io/tags/index.html</loc>
     
     <lastmod>2024-06-18</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://fulinju.github.io/about/index.html</loc>
     
     <lastmod>2024-06-18</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://fulinju.github.io/categories/index.html</loc>
     
     <lastmod>2024-06-18</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/7a6a6b5a/</loc>
+    <loc>https://fulinju.github.io/post/7a6a6b5a.html</loc>
     
     <lastmod>2024-06-18</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/posts/4a17b156/</loc>
+    <loc>https://fulinju.github.io/post/4a17b156.html</loc>
     
     <lastmod>2024-06-18</lastmod>
     
@@ -93,65 +93,72 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://example.com/tags/hexo/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/hexo/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%A4%A7%E7%BA%B2/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%95%85%E4%BA%8B/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/Android/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Java/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2024-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/Java/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -159,29 +166,36 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/categories/%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E5%A4%A7%E7%BA%B2/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Java/</loc>
-    <lastmod>2024-06-26</lastmod>
+    <loc>https://fulinju.github.io/categories/Android/</loc>
+    <lastmod>2024-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/categories/Java/</loc>
+    <lastmod>2024-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

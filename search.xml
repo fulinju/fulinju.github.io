@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/posts/4a17b156/</url>
+    <url>/post/4a17b156.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -27,11 +27,14 @@
   </entry>
   <entry>
     <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
-    <url>/posts/f887fa47/</url>
+    <url>/post/f887fa47.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="羡慕会讲故事的人吗？想成为他们吗？来看这里！"><a href="#羡慕会讲故事的人吗？想成为他们吗？来看这里！" class="headerlink" title="羡慕会讲故事的人吗？想成为他们吗？来看这里！"></a>羡慕会讲故事的人吗？想成为他们吗？来看这里！</h1><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p>
 <p>这些故事大多是书上看的转化的，先记录，再升华。</p>
 <ol>
-<li>诗仙李白的一生</li>
+<li><p>诗仙李白的一生</p>
+</li>
+<li><p>杀死一只知更鸟</p>
+</li>
 </ol>
 ]]></content>
       <categories>
@@ -43,8 +46,21 @@
       </tags>
   </entry>
   <entry>
+    <title>测试文章</title>
+    <url>/post/7a6a6b5a.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>引用图片:</p>
+<img src="/post/7a6a6b5a/test.png" class="" title="图片引用方法一">
+]]></content>
+      <categories>
+        <category>测试文章</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
-    <url>/posts/9a1684cf/</url>
+    <url>/post/9a1684cf.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="技多不压身！少年，来此学一技！这里有100本秘籍"><a href="#技多不压身！少年，来此学一技！这里有100本秘籍" class="headerlink" title="技多不压身！少年，来此学一技！这里有100本秘籍"></a>技多不压身！少年，来此学一技！这里有100本秘籍</h1><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p>
 <ol>
 <li>所有读书人必备的技能：速读！</li>
@@ -60,29 +76,28 @@
       </tags>
   </entry>
   <entry>
-    <title>测试文章</title>
-    <url>/posts/7a6a6b5a/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>引用图片:</p>
-<img src="/posts/7a6a6b5a/test.png" class="" title="图片引用方法一">
-]]></content>
+    <title>学Android？四大组件先了解一下(容易)</title>
+    <url>/post/android-base-1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
       <categories>
-        <category>测试文章</category>
+        <category>Android</category>
       </categories>
       <tags>
-        <tag>测试</tag>
+        <tag>Android</tag>
+        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
     <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <url>/posts/7cd83df9/</url>
+    <url>/post/android-main-point.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="就在这里！每个安卓开发都要掌握的知识大纲！"><a href="#就在这里！每个安卓开发都要掌握的知识大纲！" class="headerlink" title="就在这里！每个安卓开发都要掌握的知识大纲！"></a>就在这里！每个安卓开发都要掌握的知识大纲！</h1><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
 <h2 id="一、学会Java语言"><a href="#一、学会Java语言" class="headerlink" title="一、学会Java语言"></a>一、学会Java语言</h2><ol>
-<li><a href="/posts/cd3e15c9/" title="学Java？基础语法先了解一下(容易)">学Java？基础语法先了解一下(简单)</a></li>
+<li><a href="/post/java-base-1.html" title="学Java？基础语法先了解一下(容易)">学Java？基础语法先了解一下(简单)</a></li>
 <li>学Java？面向对象了解一下(简单)</li>
 <li>学Java？先学会用API吧(简单)</li>
 </ol>
 <h2 id="二、学会写安卓"><a href="#二、学会写安卓" class="headerlink" title="二、学会写安卓"></a>二、学会写安卓</h2><ol>
-<li>学Android？四大组件先了解一下(简单)</li>
+<li><a href="/post/android-base-1.html" title="学Android？四大组件先了解一下(容易)">学Android？四大组件先了解一下(简单)</a></li>
 <li>学Android？在了解一下布局(简单)</li>
 <li>学Android？自定义View了解一下(中等)</li>
 <li>学Android？Handler了解一下(中等)</li>
@@ -101,14 +116,12 @@
       </tags>
   </entry>
   <entry>
-    <title>学Android？四大组件先了解一下(容易)</title>
-    <url>/posts/7de02b33/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
     <title>学Java？基础语法先了解一下(容易)</title>
-    <url>/posts/cd3e15c9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <url>/post/java-base-1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><p>看懂这篇即可：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a></p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
+<p>扩展：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
