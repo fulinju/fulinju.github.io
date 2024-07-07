@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>抚鳞居</title>
+  
+  <subtitle>古来圣贤皆寂寞，惟有饮者留其名</subtitle>
+  <link href="https://fulinju.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://fulinju.github.io/"/>
+  <updated>2024-07-07T14:29:13.753Z</updated>
+  <id>https://fulinju.github.io/</id>
+  
+  <author>
+    <name>抚鳞居士</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://fulinju.github.io/post/4a17b156.html"/>
+    <id>https://fulinju.github.io/post/4a17b156.html</id>
+    <published>2024-07-07T14:29:13.753Z</published>
+    <updated>2024-07-07T14:29:13.753Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><blockquote><p>文字引用</p></blockquote><p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p><p><code>行内代码</code></p><p>​<code> 多行代码 多行代码 ​</code></p><p>$$<br>数学公式<br>$$</p><p>方法一：—</p><p>方法二：+++</p><p>方法三：***</p><p>无序列表使用 * 或 + 或 - 标识<br>有序列表使用数字加 . 标识，例如：1.<br>注意：标识和文字之间要有一个空格</p><hr><p>hexo文章不显示序号？设置：post_asset_folder为false</p><ul><li>无序列表1</li><li>无序列表2</li><li>无序列表3</li></ul><ol><li>有序列表1</li><li>有序列表2</li><li>有序列表3</li></ol><hr><p>方法一：<a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80" title="链接描述">链接文字</a><br>例如：<a href="https://www.example.com/" title="示例链接">示例链接</a></p><p>方法二：&lt;链接地址&gt;<br>例如：<a href="https://www.example.com/">https://www.example.com/</a></p><p><img src="/%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80" alt="图片文字" title="图片描述"><br>例如：<img src="https://www.example.com/example.PNG" alt="示例图片" title="示例图片"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="示例文章" scheme="https://fulinju.github.io/categories/%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A0/"/>
+    
+    
+    <category term="hexo" scheme="https://fulinju.github.io/tags/hexo/"/>
+    
+    <category term="命令行" scheme="https://fulinju.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>失眠...也许是人生的一个必经阶段</title>
+    <link href="https://fulinju.github.io/post/e82dc6b5.html"/>
+    <id>https://fulinju.github.io/post/e82dc6b5.html</id>
+    <published>2024-07-03T20:00:46.000Z</published>
+    <updated>2024-07-07T14:29:13.761Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>李白：仗剑高歌的传奇诗人</title>
+    <link href="https://fulinju.github.io/post/ae401bd8.html"/>
+    <id>https://fulinju.github.io/post/ae401bd8.html</id>
+    <published>2024-07-03T19:55:38.000Z</published>
+    <updated>2024-07-07T14:29:13.760Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《生死疲劳》：写的实在是太精彩了！读的可是一点都不疲劳！</title>
+    <link href="https://fulinju.github.io/post/12f8ec3.html"/>
+    <id>https://fulinju.github.io/post/12f8ec3.html</id>
+    <published>2024-07-03T19:52:30.000Z</published>
+    <updated>2024-07-07T14:29:13.761Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《数码宝贝1》：童年的记忆无限大</title>
+    <link href="https://fulinju.github.io/post/cartoon-digital-monster-1.html"/>
+    <id>https://fulinju.github.io/post/cartoon-digital-monster-1.html</id>
+    <published>2024-07-03T19:43:50.000Z</published>
+    <updated>2024-07-07T14:29:13.757Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="杂谈" scheme="https://fulinju.github.io/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="杂谈" scheme="https://fulinju.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="动漫" scheme="https://fulinju.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+    <category term="数码宝贝" scheme="https://fulinju.github.io/tags/%E6%95%B0%E7%A0%81%E5%AE%9D%E8%B4%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《海贼王》：泪水与欢笑同行的万里阳光号</title>
+    <link href="https://fulinju.github.io/post/cartoon-one-piece.html"/>
+    <id>https://fulinju.github.io/post/cartoon-one-piece.html</id>
+    <published>2024-07-03T19:39:22.000Z</published>
+    <updated>2024-07-07T14:29:13.759Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="杂谈" scheme="https://fulinju.github.io/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="海贼王" scheme="https://fulinju.github.io/tags/%E6%B5%B7%E8%B4%BC%E7%8E%8B/"/>
+    
+    <category term="杂谈" scheme="https://fulinju.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="动漫" scheme="https://fulinju.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo的常见姿势</title>
+    <link href="https://fulinju.github.io/post/exp-hexo-base.html"/>
+    <id>https://fulinju.github.io/post/exp-hexo-base.html</id>
+    <published>2024-07-03T19:14:47.000Z</published>
+    <updated>2024-07-07T14:29:13.772Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><p>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure><hr><p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p><hr><ul><li>基础的hexo命令<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure></li></ul><hr>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="经验" scheme="https://fulinju.github.io/categories/%E7%BB%8F%E9%AA%8C/"/>
+    
+    
+    <category term="经验" scheme="https://fulinju.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+    <category term="技巧" scheme="https://fulinju.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学Android？这里有一本秘籍！</title>
+    <link href="https://fulinju.github.io/post/android-base-guide.html"/>
+    <id>https://fulinju.github.io/post/android-base-guide.html</id>
+    <published>2024-06-26T14:51:48.000Z</published>
+    <updated>2024-07-07T14:29:13.755Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li>学Android？在了解一下布局</li><li>学Android？自定义View了解一下</li><li>学Android？Handler了解一下</li><li>学Android？事件分发了解一下</li><li>开源库</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Android" scheme="https://fulinju.github.io/categories/Android/"/>
+    
+    
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Android" scheme="https://fulinju.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学Java？这里有一本秘籍！</title>
+    <link href="https://fulinju.github.io/post/java-base-guide.html"/>
+    <id>https://fulinju.github.io/post/java-base-guide.html</id>
+    <published>2024-06-26T14:42:33.000Z</published>
+    <updated>2024-07-07T14:29:13.755Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="入门Java"><a href="#入门Java" class="headerlink" title="入门Java"></a>入门Java</h1><blockquote><p>适用于没有Java基础的同学</p></blockquote><p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p><h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p><h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure><p>扩展：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p><h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><p><a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.String为什么设计成不可变及其好处</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure><h1 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h1><p><a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure><h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p><a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure><h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><ul><li><p>锁：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure></li><li><p>Unsafe</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="https://fulinju.github.io/categories/Java/"/>
+    
+    
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Java" scheme="https://fulinju.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
+    <link href="https://fulinju.github.io/post/9a1684cf.html"/>
+    <id>https://fulinju.github.io/post/9a1684cf.html</id>
+    <published>2024-06-20T15:19:12.000Z</published>
+    <updated>2024-07-07T14:29:13.756Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="技多不压身！少年，来此学一技！这里有100本秘籍"><a href="#技多不压身！少年，来此学一技！这里有100本秘籍" class="headerlink" title="技多不压身！少年，来此学一技！这里有100本秘籍"></a>技多不压身！少年，来此学一技！这里有100本秘籍</h1><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p><ol><li>所有读书人必备的技能：速读！</li><li>好记性不如烂笔头？不过我也想要好记性啊！</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="技能" scheme="https://fulinju.github.io/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
+    <link href="https://fulinju.github.io/post/f887fa47.html"/>
+    <id>https://fulinju.github.io/post/f887fa47.html</id>
+    <published>2024-06-20T15:18:56.000Z</published>
+    <updated>2024-07-07T14:29:13.753Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="羡慕会讲故事的人吗？想成为他们吗？来看这里！"><a href="#羡慕会讲故事的人吗？想成为他们吗？来看这里！" class="headerlink" title="羡慕会讲故事的人吗？想成为他们吗？来看这里！"></a>羡慕会讲故事的人吗？想成为他们吗？来看这里！</h1><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p><p>这些故事大多是书上看的转化的，先记录，再升华。</p><ol><li><p>诗仙李白的一生</p></li><li><p>杀死一只知更鸟</p></li><li><p>吃货词人苏轼的一生</p></li><li><p>老人与海，硬汉的浪漫</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="故事" scheme="https://fulinju.github.io/tags/%E6%95%85%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+    <link href="https://fulinju.github.io/post/android-main-point.html"/>
+    <id>https://fulinju.github.io/post/android-main-point.html</id>
+    <published>2024-06-20T15:17:29.000Z</published>
+    <updated>2024-07-07T14:29:13.753Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p><ol><li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li><li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li></ol><h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/categories/%E5%A4%A7%E7%BA%B2/"/>
+    
+    
+    <category term="大纲" scheme="https://fulinju.github.io/tags/%E5%A4%A7%E7%BA%B2/"/>
+    
+    <category term="开发" scheme="https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>测试文章</title>
+    <link href="https://fulinju.github.io/post/7a6a6b5a.html"/>
+    <id>https://fulinju.github.io/post/7a6a6b5a.html</id>
+    <published>2024-06-10T15:42:54.000Z</published>
+    <updated>2024-07-07T14:29:13.761Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>引用图片:</p><img src="/post/7a6a6b5a/test.png" class="" title="图片引用方法一">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="测试文章" scheme="https://fulinju.github.io/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    
+    
+    <category term="测试" scheme="https://fulinju.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+</feed>
