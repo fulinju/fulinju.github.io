@@ -6,7 +6,7 @@
   <link href="https://fulinju.github.io/atom.xml" rel="self"/>
   
   <link href="https://fulinju.github.io/"/>
-  <updated>2024-07-07T14:29:13.753Z</updated>
+  <updated>2024-07-10T15:10:39.265Z</updated>
   <id>https://fulinju.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>技巧分享/口袋改版工具盒实操-究极绿宝石5.5</title>
+    <link href="https://fulinju.github.io/post/c36dc67b.html"/>
+    <id>https://fulinju.github.io/post/c36dc67b.html</id>
+    <published>2024-07-10T15:08:20.000Z</published>
+    <updated>2024-07-10T15:10:39.265Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -39,26 +59,6 @@
     <category term="hexo" scheme="https://fulinju.github.io/tags/hexo/"/>
     
     <category term="命令行" scheme="https://fulinju.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>失眠...也许是人生的一个必经阶段</title>
-    <link href="https://fulinju.github.io/post/e82dc6b5.html"/>
-    <id>https://fulinju.github.io/post/e82dc6b5.html</id>
-    <published>2024-07-03T20:00:46.000Z</published>
-    <updated>2024-07-07T14:29:13.761Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
     
   </entry>
   
@@ -122,11 +122,11 @@
     <category term="杂谈" scheme="https://fulinju.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
+    <category term="数码宝贝" scheme="https://fulinju.github.io/tags/%E6%95%B0%E7%A0%81%E5%AE%9D%E8%B4%9D/"/>
+    
     <category term="杂谈" scheme="https://fulinju.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="动漫" scheme="https://fulinju.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
-    
-    <category term="数码宝贝" scheme="https://fulinju.github.io/tags/%E6%95%B0%E7%A0%81%E5%AE%9D%E8%B4%9D/"/>
     
   </entry>
   
@@ -150,11 +150,11 @@
     <category term="杂谈" scheme="https://fulinju.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-    <category term="海贼王" scheme="https://fulinju.github.io/tags/%E6%B5%B7%E8%B4%BC%E7%8E%8B/"/>
-    
     <category term="杂谈" scheme="https://fulinju.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="动漫" scheme="https://fulinju.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+    <category term="海贼王" scheme="https://fulinju.github.io/tags/%E6%B5%B7%E8%B4%BC%E7%8E%8B/"/>
     
   </entry>
   
@@ -163,9 +163,9 @@
     <link href="https://fulinju.github.io/post/exp-hexo-base.html"/>
     <id>https://fulinju.github.io/post/exp-hexo-base.html</id>
     <published>2024-07-03T19:14:47.000Z</published>
-    <updated>2024-07-07T14:29:13.772Z</updated>
+    <updated>2024-07-10T14:57:27.081Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><p>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure><hr><p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p><hr><ul><li>基础的hexo命令<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure><hr><p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p><h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul><li><p>建立文章草稿</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure></li><li><p>本地预览草稿</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure></li><li><p>草稿转发布</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure><p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p></li><li><p>发布转草稿</p><p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p></li></ul><hr><h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure><hr>]]></content>
     
     
       
@@ -215,9 +215,9 @@
     <link href="https://fulinju.github.io/post/java-base-guide.html"/>
     <id>https://fulinju.github.io/post/java-base-guide.html</id>
     <published>2024-06-26T14:42:33.000Z</published>
-    <updated>2024-07-07T14:29:13.755Z</updated>
+    <updated>2024-07-10T14:50:24.197Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="入门Java"><a href="#入门Java" class="headerlink" title="入门Java"></a>入门Java</h1><blockquote><p>适用于没有Java基础的同学</p></blockquote><p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p><h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p><h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure><p>扩展：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p><h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><p><a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.String为什么设计成不可变及其好处</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure><h1 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h1><p><a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure><h1 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h1><p><a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure><h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><ul><li><p>锁：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure></li><li><p>Unsafe</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java入门"><a href="#Java入门" class="headerlink" title="Java入门"></a>Java入门</h1><blockquote><p>适用于没有Java基础的同学</p></blockquote><p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p><h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p><h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure><blockquote><p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p></blockquote><p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p><a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure><h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p><a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p><a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p><h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以学到：逆变和协变</span><br></pre></td></tr></table></figure><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p><h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p><h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><ul><li><p>锁：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">可以学习到：</span><br><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     
       
@@ -293,7 +293,7 @@
     <link href="https://fulinju.github.io/post/android-main-point.html"/>
     <id>https://fulinju.github.io/post/android-main-point.html</id>
     <published>2024-06-20T15:17:29.000Z</published>
-    <updated>2024-07-07T14:29:13.753Z</updated>
+    <updated>2024-07-10T13:45:56.244Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p><ol><li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li><li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li></ol><h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
     
