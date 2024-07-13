@@ -42,6 +42,26 @@
       </tags>
   </entry>
   <entry>
+    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+    <url>/post/android-main-point.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
+<ol>
+<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
+<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
+</ol>
+<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
+<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
+<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
+]]></content>
+      <categories>
+        <category>大纲</category>
+      </categories>
+      <tags>
+        <tag>大纲</tag>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>口袋改版工具盒实操-究极绿宝石5.5</title>
     <url>/post/c36dcexp67b.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
@@ -91,26 +111,6 @@
       </tags>
   </entry>
   <entry>
-    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <url>/post/android-main-point.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
-<ol>
-<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
-<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
-</ol>
-<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
-<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
-<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
-]]></content>
-      <categories>
-        <category>大纲</category>
-      </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于【hexo+butterfly】搭建博客的改造计划</title>
     <url>/post/exp-hexo-butterfly.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -124,6 +124,7 @@
 <p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
 <h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
 <p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
+<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
 ]]></content>
       <categories>
         <category>经验</category>
@@ -134,39 +135,8 @@
       </tags>
   </entry>
   <entry>
-    <title>李白：仗剑高歌的传奇诗人</title>
-    <url>/post/ae401bd8.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>《数码宝贝1》：童年的记忆无限大</title>
-    <url>/post/cartoon-digital-monster-1.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>数码宝贝</tag>
-        <tag>杂谈</tag>
-        <tag>动漫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《海贼王》：泪水与欢笑同行的万里阳光号</title>
-    <url>/post/cartoon-one-piece.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>杂谈</tag>
-        <tag>动漫</tag>
-        <tag>海贼王</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《生死疲劳》：写的实在是太精彩了！读的可是一点都不疲劳！</title>
-    <url>/post/12f8ec3.html</url>
+    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
+    <url>/post/4a1b603.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
@@ -252,6 +222,42 @@
       <tags>
         <tag>开发</tag>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《数码宝贝1》：童年的记忆无限大</title>
+    <url>/post/cartoon-digital-monster-1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>数码宝贝</tag>
+        <tag>杂谈</tag>
+        <tag>动漫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>李白：仗剑高歌的传奇诗人</title>
+    <url>/post/ae401bd8.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>《生死疲劳》：写的实在是太精彩了！读的可是一点都不疲劳！</title>
+    <url>/post/12f8ec3.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>《海贼王》：泪水与欢笑同行的万里阳光号</title>
+    <url>/post/cartoon-one-piece.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>动漫</tag>
+        <tag>海贼王</tag>
       </tags>
   </entry>
 </search>
