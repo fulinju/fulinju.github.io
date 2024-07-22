@@ -1,282 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
-    <url>/post/f887fa47.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p>
-<p>这些故事大多是书上看的转化的，先记录，再升华。</p>
-<ol>
-<li><p>诗仙李白的一生</p>
-</li>
-<li><p>杀死一只知更鸟</p>
-</li>
-<li><p>吃货词人苏轼的一生</p>
-</li>
-<li><p>老人与海，硬汉的浪漫</p>
-</li>
-</ol>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Java面试！通过问题来串联知识</title>
+      <link href="/post/5d81f735.html"/>
+      <url>/post/5d81f735.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
       <categories>
-        <category>大纲</category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>故事</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
-    <url>/post/9a1684cf.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p>
-<ol>
-<li>所有读书人必备的技能：速读！</li>
-<li>好记性不如烂笔头？不过我也想要好记性啊！</li>
-</ol>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
+      <link href="/post/4a1b603.html"/>
+      <url>/post/4a1b603.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
       <categories>
-        <category>大纲</category>
+          
+          <category> 技巧分享 </category>
+          
       </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>技能</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <url>/post/android-main-point.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
-<ol>
-<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
-<li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li>
-<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
-</ol>
-<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
-<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
-<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于【hexo+butterfly】搭建博客的改造计划</title>
+      <link href="/post/exp-hexo-butterfly.html"/>
+      <url>/post/exp-hexo-butterfly.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p><p>因为，butterfly是数码宝贝第1部的主题曲啊！</p></blockquote><p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p><p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p><p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p><h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote><p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p></blockquote><p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p><blockquote><p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p><p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p></blockquote><p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure><p>以上代码通过ChatGPT就可以生成 😕</p><p>询问方式：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure><h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p><p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p><h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p><p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p><h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>]]></content>
+      
+      
       <categories>
-        <category>大纲</category>
+          
+          <category> 经验 </category>
+          
       </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>口袋改版工具盒实操-究极绿宝石5.5</title>
-    <url>/post/c36dcexp67b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>口袋改版工具盒实操-究极绿宝石5.5</title>
+      <link href="/post/c36dcexp67b.html"/>
+      <url>/post/c36dcexp67b.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
       <categories>
-        <category>技巧分享</category>
+          
+          <category> 技巧分享 </category>
+          
       </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
-    <url>/post/4a1b603.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用hexo的常见姿势</title>
+      <link href="/post/exp-hexo-base.html"/>
+      <url>/post/exp-hexo-base.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr><h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure><hr><p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p><h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul><li><p>建立文章草稿</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure></li><li><p>本地预览草稿</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure></li><li><p>草稿转发布</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure><p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p></li><li><p>发布转草稿</p><p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p></li></ul><hr><h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure><hr><blockquote><p>文字引用</p></blockquote><p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p><p><code>行内代码</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure><img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">]]></content>
+      
+      
       <categories>
-        <category>技巧分享</category>
+          
+          <category> 经验 </category>
+          
       </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo的常见姿势</title>
-    <url>/post/exp-hexo-base.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
-<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
-<li><p>建立文章草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地预览草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>草稿转发布</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
-</li>
-<li><p>发布转草稿</p>
-<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
-</li>
-</ul>
-<hr>
-<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>文字引用</p>
-</blockquote>
-<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
-<p><code>行内代码</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
-<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 经验 </tag>
+            
+            <tag> 技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>学Android？这里有一本秘籍！</title>
+      <link href="/post/android-base-guide.html"/>
+      <url>/post/android-base-guide.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li>学Android？在了解一下布局</li><li>学Android？自定义View了解一下</li><li>学Android？Handler了解一下</li><li>学Android？事件分发了解一下</li><li>开源库</li></ol>]]></content>
+      
+      
       <categories>
-        <category>经验</category>
+          
+          <category> Android </category>
+          
       </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
-    <url>/post/exp-hexo-butterfly.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
-<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
-</blockquote>
-<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
-<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
-<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
-<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
-<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
-</blockquote>
-<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
-<blockquote>
-<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
-<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
-</blockquote>
-<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码通过ChatGPT就可以生成 😕</p>
-<p>询问方式：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
-<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
-<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
-<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
-<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> Android </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>学Java？这里有一本秘籍！</title>
+      <link href="/post/java-base-guide.html"/>
+      <url>/post/java-base-guide.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java入门"><a href="#Java入门" class="headerlink" title="Java入门"></a>Java入门</h1><blockquote><p>适用于没有Java基础的同学</p></blockquote><p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p><h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p><h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure><blockquote><p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p></blockquote><p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure><h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure><h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure><h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure><h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p><h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p><h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure><p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure><h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>经验</category>
+          
+          <category> Java </category>
+          
       </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Android？这里有一本秘籍！</title>
-    <url>/post/android-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
-<li>学Android？在了解一下布局</li>
-<li>学Android？自定义View了解一下</li>
-<li>学Android？Handler了解一下</li>
-<li>学Android？事件分发了解一下</li>
-<li>开源库</li>
-</ol>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
+      <link href="/post/9a1684cf.html"/>
+      <url>/post/9a1684cf.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p><ol><li>所有读书人必备的技能：速读！</li><li>好记性不如烂笔头？不过我也想要好记性啊！</li></ol>]]></content>
+      
+      
       <categories>
-        <category>Android</category>
+          
+          <category> 大纲 </category>
+          
       </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java面试！通过问题来串联知识</title>
-    <url>/post/5d81f735.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      
+      
+        <tags>
+            
+            <tag> 大纲 </tag>
+            
+            <tag> 技能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
+      <link href="/post/f887fa47.html"/>
+      <url>/post/f887fa47.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p><p>这些故事大多是书上看的转化的，先记录，再升华。</p><ol><li><p>诗仙李白的一生</p></li><li><p>杀死一只知更鸟</p></li><li><p>吃货词人苏轼的一生</p></li><li><p>老人与海，硬汉的浪漫</p></li></ol>]]></content>
+      
+      
       <categories>
-        <category>Java</category>
+          
+          <category> 大纲 </category>
+          
       </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Java？这里有一本秘籍！</title>
-    <url>/post/java-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java入门"><a href="#Java入门" class="headerlink" title="Java入门"></a>Java入门</h1><blockquote>
-<p>适用于没有Java基础的同学</p>
-</blockquote>
-<p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
-<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
-<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
-</blockquote>
-<p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
-
-<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
-<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 大纲 </tag>
+            
+            <tag> 故事 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+      <link href="/post/android-main-point.html"/>
+      <url>/post/android-main-point.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p><ol><li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li><li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li><li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li></ol><h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p><h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p><h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>]]></content>
+      
+      
       <categories>
-        <category>Java</category>
+          
+          <category> 大纲 </category>
+          
       </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 大纲 </tag>
+            
+            <tag> 开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
