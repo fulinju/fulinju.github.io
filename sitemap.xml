@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/about/index.html</loc>
+    <loc>https://fulinju.github.io/categories/index.html</loc>
     
     <lastmod>2024-07-07</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/categories/index.html</loc>
+    <loc>https://fulinju.github.io/about/index.html</loc>
     
     <lastmod>2024-07-07</lastmod>
     
@@ -149,13 +149,6 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2025-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fulinju.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2025-03-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -178,6 +171,13 @@
   
   <url>
     <loc>https://fulinju.github.io/tags/%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2025-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2025-03-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -42,27 +42,6 @@
       </tags>
   </entry>
   <entry>
-    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <url>/post/android-main-point.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
-<ol>
-<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
-<li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li>
-<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
-</ol>
-<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
-<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
-<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
-]]></content>
-      <categories>
-        <category>大纲</category>
-      </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>口袋改版工具盒实操-究极绿宝石5.5</title>
     <url>/post/c36dcexp67b.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
@@ -171,6 +150,27 @@
       <tags>
         <tag>经验</tag>
         <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+    <url>/post/android-main-point.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
+<ol>
+<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
+<li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li>
+<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
+</ol>
+<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
+<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
+<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
+]]></content>
+      <categories>
+        <category>大纲</category>
+      </categories>
+      <tags>
+        <tag>大纲</tag>
+        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
@@ -319,7 +319,14 @@
 <!-- 清除浮动 -->
 <div style="clear: both;"></div>
 
-<hr>
+<img src="/post/8ab4a728/640.png" class="" width="716" height="320" title="Handler工作流程">
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+---
+
+
+
 <h4 id="结语：Handler的设计哲学"><a href="#结语：Handler的设计哲学" class="headerlink" title="结语：Handler的设计哲学"></a>结语：Handler的设计哲学</h4><p>Handler机制体现了Android系统两大设计智慧：</p>
 <ol>
 <li><strong>单线程模型</strong>：通过消息队列实现线程安全</li>
@@ -487,6 +494,16 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
+    <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
+    <url>/post/5d715b31.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
+    <url>/post/752ec13d.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
     <title>Android开发全指南：学习如何设计引人入胜的UI，以提升用户的应用体验！</title>
     <url>/post/17c79a2f.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用户界面（UI）的设计不仅是美观的问题，更直接关系到用户的整体应用体验。一个设计精良的UI可以显著提升用户的满意度，并使应用更具吸引力。本文将深入探讨如何通过有效的布局管理和自定义View创建，打造令人惊叹的用户界面。</p>
@@ -545,16 +562,6 @@
 <h3 id="三、结语"><a href="#三、结语" class="headerlink" title="三、结语"></a>三、结语</h3><p>设计一个引人入胜的用户界面是提升应用用户体验的关键。通过掌握有效的布局管理技巧，如使用ConstraintLayout优化复杂布局，以及深入了解Material Design的设计原则，你可以创建出既美观又实用的界面。同时，自定义View的创建和性能优化也能帮助你实现独特的UI组件，满足特定需求。</p>
 <p>希望本文对你理解和应用UI设计的最佳实践有所帮助，让你的应用在众多竞争者中脱颖而出。如果你有任何问题或建议，欢迎在评论区与我互动！</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
-    <url>/post/5d715b31.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
-    <url>/post/752ec13d.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>Android开发全指南：掌握数据存储与网络通信，驱动你的Android应用！</title>
