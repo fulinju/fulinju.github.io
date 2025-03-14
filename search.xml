@@ -42,6 +42,27 @@
       </tags>
   </entry>
   <entry>
+    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
+    <url>/post/android-main-point.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
+<ol>
+<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
+<li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li>
+<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
+</ol>
+<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
+<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
+<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
+]]></content>
+      <categories>
+        <category>大纲</category>
+      </categories>
+      <tags>
+        <tag>大纲</tag>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>口袋改版工具盒实操-究极绿宝石5.5</title>
     <url>/post/c36dcexp67b.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
@@ -293,7 +314,7 @@
 </li>
 </ul>
 <p><strong>【Handler面试脑图】</strong>  </p>
-<img src="/post/8ab4a728/Handler%E7%9F%A5%E8%AF%86%E7%82%B9.png" class="" width="716" height="320" title="Handler知识点">
+<img src="/post/8ab4a728/Handler%E7%9F%A5%E8%AF%86%E7%82%B9%E8%84%91%E5%9B%BE.png" class="" width="716" height="320" title="Handler知识点脑图">
 
 <!-- 清除浮动 -->
 <div style="clear: both;"></div>
@@ -458,27 +479,6 @@
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
-    <url>/post/android-main-point.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
-<ol>
-<li><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！">学Java？这里有一本秘籍！</a></li>
-<li><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识">Java面试！通过问题来串联知识</a></li>
-<li><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！">学Android？这里有一本秘籍！</a></li>
-</ol>
-<h2 id="三、万变不离其宗-设计模式"><a href="#三、万变不离其宗-设计模式" class="headerlink" title="三、万变不离其宗-设计模式"></a>三、万变不离其宗-设计模式</h2><h2 id="四、恶补基础知识"><a href="#四、恶补基础知识" class="headerlink" title="四、恶补基础知识"></a>四、恶补基础知识</h2><p>设计模式、网络原理、数据结构、算法</p>
-<h2 id="五、探索Java-VM"><a href="#五、探索Java-VM" class="headerlink" title="五、探索Java VM"></a>五、探索Java VM</h2><h2 id="六、探索开源库的原理"><a href="#六、探索开源库的原理" class="headerlink" title="六、探索开源库的原理"></a>六、探索开源库的原理</h2><h2 id="七、学习其他开发语言"><a href="#七、学习其他开发语言" class="headerlink" title="七、学习其他开发语言"></a>七、学习其他开发语言</h2><p>Kotlin、C++</p>
-<h2 id="八、学习一些有难度的开源库"><a href="#八、学习一些有难度的开源库" class="headerlink" title="八、学习一些有难度的开源库"></a>八、学习一些有难度的开源库</h2><h2 id="九、探索系统源码"><a href="#九、探索系统源码" class="headerlink" title="九、探索系统源码"></a>九、探索系统源码</h2><h2 id="十、学无止境"><a href="#十、学无止境" class="headerlink" title="十、学无止境"></a>十、学无止境</h2><p>学会另一门语言-Kotlin</p>
-]]></content>
-      <categories>
-        <category>大纲</category>
-      </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
@@ -870,19 +870,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java面试！通过问题来串联知识</title>
-    <url>/post/5d81f735.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学Java？这里有一本秘籍！</title>
     <url>/post/java-base-guide.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
@@ -956,6 +943,19 @@
       <tags>
         <tag>开发</tag>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java面试！通过问题来串联知识</title>
+    <url>/post/5d81f735.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Java</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
 </search>
