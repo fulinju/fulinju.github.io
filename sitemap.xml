@@ -170,20 +170,6 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/tags/%E7%BB%8F%E9%AA%8C/</loc>
-    <lastmod>2025-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://fulinju.github.io/tags/%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2025-03-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://fulinju.github.io/tags/android/</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -192,6 +178,20 @@
   
   <url>
     <loc>https://fulinju.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/%E7%BB%8F%E9%AA%8C/</loc>
+    <lastmod>2025-03-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -235,14 +235,14 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/categories/%E7%BB%8F%E9%AA%8C/</loc>
+    <loc>https://fulinju.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+    <loc>https://fulinju.github.io/categories/%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2025-03-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
