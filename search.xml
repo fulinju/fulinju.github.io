@@ -85,6 +85,95 @@
       </tags>
   </entry>
   <entry>
+    <title>使用hexo的常见姿势</title>
+    <url>/post/exp-hexo-base.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
+<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
+<li><p>建立文章草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地预览草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>草稿转发布</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
+</li>
+<li><p>发布转草稿</p>
+<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
+</li>
+</ul>
+<hr>
+<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>文字引用</p>
+</blockquote>
+<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
+<p><code>行内代码</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
+
+<p><a href="test.png" title="图片引用方法二">test</a></p>
+]]></content>
+      <categories>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
+    <url>/post/exp-hexo-butterfly.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
+<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
+</blockquote>
+<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
+<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
+<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
+<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
+<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
+</blockquote>
+<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
+<blockquote>
+<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
+<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
+</blockquote>
+<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码通过ChatGPT就可以生成 😕</p>
+<p>询问方式：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
+<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
+<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
+<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
+<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
+]]></content>
+      <categories>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</title>
     <url>/post/8ab4a728.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><a href="#面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）" class="headerlink" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"></a>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h2><h3 id="引言：为什么需要Handler？"><a href="#引言：为什么需要Handler？" class="headerlink" title="引言：为什么需要Handler？"></a>引言：为什么需要Handler？</h3><p>在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。</p>
@@ -393,107 +482,102 @@
       </tags>
   </entry>
   <entry>
-    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
-    <url>/post/exp-hexo-butterfly.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
-<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
-</blockquote>
-<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
-<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
-<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
-<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
-<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
-</blockquote>
-<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
-<blockquote>
-<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
-<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
-</blockquote>
-<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码通过ChatGPT就可以生成 😕</p>
-<p>询问方式：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
-<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
-<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
-<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
-<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
-]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo的常见姿势</title>
-    <url>/post/exp-hexo-base.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
-
+    <title>Git 命令入门指南：从零掌握代码版本管理</title>
+    <url>/post/ef2b76b.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Git-命令入门指南：从零掌握代码版本管理"><a href="#Git-命令入门指南：从零掌握代码版本管理" class="headerlink" title="Git 命令入门指南：从零掌握代码版本管理"></a>Git 命令入门指南：从零掌握代码版本管理</h3><p>Git 作为分布式版本控制系统，是开发者日常协作与代码管理的核心工具。本文基于多篇开发者社区及官方文档的总结，整理了 <strong>最常用且必备的 Git 命令</strong>，助你快速上手。</p>
 <hr>
-<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
-<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
-<li><p>建立文章草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="一、环境配置与仓库初始化"><a href="#一、环境配置与仓库初始化" class="headerlink" title="一、环境配置与仓库初始化"></a>一、环境配置与仓库初始化</h4><ol>
+<li><p><strong>用户身份标识</strong><br>每次提交代码时，Git 需要记录操作者信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;YourName&quot;</span>  <span class="comment"># 设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span>  <span class="comment"># 设置全局邮箱</span></span><br><span class="line">git config --list  <span class="comment"># 查看所有配置项</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>本地预览草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+<li><p><strong>SSH Key 生成（远程仓库连接必备）</strong><br>用于免密推送代码到 GitHub&#x2F;GitLab 等平台：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your_email@example.com&quot;</span>  <span class="comment"># 生成密钥对</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>草稿转发布</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
-</li>
-<li><p>发布转草稿</p>
-<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
-</li>
+<li><p><strong>创建仓库</strong>  </p>
+<ul>
+<li>本地初始化：<code>git init</code>（生成隐藏的 .git 目录）  </li>
+<li>克隆远程仓库：<code>git clone https://github.com/xxx/xxx.git</code></li>
 </ul>
+</li>
+</ol>
 <hr>
-<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
-
+<h4 id="二、日常开发核心操作"><a href="#二、日常开发核心操作" class="headerlink" title="二、日常开发核心操作"></a>二、日常开发核心操作</h4><ol start="4">
+<li><p><strong>代码提交流程</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                <span class="comment"># 添加所有修改到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;功能描述&quot;</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git status               <span class="comment"># 查看文件状态（红/绿色提示）</span></span><br><span class="line">git <span class="built_in">log</span> --oneline        <span class="comment"># 查看精简版提交历史</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>分支管理</strong>  </p>
+<ul>
+<li>创建与切换：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch dev          <span class="comment"># 创建分支</span></span><br><span class="line">git checkout dev       <span class="comment"># 切换分支（旧版）</span></span><br><span class="line">git switch -c dev      <span class="comment"># 新版推荐命令</span></span><br></pre></td></tr></table></figure></li>
+<li>合并与冲突解决：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge dev          <span class="comment"># 将 dev 分支合并到当前分支</span></span><br><span class="line"><span class="comment"># 合并冲突后，手动修改文件 → git add → git commit</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>远程仓库交互</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin URL   <span class="comment"># 关联远程仓库</span></span><br><span class="line">git push -u origin main     <span class="comment"># 首次推送并建立追踪</span></span><br><span class="line">git pull origin dev         <span class="comment"># 拉取远程分支更新</span></span><br><span class="line">git fetch                   <span class="comment"># 仅获取远程变更（不自动合并）</span></span><br></pre></td></tr></table></figure></li>
+</ol>
 <hr>
-<blockquote>
-<p>文字引用</p>
-</blockquote>
-<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
-<p><code>行内代码</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
-<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
-
-<p><a href="test.png" title="图片引用方法二">test</a></p>
+<h4 id="三、高阶操作与问题处理"><a href="#三、高阶操作与问题处理" class="headerlink" title="三、高阶操作与问题处理"></a>三、高阶操作与问题处理</h4><ol start="7">
+<li><p><strong>撤销与回退</strong>  </p>
+<ul>
+<li>丢弃工作区修改：<code>git checkout -- filename</code>  </li>
+<li>撤销暂存区文件：<code>git reset HEAD filename</code>  </li>
+<li>版本回退：<code>git reset --hard commit_id</code>（慎用）</li>
+</ul>
+</li>
+<li><p><strong>暂存与恢复</strong><br>临时保存未完成的修改：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash        <span class="comment"># 保存当前工作进度</span></span><br><span class="line">git stash pop    <span class="comment"># 恢复最近一次暂存内容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>标签管理</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0.0           <span class="comment"># 创建轻量标签</span></span><br><span class="line">git tag -a v1.0 -m <span class="string">&quot;描述&quot;</span> <span class="comment"># 含备注的标签</span></span><br><span class="line">git push origin --tags    <span class="comment"># 推送所有标签到远程</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h4 id="四、协作开发建议"><a href="#四、协作开发建议" class="headerlink" title="四、协作开发建议"></a>四、协作开发建议</h4><ol>
+<li><strong>分支策略</strong>：主分支（main&#x2F;master）仅用于发布稳定版本，新功能在 dev 或 feature 分支开发。  </li>
+<li><strong>提交规范</strong>：commit 信息需清晰描述修改内容，推荐使用 <a href="https://www.conventionalcommits.org/">Conventional Commits</a> 格式。  </li>
+<li><strong>冲突预防</strong>：频繁使用 <code>git pull --rebase</code> 保持本地与远程同步，减少合并冲突。</li>
+</ol>
+<hr>
+<h4 id="附：完整命令速查表（部分）"><a href="#附：完整命令速查表（部分）" class="headerlink" title="附：完整命令速查表（部分）"></a>附：完整命令速查表（部分）</h4><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>命令示例</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>配置</td>
+<td><code>git config --list</code></td>
+<td>查看所有配置项</td>
+</tr>
+<tr>
+<td>提交</td>
+<td><code>git commit -am &quot;msg&quot;</code></td>
+<td>跳过暂存区直接提交已追踪文件</td>
+</tr>
+<tr>
+<td>分支</td>
+<td><code>git branch -d dev</code></td>
+<td>删除已合并的分支</td>
+</tr>
+<tr>
+<td>远程</td>
+<td><code>git remote -v</code></td>
+<td>查看远程仓库地址</td>
+</tr>
+<tr>
+<td>日志</td>
+<td><code>git log --graph --oneline</code></td>
+<td>图形化显示分支合并历史</td>
+</tr>
+</tbody></table>
+<p>更多完整命令可参考：<a href="https://git-scm.com/doc">Git 官方文档</a> 或腾讯云开发者社区的《Git 常用命令汇总》。</p>
+<hr>
+<p><strong>学习提示</strong>：建议通过可视化工具（如 VS Code 的 Git 插件或 GitHub Desktop）辅助理解操作流程，再逐步熟悉命令行操作。</p>
 ]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
   </entry>
   <entry>
     <title>Android开发全指南：了解如何确保应用安全，增强用户信任与满意度！</title>
     <url>/post/b5369373.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
-    <url>/post/5d715b31.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
-    <url>/post/752ec13d.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
@@ -555,6 +639,16 @@
 <h3 id="三、结语"><a href="#三、结语" class="headerlink" title="三、结语"></a>三、结语</h3><p>设计一个引人入胜的用户界面是提升应用用户体验的关键。通过掌握有效的布局管理技巧，如使用ConstraintLayout优化复杂布局，以及深入了解Material Design的设计原则，你可以创建出既美观又实用的界面。同时，自定义View的创建和性能优化也能帮助你实现独特的UI组件，满足特定需求。</p>
 <p>希望本文对你理解和应用UI设计的最佳实践有所帮助，让你的应用在众多竞争者中脱颖而出。如果你有任何问题或建议，欢迎在评论区与我互动！</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
+    <url>/post/5d715b31.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
+    <url>/post/752ec13d.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>Android开发全指南：掌握数据存储与网络通信，驱动你的Android应用！</title>
@@ -732,119 +826,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>学Android？这里有一本秘籍！</title>
-    <url>/post/android-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
-<li>学Android？在了解一下布局</li>
-<li>学Android？自定义View了解一下</li>
-<li>学Android？Handler了解一下</li>
-<li>学Android？事件分发了解一下</li>
-<li>开源库</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 命令入门指南：从零掌握代码版本管理</title>
-    <url>/post/ef2b76b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Git-命令入门指南：从零掌握代码版本管理"><a href="#Git-命令入门指南：从零掌握代码版本管理" class="headerlink" title="Git 命令入门指南：从零掌握代码版本管理"></a>Git 命令入门指南：从零掌握代码版本管理</h3><p>Git 作为分布式版本控制系统，是开发者日常协作与代码管理的核心工具。本文基于多篇开发者社区及官方文档的总结，整理了 <strong>最常用且必备的 Git 命令</strong>，助你快速上手。</p>
-<hr>
-<h4 id="一、环境配置与仓库初始化"><a href="#一、环境配置与仓库初始化" class="headerlink" title="一、环境配置与仓库初始化"></a>一、环境配置与仓库初始化</h4><ol>
-<li><p><strong>用户身份标识</strong><br>每次提交代码时，Git 需要记录操作者信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;YourName&quot;</span>  <span class="comment"># 设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span>  <span class="comment"># 设置全局邮箱</span></span><br><span class="line">git config --list  <span class="comment"># 查看所有配置项</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>SSH Key 生成（远程仓库连接必备）</strong><br>用于免密推送代码到 GitHub&#x2F;GitLab 等平台：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your_email@example.com&quot;</span>  <span class="comment"># 生成密钥对</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>创建仓库</strong>  </p>
-<ul>
-<li>本地初始化：<code>git init</code>（生成隐藏的 .git 目录）  </li>
-<li>克隆远程仓库：<code>git clone https://github.com/xxx/xxx.git</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="二、日常开发核心操作"><a href="#二、日常开发核心操作" class="headerlink" title="二、日常开发核心操作"></a>二、日常开发核心操作</h4><ol start="4">
-<li><p><strong>代码提交流程</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                <span class="comment"># 添加所有修改到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;功能描述&quot;</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git status               <span class="comment"># 查看文件状态（红/绿色提示）</span></span><br><span class="line">git <span class="built_in">log</span> --oneline        <span class="comment"># 查看精简版提交历史</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支管理</strong>  </p>
-<ul>
-<li>创建与切换：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch dev          <span class="comment"># 创建分支</span></span><br><span class="line">git checkout dev       <span class="comment"># 切换分支（旧版）</span></span><br><span class="line">git switch -c dev      <span class="comment"># 新版推荐命令</span></span><br></pre></td></tr></table></figure></li>
-<li>合并与冲突解决：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge dev          <span class="comment"># 将 dev 分支合并到当前分支</span></span><br><span class="line"><span class="comment"># 合并冲突后，手动修改文件 → git add → git commit</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>远程仓库交互</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin URL   <span class="comment"># 关联远程仓库</span></span><br><span class="line">git push -u origin main     <span class="comment"># 首次推送并建立追踪</span></span><br><span class="line">git pull origin dev         <span class="comment"># 拉取远程分支更新</span></span><br><span class="line">git fetch                   <span class="comment"># 仅获取远程变更（不自动合并）</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h4 id="三、高阶操作与问题处理"><a href="#三、高阶操作与问题处理" class="headerlink" title="三、高阶操作与问题处理"></a>三、高阶操作与问题处理</h4><ol start="7">
-<li><p><strong>撤销与回退</strong>  </p>
-<ul>
-<li>丢弃工作区修改：<code>git checkout -- filename</code>  </li>
-<li>撤销暂存区文件：<code>git reset HEAD filename</code>  </li>
-<li>版本回退：<code>git reset --hard commit_id</code>（慎用）</li>
-</ul>
-</li>
-<li><p><strong>暂存与恢复</strong><br>临时保存未完成的修改：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash        <span class="comment"># 保存当前工作进度</span></span><br><span class="line">git stash pop    <span class="comment"># 恢复最近一次暂存内容</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>标签管理</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0.0           <span class="comment"># 创建轻量标签</span></span><br><span class="line">git tag -a v1.0 -m <span class="string">&quot;描述&quot;</span> <span class="comment"># 含备注的标签</span></span><br><span class="line">git push origin --tags    <span class="comment"># 推送所有标签到远程</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h4 id="四、协作开发建议"><a href="#四、协作开发建议" class="headerlink" title="四、协作开发建议"></a>四、协作开发建议</h4><ol>
-<li><strong>分支策略</strong>：主分支（main&#x2F;master）仅用于发布稳定版本，新功能在 dev 或 feature 分支开发。  </li>
-<li><strong>提交规范</strong>：commit 信息需清晰描述修改内容，推荐使用 <a href="https://www.conventionalcommits.org/">Conventional Commits</a> 格式。  </li>
-<li><strong>冲突预防</strong>：频繁使用 <code>git pull --rebase</code> 保持本地与远程同步，减少合并冲突。</li>
-</ol>
-<hr>
-<h4 id="附：完整命令速查表（部分）"><a href="#附：完整命令速查表（部分）" class="headerlink" title="附：完整命令速查表（部分）"></a>附：完整命令速查表（部分）</h4><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>命令示例</th>
-<th>作用说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>配置</td>
-<td><code>git config --list</code></td>
-<td>查看所有配置项</td>
-</tr>
-<tr>
-<td>提交</td>
-<td><code>git commit -am &quot;msg&quot;</code></td>
-<td>跳过暂存区直接提交已追踪文件</td>
-</tr>
-<tr>
-<td>分支</td>
-<td><code>git branch -d dev</code></td>
-<td>删除已合并的分支</td>
-</tr>
-<tr>
-<td>远程</td>
-<td><code>git remote -v</code></td>
-<td>查看远程仓库地址</td>
-</tr>
-<tr>
-<td>日志</td>
-<td><code>git log --graph --oneline</code></td>
-<td>图形化显示分支合并历史</td>
-</tr>
-</tbody></table>
-<p>更多完整命令可参考：<a href="https://git-scm.com/doc">Git 官方文档</a> 或腾讯云开发者社区的《Git 常用命令汇总》。</p>
-<hr>
-<p><strong>学习提示</strong>：建议通过可视化工具（如 VS Code 的 Git 插件或 GitHub Desktop）辅助理解操作流程，再逐步熟悉命令行操作。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Android开发者必学：从新手到高手的全指南</title>
     <url>/post/795293fc.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="从新手到高手的全指南"><a href="#从新手到高手的全指南" class="headerlink" title="从新手到高手的全指南"></a>从新手到高手的全指南</h1><ol>
@@ -964,133 +945,22 @@
       </tags>
   </entry>
   <entry>
-    <title>Java面试！通过问题来串联知识</title>
-    <url>/post/5d81f735.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
-<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
-<li>final、finally、finalize的区别</li>
-<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
-<li>重载（Overload）与重写（Override）的区别  </li>
-<li>接口与抽象类的核心区别  </li>
-<li>ArrayList与LinkedList的底层实现及性能差异  </li>
-<li>HashMap与HashTable的线程安全性对比  </li>
-<li>&#x3D;&#x3D;与equals()的区别  </li>
-<li>进程与线程的区别  </li>
-<li>线程的创建方式（Thread、Runnable、Callable）  </li>
-<li>sleep()与wait()的区别  </li>
-<li>集合框架中Set如何判断元素重复？  </li>
-<li>Java的四种引用类型（强、软、弱、虚）  </li>
-<li>泛型擦除原理及作用  </li>
-<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
-<li>静态内部类与非静态内部类的区别  </li>
-<li>单例模式的饿汉式与懒汉式实现  </li>
-<li>Java8新特性（Lambda、Stream API）  </li>
-<li>序列化与反序列化的作用及实现  </li>
-<li>反射机制的应用场景与性能问题  </li>
-<li>Java基本数据类型与包装类的自动拆装箱  </li>
-<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
-<li>Java的跨平台原理（JVM作用）  </li>
-<li>深拷贝与浅拷贝的实现方式  </li>
-<li>数组与链表的优缺点对比  </li>
-<li>多态的实现原理（方法重写、动态绑定）  </li>
-<li>Java内存模型（堆、栈、方法区）  </li>
-<li>线程的六种状态及转换  </li>
-<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
-<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
-<li>如何避免死锁？</li>
+    <title>学Android？这里有一本秘籍！</title>
+    <url>/post/android-base-guide.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
+<li>学Android？在了解一下布局</li>
+<li>学Android？自定义View了解一下</li>
+<li>学Android？Handler了解一下</li>
+<li>学Android？事件分发了解一下</li>
+<li>开源库</li>
 </ol>
-<hr>
-<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
-<li><strong>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</strong>  </li>
-<li>ConcurrentHashMap的分段锁原理  </li>
-<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
-<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
-<li>CAS原理及ABA问题解决方案  </li>
-<li>JVM内存区域划分（堆、栈、元空间）  </li>
-<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
-<li>G1垃圾回收器的Region分区策略  </li>
-<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
-<li>ANR的产生原因及排查方法  </li>
-<li>Android中Handler机制（Looper、MessageQueue）  </li>
-<li>Binder跨进程通信原理  </li>
-<li>View的绘制流程（measure→layout→draw）  </li>
-<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
-<li>RecyclerView与ListView的缓存机制对比  </li>
-<li>Glide的四级缓存策略  </li>
-<li>OkHttp的拦截器链设计  </li>
-<li>Retrofit的动态代理实现原理  </li>
-<li>MVC、MVP、MVVM架构模式的优缺点  </li>
-<li>LiveData与RxJava的区别及使用场景  </li>
-<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
-<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
-<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
-<li>内存抖动检测与优化（MAT工具分析）  </li>
-<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
-<li>设计模式：Builder模式在AlertDialog中的实践  </li>
-<li>设计模式：适配器模式在RecyclerView中的应用  </li>
-<li>设计模式：代理模式实现AOP编程  </li>
-<li>动态代理与静态代理的区别  </li>
-<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
-<li>Dagger2依赖注入的实现原理  </li>
-<li>模块化开发中ARouter的路由实现  </li>
-<li>APK打包流程（aapt→dex→签名→对齐）  </li>
-<li>热修复原理（类替换、资源替换）  </li>
-<li>插件化框架实现原理（Hook ClassLoader）  </li>
-<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
-<li>TCP三次握手与四次挥手过程  </li>
-<li>WebSocket长连接的心跳机制设计  </li>
-<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
-<li>SQLite数据库的事务特性及优化方案</li>
-</ol>
-<hr>
-<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
-<li><strong>JVM调优实战（G1参数配置、Full GC触发条件）</strong>  </li>
-<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
-<li>微服务架构中的服务熔断与降级策略  </li>
-<li>如何设计高并发下的红包系统？  </li>
-<li>如何实现APK的差分更新（bsdiff算法）？  </li>
-<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
-<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
-<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
-<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
-<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
-<li>如何实现Android应用的灰度发布？  </li>
-<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
-<li>如何实现数据埋点的全量采集与无痕打点？  </li>
-<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
-<li>如何实现安全的HTTPS双向认证？  </li>
-<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
-<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
-<li>如何优化冷启动速度至500ms以内？  </li>
-<li>如何通过Gradle插件实现编译期的代码检查？  </li>
-<li>如何设计一个支持千万级用户的IM系统？  </li>
-<li>如何实现Android Native与WebView的双向通信？  </li>
-<li>如何设计一个支持动态替换的主题引擎？  </li>
-<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
-<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
-<li>如何实现跨进程的ViewModel数据共享？  </li>
-<li>如何设计支持AB实验的配置中心？  </li>
-<li>如何实现基于Walle的多渠道打包方案？  </li>
-<li>如何通过RenderScript实现图片的高斯模糊？  </li>
-<li>如何设计一个支持离线优先的本地缓存策略？  </li>
-<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
-</ol>
-<hr>
-<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
-<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
-<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
-<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
-<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
-</ul>
-<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>Android</category>
       </categories>
       <tags>
         <tag>开发</tag>
-        <tag>Java</tag>
-        <tag>面试</tag>
+        <tag>Android</tag>
       </tags>
   </entry>
   <entry>
@@ -1221,6 +1091,136 @@
         <category>Java</category>
       </categories>
       <tags>
+        <tag>Java</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java面试！通过问题来串联知识</title>
+    <url>/post/5d81f735.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
+<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
+<li>final、finally、finalize的区别</li>
+<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
+<li>重载（Overload）与重写（Override）的区别  </li>
+<li>接口与抽象类的核心区别  </li>
+<li>ArrayList与LinkedList的底层实现及性能差异  </li>
+<li>HashMap与HashTable的线程安全性对比  </li>
+<li>&#x3D;&#x3D;与equals()的区别  </li>
+<li>进程与线程的区别  </li>
+<li>线程的创建方式（Thread、Runnable、Callable）  </li>
+<li>sleep()与wait()的区别  </li>
+<li>集合框架中Set如何判断元素重复？  </li>
+<li>Java的四种引用类型（强、软、弱、虚）  </li>
+<li>泛型擦除原理及作用  </li>
+<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
+<li>静态内部类与非静态内部类的区别  </li>
+<li>单例模式的饿汉式与懒汉式实现  </li>
+<li>Java8新特性（Lambda、Stream API）  </li>
+<li>序列化与反序列化的作用及实现  </li>
+<li>反射机制的应用场景与性能问题  </li>
+<li>Java基本数据类型与包装类的自动拆装箱  </li>
+<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
+<li>Java的跨平台原理（JVM作用）  </li>
+<li>深拷贝与浅拷贝的实现方式  </li>
+<li>数组与链表的优缺点对比  </li>
+<li>多态的实现原理（方法重写、动态绑定）  </li>
+<li>Java内存模型（堆、栈、方法区）  </li>
+<li>线程的六种状态及转换  </li>
+<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
+<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
+<li>如何避免死锁？</li>
+</ol>
+<hr>
+<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
+<li><strong>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</strong>  </li>
+<li>ConcurrentHashMap的分段锁原理  </li>
+<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
+<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
+<li>CAS原理及ABA问题解决方案  </li>
+<li>JVM内存区域划分（堆、栈、元空间）  </li>
+<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
+<li>G1垃圾回收器的Region分区策略  </li>
+<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
+<li>ANR的产生原因及排查方法  </li>
+<li>Android中Handler机制（Looper、MessageQueue）  </li>
+<li>Binder跨进程通信原理  </li>
+<li>View的绘制流程（measure→layout→draw）  </li>
+<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
+<li>RecyclerView与ListView的缓存机制对比  </li>
+<li>Glide的四级缓存策略  </li>
+<li>OkHttp的拦截器链设计  </li>
+<li>Retrofit的动态代理实现原理  </li>
+<li>MVC、MVP、MVVM架构模式的优缺点  </li>
+<li>LiveData与RxJava的区别及使用场景  </li>
+<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
+<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
+<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
+<li>内存抖动检测与优化（MAT工具分析）  </li>
+<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
+<li>设计模式：Builder模式在AlertDialog中的实践  </li>
+<li>设计模式：适配器模式在RecyclerView中的应用  </li>
+<li>设计模式：代理模式实现AOP编程  </li>
+<li>动态代理与静态代理的区别  </li>
+<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
+<li>Dagger2依赖注入的实现原理  </li>
+<li>模块化开发中ARouter的路由实现  </li>
+<li>APK打包流程（aapt→dex→签名→对齐）  </li>
+<li>热修复原理（类替换、资源替换）  </li>
+<li>插件化框架实现原理（Hook ClassLoader）  </li>
+<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
+<li>TCP三次握手与四次挥手过程  </li>
+<li>WebSocket长连接的心跳机制设计  </li>
+<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
+<li>SQLite数据库的事务特性及优化方案</li>
+</ol>
+<hr>
+<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
+<li><strong>JVM调优实战（G1参数配置、Full GC触发条件）</strong>  </li>
+<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
+<li>微服务架构中的服务熔断与降级策略  </li>
+<li>如何设计高并发下的红包系统？  </li>
+<li>如何实现APK的差分更新（bsdiff算法）？  </li>
+<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
+<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
+<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
+<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
+<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
+<li>如何实现Android应用的灰度发布？  </li>
+<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
+<li>如何实现数据埋点的全量采集与无痕打点？  </li>
+<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
+<li>如何实现安全的HTTPS双向认证？  </li>
+<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
+<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
+<li>如何优化冷启动速度至500ms以内？  </li>
+<li>如何通过Gradle插件实现编译期的代码检查？  </li>
+<li>如何设计一个支持千万级用户的IM系统？  </li>
+<li>如何实现Android Native与WebView的双向通信？  </li>
+<li>如何设计一个支持动态替换的主题引擎？  </li>
+<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
+<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
+<li>如何实现跨进程的ViewModel数据共享？  </li>
+<li>如何设计支持AB实验的配置中心？  </li>
+<li>如何实现基于Walle的多渠道打包方案？  </li>
+<li>如何通过RenderScript实现图片的高斯模糊？  </li>
+<li>如何设计一个支持离线优先的本地缓存策略？  </li>
+<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
+</ol>
+<hr>
+<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
+<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
+<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
+<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
+<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
+</ul>
+<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
         <tag>Java</tag>
         <tag>面试</tag>
       </tags>
