@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
-    <url>/post/9a1684cf.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p>
-<ol>
-<li>所有读书人必备的技能：速读！</li>
-<li>好记性不如烂笔头？不过我也想要好记性啊！</li>
-</ol>
-]]></content>
-      <categories>
-        <category>大纲</category>
-      </categories>
-      <tags>
-        <tag>大纲</tag>
-        <tag>技能</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>羡慕会讲故事的人吗？想成为他们吗？来看这里！</title>
     <url>/post/f887fa47.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我总是对会讲故事的人心生崇拜，见贤思齐，深刻反思，因是腹无点墨。需要备一些故事了，让自己在想说什么的时候可以“引经据典”，以后带小孩的时候，也可以心有所想，故事牵引。</p>
@@ -42,6 +25,45 @@
       </tags>
   </entry>
   <entry>
+    <title>技多不压身！少年，来此学一技！这里有100本秘籍</title>
+    <url>/post/9a1684cf.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我也是一个非常喜欢学习新技能的人，曾看过一集TED的演讲，广为流传的10000小时定律，是成为专家的时间，而学会一项新技能只需要：<strong>20小时</strong></p>
+<ol>
+<li>所有读书人必备的技能：速读！</li>
+<li>好记性不如烂笔头？不过我也想要好记性啊！</li>
+</ol>
+]]></content>
+      <categories>
+        <category>大纲</category>
+      </categories>
+      <tags>
+        <tag>大纲</tag>
+        <tag>技能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>口袋改版工具盒实操-究极绿宝石5.5</title>
+    <url>/post/c36dcexp67b.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>技巧分享</category>
+      </categories>
+      <tags>
+        <tag>游戏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
+    <url>/post/4a1b603.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>技巧分享</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>就在这里！每个安卓开发都要掌握的知识大纲！</title>
     <url>/post/android-main-point.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>此文适用于所有安卓开发和想从事安卓开发的人</p>
@@ -60,264 +82,6 @@
       <tags>
         <tag>大纲</tag>
         <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo的常见姿势</title>
-    <url>/post/exp-hexo-base.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
-<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
-<li><p>建立文章草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地预览草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>草稿转发布</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
-</li>
-<li><p>发布转草稿</p>
-<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
-</li>
-</ul>
-<hr>
-<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>文字引用</p>
-</blockquote>
-<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
-<p><code>行内代码</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
-<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
-
-<p><a href="test.png" title="图片引用方法二">test</a></p>
-]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
-    <url>/post/4a1b603.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>技巧分享</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
-    <url>/post/exp-hexo-butterfly.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
-<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
-</blockquote>
-<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
-<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
-<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
-<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
-<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
-</blockquote>
-<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
-<blockquote>
-<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
-<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
-</blockquote>
-<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码通过ChatGPT就可以生成 😕</p>
-<p>询问方式：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
-<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
-<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
-<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
-<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
-]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>口袋改版工具盒实操-究极绿宝石5.5</title>
-    <url>/post/c36dcexp67b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>技巧分享</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
-    <url>/post/a2a378f1.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
-<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
-<li><p><strong>数据结构与基础算法</strong>  </p>
-<ul>
-<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
-<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
-<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
-</ul>
-</li>
-<li><p><strong>Android专项算法融合</strong>  </p>
-<ul>
-<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
-<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
-<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计与工程思维</strong>  </p>
-<ul>
-<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
-<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
-<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
-<li><strong>每日核心任务</strong>  <ul>
-<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
-<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
-<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
-<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
-<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
-<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
-</ul>
-</li>
-<li><strong>Android结合练习</strong>：  <ul>
-<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>重点突破</strong>  <ul>
-<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
-<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
-<li><strong>动态规划五步法</strong>  <ul>
-<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
-<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
-<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
-</ul>
-</li>
-<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
-</ul>
-</li>
-<li><strong>高频题型分类</strong>  <ul>
-<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
-<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
-<li><p><strong>Android特色算法题</strong>  </p>
-<ul>
-<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
-<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
-</ul>
-</li>
-<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
-<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计实战</strong>  </p>
-<ul>
-<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
-<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
-<li><p><strong>全真模拟（每日2轮）</strong>  </p>
-<ul>
-<li><strong>Google式面试流程</strong>：  <ul>
-<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
-<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
-<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>错题本与专项突破</strong>  </p>
-<ul>
-<li><strong>错误类型处理</strong>：  <ul>
-<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
-<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
-<li><strong>刷题平台</strong>：  <ul>
-<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
-<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
-<li><p><strong>常见误区</strong>：  </p>
-<ul>
-<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
-<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
-</ul>
-</li>
-<li><p><strong>加分技巧</strong>：  </p>
-<ul>
-<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
-<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
-</ul>
-</li>
-<li><p><strong>补充说明</strong></p>
-<ul>
-<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
-<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -482,341 +246,239 @@
       </tags>
   </entry>
   <entry>
-    <title>Java面试！通过问题来串联知识</title>
-    <url>/post/5d81f735.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
-<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
-<li>final、finally、finalize的区别</li>
-<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
-<li>重载（Overload）与重写（Override）的区别  </li>
-<li>接口与抽象类的核心区别  </li>
-<li>ArrayList与LinkedList的底层实现及性能差异  </li>
-<li>HashMap与HashTable的线程安全性对比  </li>
-<li>&#x3D;&#x3D;与equals()的区别  </li>
-<li>进程与线程的区别  </li>
-<li>线程的创建方式（Thread、Runnable、Callable）  </li>
-<li>sleep()与wait()的区别  </li>
-<li>集合框架中Set如何判断元素重复？  </li>
-<li>Java的四种引用类型（强、软、弱、虚）  </li>
-<li>泛型擦除原理及作用  </li>
-<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
-<li>静态内部类与非静态内部类的区别  </li>
-<li>单例模式的饿汉式与懒汉式实现  </li>
-<li>Java8新特性（Lambda、Stream API）  </li>
-<li>序列化与反序列化的作用及实现  </li>
-<li>反射机制的应用场景与性能问题  </li>
-<li>Java基本数据类型与包装类的自动拆装箱  </li>
-<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
-<li>Java的跨平台原理（JVM作用）  </li>
-<li>深拷贝与浅拷贝的实现方式  </li>
-<li>数组与链表的优缺点对比  </li>
-<li>多态的实现原理（方法重写、动态绑定）  </li>
-<li>Java内存模型（堆、栈、方法区）  </li>
-<li>线程的六种状态及转换  </li>
-<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
-<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
-<li>如何避免死锁？</li>
-</ol>
-<hr>
-<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
-<li><strong>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</strong>  </li>
-<li>ConcurrentHashMap的分段锁原理  </li>
-<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
-<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
-<li>CAS原理及ABA问题解决方案  </li>
-<li>JVM内存区域划分（堆、栈、元空间）  </li>
-<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
-<li>G1垃圾回收器的Region分区策略  </li>
-<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
-<li>ANR的产生原因及排查方法  </li>
-<li>Android中Handler机制（Looper、MessageQueue）  </li>
-<li>Binder跨进程通信原理  </li>
-<li>View的绘制流程（measure→layout→draw）  </li>
-<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
-<li>RecyclerView与ListView的缓存机制对比  </li>
-<li>Glide的四级缓存策略  </li>
-<li>OkHttp的拦截器链设计  </li>
-<li>Retrofit的动态代理实现原理  </li>
-<li>MVC、MVP、MVVM架构模式的优缺点  </li>
-<li>LiveData与RxJava的区别及使用场景  </li>
-<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
-<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
-<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
-<li>内存抖动检测与优化（MAT工具分析）  </li>
-<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
-<li>设计模式：Builder模式在AlertDialog中的实践  </li>
-<li>设计模式：适配器模式在RecyclerView中的应用  </li>
-<li>设计模式：代理模式实现AOP编程  </li>
-<li>动态代理与静态代理的区别  </li>
-<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
-<li>Dagger2依赖注入的实现原理  </li>
-<li>模块化开发中ARouter的路由实现  </li>
-<li>APK打包流程（aapt→dex→签名→对齐）  </li>
-<li>热修复原理（类替换、资源替换）  </li>
-<li>插件化框架实现原理（Hook ClassLoader）  </li>
-<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
-<li>TCP三次握手与四次挥手过程  </li>
-<li>WebSocket长连接的心跳机制设计  </li>
-<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
-<li>SQLite数据库的事务特性及优化方案</li>
-</ol>
-<hr>
-<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
-<li><strong>JVM调优实战（G1参数配置、Full GC触发条件）</strong>  </li>
-<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
-<li>微服务架构中的服务熔断与降级策略  </li>
-<li>如何设计高并发下的红包系统？  </li>
-<li>如何实现APK的差分更新（bsdiff算法）？  </li>
-<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
-<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
-<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
-<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
-<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
-<li>如何实现Android应用的灰度发布？  </li>
-<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
-<li>如何实现数据埋点的全量采集与无痕打点？  </li>
-<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
-<li>如何实现安全的HTTPS双向认证？  </li>
-<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
-<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
-<li>如何优化冷启动速度至500ms以内？  </li>
-<li>如何通过Gradle插件实现编译期的代码检查？  </li>
-<li>如何设计一个支持千万级用户的IM系统？  </li>
-<li>如何实现Android Native与WebView的双向通信？  </li>
-<li>如何设计一个支持动态替换的主题引擎？  </li>
-<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
-<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
-<li>如何实现跨进程的ViewModel数据共享？  </li>
-<li>如何设计支持AB实验的配置中心？  </li>
-<li>如何实现基于Walle的多渠道打包方案？  </li>
-<li>如何通过RenderScript实现图片的高斯模糊？  </li>
-<li>如何设计一个支持离线优先的本地缓存策略？  </li>
-<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
-</ol>
-<hr>
-<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
-<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
-<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
-<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
-<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
+    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
+    <url>/post/a2a378f1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
+<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
+<li><p><strong>数据结构与基础算法</strong>  </p>
+<ul>
+<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
+<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
+<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
 </ul>
-<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
+</li>
+<li><p><strong>Android专项算法融合</strong>  </p>
+<ul>
+<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
+<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
+<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计与工程思维</strong>  </p>
+<ul>
+<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
+<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
+<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
+<li><strong>每日核心任务</strong>  <ul>
+<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
+<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
+<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
+<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
+<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
+<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
+</ul>
+</li>
+<li><strong>Android结合练习</strong>：  <ul>
+<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>重点突破</strong>  <ul>
+<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
+<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
+<li><strong>动态规划五步法</strong>  <ul>
+<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
+<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
+<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
+</ul>
+</li>
+<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
+</ul>
+</li>
+<li><strong>高频题型分类</strong>  <ul>
+<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
+<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
+<li><p><strong>Android特色算法题</strong>  </p>
+<ul>
+<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
+<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
+</ul>
+</li>
+<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
+<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计实战</strong>  </p>
+<ul>
+<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
+<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
+<li><p><strong>全真模拟（每日2轮）</strong>  </p>
+<ul>
+<li><strong>Google式面试流程</strong>：  <ul>
+<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
+<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
+<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>错题本与专项突破</strong>  </p>
+<ul>
+<li><strong>错误类型处理</strong>：  <ul>
+<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
+<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
+<li><strong>刷题平台</strong>：  <ul>
+<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
+<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
+<li><p><strong>常见误区</strong>：  </p>
+<ul>
+<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
+<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
+</ul>
+</li>
+<li><p><strong>加分技巧</strong>：  </p>
+<ul>
+<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
+<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
+</ul>
+</li>
+<li><p><strong>补充说明</strong></p>
+<ul>
+<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
+<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>面试</category>
       </categories>
       <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
-        <tag>面试</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title>学Java？这里有一本秘籍！</title>
-    <url>/post/java-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
-<p>适用于没有Java基础的同学</p>
-</blockquote>
-<p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
-<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
-<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
+    <title>使用hexo的常见姿势</title>
+    <url>/post/exp-hexo-base.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
 
+<hr>
+<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
+<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
+<li><p>建立文章草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地预览草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>草稿转发布</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
+</li>
+<li><p>发布转草稿</p>
+<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
+</li>
+</ul>
+<hr>
+<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
+
+<hr>
 <blockquote>
-<p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
+<p>文字引用</p>
 </blockquote>
-<p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
+<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
+<p><code>行内代码</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
 
-
-
-<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
-
-<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
-<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
-
-
-
-
-
+<p><a href="test.png" title="图片引用方法二">test</a></p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>经验</category>
       </categories>
       <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
+        <tag>经验</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
-    <title>Android面试必备：Java核心100题深度拆解（附高频考点）</title>
-    <url>/post/d0bfb046.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
-<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
-<li>final、finally、finalize的区别</li>
-<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
-<li>重载（Overload）与重写（Override）的区别  </li>
-<li>接口与抽象类的核心区别  </li>
-<li>ArrayList与LinkedList的底层实现及性能差异  </li>
-<li>HashMap与HashTable的线程安全性对比  </li>
-<li>&#x3D;&#x3D;与equals()的区别  </li>
-<li>进程与线程的区别  </li>
-<li>线程的创建方式（Thread、Runnable、Callable）  </li>
-<li>sleep()与wait()的区别  </li>
-<li>集合框架中Set如何判断元素重复？  </li>
-<li>Java的四种引用类型（强、软、弱、虚）  </li>
-<li>泛型擦除原理及作用  </li>
-<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
-<li>静态内部类与非静态内部类的区别  </li>
-<li>单例模式的饿汉式与懒汉式实现  </li>
-<li>Java8新特性（Lambda、Stream API）  </li>
-<li>序列化与反序列化的作用及实现  </li>
-<li>反射机制的应用场景与性能问题  </li>
-<li>Java基本数据类型与包装类的自动拆装箱  </li>
-<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
-<li>Java的跨平台原理（JVM作用）  </li>
-<li>深拷贝与浅拷贝的实现方式  </li>
-<li>数组与链表的优缺点对比  </li>
-<li>多态的实现原理（方法重写、动态绑定）  </li>
-<li>Java内存模型（堆、栈、方法区）  </li>
-<li>线程的六种状态及转换  </li>
-<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
-<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
-<li>如何避免死锁？</li>
-</ol>
-<hr>
-<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
-<li>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</li>
-<li>ConcurrentHashMap的分段锁原理  </li>
-<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
-<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
-<li>CAS原理及ABA问题解决方案  </li>
-<li>JVM内存区域划分（堆、栈、元空间）  </li>
-<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
-<li>G1垃圾回收器的Region分区策略  </li>
-<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
-<li>ANR的产生原因及排查方法  </li>
-<li>Android中Handler机制（Looper、MessageQueue）  </li>
-<li>Binder跨进程通信原理  </li>
-<li>View的绘制流程（measure→layout→draw）  </li>
-<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
-<li>RecyclerView与ListView的缓存机制对比  </li>
-<li>Glide的四级缓存策略  </li>
-<li>OkHttp的拦截器链设计  </li>
-<li>Retrofit的动态代理实现原理  </li>
-<li>MVC、MVP、MVVM架构模式的优缺点  </li>
-<li>LiveData与RxJava的区别及使用场景  </li>
-<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
-<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
-<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
-<li>内存抖动检测与优化（MAT工具分析）  </li>
-<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
-<li>设计模式：Builder模式在AlertDialog中的实践  </li>
-<li>设计模式：适配器模式在RecyclerView中的应用  </li>
-<li>设计模式：代理模式实现AOP编程  </li>
-<li>动态代理与静态代理的区别  </li>
-<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
-<li>Dagger2依赖注入的实现原理  </li>
-<li>模块化开发中ARouter的路由实现  </li>
-<li>APK打包流程（aapt→dex→签名→对齐）  </li>
-<li>热修复原理（类替换、资源替换）  </li>
-<li>插件化框架实现原理（Hook ClassLoader）  </li>
-<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
-<li>TCP三次握手与四次挥手过程  </li>
-<li>WebSocket长连接的心跳机制设计  </li>
-<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
-<li>SQLite数据库的事务特性及优化方案</li>
-</ol>
-<hr>
-<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
-<li>JVM调优实战（G1参数配置、Full GC触发条件）</li>
-<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
-<li>微服务架构中的服务熔断与降级策略  </li>
-<li>如何设计高并发下的红包系统？  </li>
-<li>如何实现APK的差分更新（bsdiff算法）？  </li>
-<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
-<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
-<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
-<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
-<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
-<li>如何实现Android应用的灰度发布？  </li>
-<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
-<li>如何实现数据埋点的全量采集与无痕打点？  </li>
-<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
-<li>如何实现安全的HTTPS双向认证？  </li>
-<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
-<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
-<li>如何优化冷启动速度至500ms以内？  </li>
-<li>如何通过Gradle插件实现编译期的代码检查？  </li>
-<li>如何设计一个支持千万级用户的IM系统？  </li>
-<li>如何实现Android Native与WebView的双向通信？  </li>
-<li>如何设计一个支持动态替换的主题引擎？  </li>
-<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
-<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
-<li>如何实现跨进程的ViewModel数据共享？  </li>
-<li>如何设计支持AB实验的配置中心？  </li>
-<li>如何实现基于Walle的多渠道打包方案？  </li>
-<li>如何通过RenderScript实现图片的高斯模糊？  </li>
-<li>如何设计一个支持离线优先的本地缓存策略？  </li>
-<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
-</ol>
-<hr>
-<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
-<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
-<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
-<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
-<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
-</ul>
-<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
-<h3 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h3><ol>
-<li>final 是一个修饰符，可以修饰变量、方法和类。如果 final 修饰变量，意味着该变量的值在初始化后不能被改变。finalize 方法是在对象被回收之前调用的方法，给对象自己最后一个复活的机会，但是什么时候调用 finalize 没有保证。finally 是一个关键字，与 try 和 catch 一起用于异常的处理。finally 块一定会被执行，无论在 try 块中是否有发生异常。</li>
-</ol>
+    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
+    <url>/post/exp-hexo-butterfly.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
+<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
+</blockquote>
+<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
+<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
+<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
+<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
+<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
+</blockquote>
+<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
+<blockquote>
+<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
+<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
+</blockquote>
+<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码通过ChatGPT就可以生成 😕</p>
+<p>询问方式：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
+<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
+<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
+<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
+<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
 ]]></content>
       <categories>
-        <category>Java</category>
+        <category>经验</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>面试</tag>
+        <tag>经验</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -975,13 +637,46 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Android开发全指南：探索Jetpack和Compose等现代技术，紧跟开发潮流！</title>
-    <url>/post/4c5eb723.html</url>
+    <title>Android开发全指南：探索优化应用性能的最佳实践，让你的应用表现更加出色！</title>
+    <url>/post/a2d9c915.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
-    <title>Android开发全指南：探索优化应用性能的最佳实践，让你的应用表现更加出色！</title>
-    <url>/post/a2d9c915.html</url>
+    <title>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</title>
+    <url>/post/79a8e3a5.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</strong></p>
+<p>在Android开发的广阔天地中，Java与Kotlin无疑是两把最锋利的剑。它们各自闪耀着独特的光芒，却又能够和谐共存，为开发者们开辟出一条条创新之路。今天，就让我们一起踏上这场探索之旅，看看如何掌握这两门强大的编程语言，从而成为Android开发领域的高手！</p>
+<p><strong>一、Java：Android开发的传统强者</strong></p>
+<p>Java，作为Android开发的原生语言，有着悠久的历史和深厚的底蕴。它的语法严谨、结构清晰，使得代码易于理解和维护。同时，Java拥有丰富的类库和强大的跨平台能力，为Android应用提供了坚实的基石。</p>
+<ol>
+<li><p><strong>基础语法与面向对象编程</strong>：从变量、数据类型到控制流语句，再到类和对象的创建与使用，Java的基础语法是每位Android开发者必须熟练掌握的。</p>
+</li>
+<li><p><strong>异常处理与多线程</strong>：在Android应用中，异常处理机制和多线程编程对于提升应用的稳定性和响应速度至关重要。Java提供了完善的异常处理类和多线程支持，让开发者能够轻松应对各种复杂场景。</p>
+</li>
+</ol>
+<p><strong>二、Kotlin：新兴的语言力量</strong></p>
+<p>Kotlin，作为近年来崭露头角的新兴编程语言，以其简洁、安全的特性迅速赢得了开发者的喜爱。它与Java完全兼容，并且在很多方面进行了优化和改进。</p>
+<ol>
+<li><p><strong>简洁的语法与空安全</strong>：Kotlin的语法更加简洁明了，减少了不必要的代码量。同时，它引入了空安全的概念，有效避免了空指针异常的问题。</p>
+</li>
+<li><p><strong>扩展函数与高阶函数</strong>：Kotlin允许开发者为现有类添加新的方法（扩展函数），这使得代码更加灵活和可重用。此外，Kotlin还支持高阶函数和Lambda表达式，让代码更加简洁高效。</p>
+</li>
+</ol>
+<p><strong>三、双剑合璧：Java与Kotlin的协同作战</strong></p>
+<p>在Android开发中，Java与Kotlin并非竞争关系，而是可以相互补充、协同作战的伙伴关系。开发者可以根据项目需求和团队习惯灵活选择使用哪种语言。</p>
+<ol>
+<li><p><strong>混合编程与互操作性</strong>：在同一个Android项目中，可以同时使用Java和Kotlin进行开发。两者之间的互操作性非常好，可以轻松地在两种语言之间调用方法和传递数据。</p>
+</li>
+<li><p><strong>利用各自优势</strong>：对于需要快速迭代和简洁语法的场景，可以选择使用Kotlin；而在需要利用丰富类库和跨平台能力的场景下，Java则更加合适。</p>
+</li>
+</ol>
+<p><strong>四、结语</strong></p>
+<p>掌握Java与Kotlin，就如同手握Android开发的双剑。通过深入学习和实践这两种语言，你将能够在Android开发的道路上披荆斩棘、勇往直前。无论你是初学者还是资深开发者，都不要错过这场探索之旅！让我们一起成为Android开发的高手吧！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：探索Jetpack和Compose等现代技术，紧跟开发潮流！</title>
+    <url>/post/4c5eb723.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
@@ -1156,37 +851,361 @@
       </tags>
   </entry>
   <entry>
-    <title>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</title>
-    <url>/post/79a8e3a5.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</strong></p>
-<p>在Android开发的广阔天地中，Java与Kotlin无疑是两把最锋利的剑。它们各自闪耀着独特的光芒，却又能够和谐共存，为开发者们开辟出一条条创新之路。今天，就让我们一起踏上这场探索之旅，看看如何掌握这两门强大的编程语言，从而成为Android开发领域的高手！</p>
-<p><strong>一、Java：Android开发的传统强者</strong></p>
-<p>Java，作为Android开发的原生语言，有着悠久的历史和深厚的底蕴。它的语法严谨、结构清晰，使得代码易于理解和维护。同时，Java拥有丰富的类库和强大的跨平台能力，为Android应用提供了坚实的基石。</p>
-<ol>
-<li><p><strong>基础语法与面向对象编程</strong>：从变量、数据类型到控制流语句，再到类和对象的创建与使用，Java的基础语法是每位Android开发者必须熟练掌握的。</p>
-</li>
-<li><p><strong>异常处理与多线程</strong>：在Android应用中，异常处理机制和多线程编程对于提升应用的稳定性和响应速度至关重要。Java提供了完善的异常处理类和多线程支持，让开发者能够轻松应对各种复杂场景。</p>
-</li>
+    <title>学Android？这里有一本秘籍！</title>
+    <url>/post/android-base-guide.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
+<li>学Android？在了解一下布局</li>
+<li>学Android？自定义View了解一下</li>
+<li>学Android？Handler了解一下</li>
+<li>学Android？事件分发了解一下</li>
+<li>开源库</li>
 </ol>
-<p><strong>二、Kotlin：新兴的语言力量</strong></p>
-<p>Kotlin，作为近年来崭露头角的新兴编程语言，以其简洁、安全的特性迅速赢得了开发者的喜爱。它与Java完全兼容，并且在很多方面进行了优化和改进。</p>
-<ol>
-<li><p><strong>简洁的语法与空安全</strong>：Kotlin的语法更加简洁明了，减少了不必要的代码量。同时，它引入了空安全的概念，有效避免了空指针异常的问题。</p>
-</li>
-<li><p><strong>扩展函数与高阶函数</strong>：Kotlin允许开发者为现有类添加新的方法（扩展函数），这使得代码更加灵活和可重用。此外，Kotlin还支持高阶函数和Lambda表达式，让代码更加简洁高效。</p>
-</li>
-</ol>
-<p><strong>三、双剑合璧：Java与Kotlin的协同作战</strong></p>
-<p>在Android开发中，Java与Kotlin并非竞争关系，而是可以相互补充、协同作战的伙伴关系。开发者可以根据项目需求和团队习惯灵活选择使用哪种语言。</p>
-<ol>
-<li><p><strong>混合编程与互操作性</strong>：在同一个Android项目中，可以同时使用Java和Kotlin进行开发。两者之间的互操作性非常好，可以轻松地在两种语言之间调用方法和传递数据。</p>
-</li>
-<li><p><strong>利用各自优势</strong>：对于需要快速迭代和简洁语法的场景，可以选择使用Kotlin；而在需要利用丰富类库和跨平台能力的场景下，Java则更加合适。</p>
-</li>
-</ol>
-<p><strong>四、结语</strong></p>
-<p>掌握Java与Kotlin，就如同手握Android开发的双剑。通过深入学习和实践这两种语言，你将能够在Android开发的道路上披荆斩棘、勇往直前。无论你是初学者还是资深开发者，都不要错过这场探索之旅！让我们一起成为Android开发的高手吧！</p>
 ]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android面试必备：Java核心100题深度拆解（附高频考点）</title>
+    <url>/post/d0bfb046.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
+<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
+<li>final、finally、finalize的区别</li>
+<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
+<li>重载（Overload）与重写（Override）的区别  </li>
+<li>接口与抽象类的核心区别  </li>
+<li>ArrayList与LinkedList的底层实现及性能差异  </li>
+<li>HashMap与HashTable的线程安全性对比  </li>
+<li>&#x3D;&#x3D;与equals()的区别  </li>
+<li>进程与线程的区别  </li>
+<li>线程的创建方式（Thread、Runnable、Callable）  </li>
+<li>sleep()与wait()的区别  </li>
+<li>集合框架中Set如何判断元素重复？  </li>
+<li>Java的四种引用类型（强、软、弱、虚）  </li>
+<li>泛型擦除原理及作用  </li>
+<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
+<li>静态内部类与非静态内部类的区别  </li>
+<li>单例模式的饿汉式与懒汉式实现  </li>
+<li>Java8新特性（Lambda、Stream API）  </li>
+<li>序列化与反序列化的作用及实现  </li>
+<li>反射机制的应用场景与性能问题  </li>
+<li>Java基本数据类型与包装类的自动拆装箱  </li>
+<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
+<li>Java的跨平台原理（JVM作用）  </li>
+<li>深拷贝与浅拷贝的实现方式  </li>
+<li>数组与链表的优缺点对比  </li>
+<li>多态的实现原理（方法重写、动态绑定）  </li>
+<li>Java内存模型（堆、栈、方法区）  </li>
+<li>线程的六种状态及转换  </li>
+<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
+<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
+<li>如何避免死锁？</li>
+</ol>
+<hr>
+<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
+<li>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</li>
+<li>ConcurrentHashMap的分段锁原理  </li>
+<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
+<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
+<li>CAS原理及ABA问题解决方案  </li>
+<li>JVM内存区域划分（堆、栈、元空间）  </li>
+<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
+<li>G1垃圾回收器的Region分区策略  </li>
+<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
+<li>ANR的产生原因及排查方法  </li>
+<li>Android中Handler机制（Looper、MessageQueue）  </li>
+<li>Binder跨进程通信原理  </li>
+<li>View的绘制流程（measure→layout→draw）  </li>
+<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
+<li>RecyclerView与ListView的缓存机制对比  </li>
+<li>Glide的四级缓存策略  </li>
+<li>OkHttp的拦截器链设计  </li>
+<li>Retrofit的动态代理实现原理  </li>
+<li>MVC、MVP、MVVM架构模式的优缺点  </li>
+<li>LiveData与RxJava的区别及使用场景  </li>
+<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
+<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
+<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
+<li>内存抖动检测与优化（MAT工具分析）  </li>
+<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
+<li>设计模式：Builder模式在AlertDialog中的实践  </li>
+<li>设计模式：适配器模式在RecyclerView中的应用  </li>
+<li>设计模式：代理模式实现AOP编程  </li>
+<li>动态代理与静态代理的区别  </li>
+<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
+<li>Dagger2依赖注入的实现原理  </li>
+<li>模块化开发中ARouter的路由实现  </li>
+<li>APK打包流程（aapt→dex→签名→对齐）  </li>
+<li>热修复原理（类替换、资源替换）  </li>
+<li>插件化框架实现原理（Hook ClassLoader）  </li>
+<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
+<li>TCP三次握手与四次挥手过程  </li>
+<li>WebSocket长连接的心跳机制设计  </li>
+<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
+<li>SQLite数据库的事务特性及优化方案</li>
+</ol>
+<hr>
+<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
+<li>JVM调优实战（G1参数配置、Full GC触发条件）</li>
+<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
+<li>微服务架构中的服务熔断与降级策略  </li>
+<li>如何设计高并发下的红包系统？  </li>
+<li>如何实现APK的差分更新（bsdiff算法）？  </li>
+<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
+<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
+<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
+<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
+<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
+<li>如何实现Android应用的灰度发布？  </li>
+<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
+<li>如何实现数据埋点的全量采集与无痕打点？  </li>
+<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
+<li>如何实现安全的HTTPS双向认证？  </li>
+<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
+<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
+<li>如何优化冷启动速度至500ms以内？  </li>
+<li>如何通过Gradle插件实现编译期的代码检查？  </li>
+<li>如何设计一个支持千万级用户的IM系统？  </li>
+<li>如何实现Android Native与WebView的双向通信？  </li>
+<li>如何设计一个支持动态替换的主题引擎？  </li>
+<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
+<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
+<li>如何实现跨进程的ViewModel数据共享？  </li>
+<li>如何设计支持AB实验的配置中心？  </li>
+<li>如何实现基于Walle的多渠道打包方案？  </li>
+<li>如何通过RenderScript实现图片的高斯模糊？  </li>
+<li>如何设计一个支持离线优先的本地缓存策略？  </li>
+<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
+</ol>
+<hr>
+<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
+<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
+<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
+<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
+<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
+</ul>
+<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
+<h3 id="参考答案"><a href="#参考答案" class="headerlink" title="参考答案"></a>参考答案</h3><ol>
+<li>final 是一个修饰符，可以修饰变量、方法和类。如果 final 修饰变量，意味着该变量的值在初始化后不能被改变。finalize 方法是在对象被回收之前调用的方法，给对象自己最后一个复活的机会，但是什么时候调用 finalize 没有保证。finally 是一个关键字，与 try 和 catch 一起用于异常的处理。finally 块一定会被执行，无论在 try 块中是否有发生异常。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学Java？这里有一本秘籍！</title>
+    <url>/post/java-base-guide.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
+<p>适用于没有Java基础的同学</p>
+</blockquote>
+<p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
+<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
+<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
+</blockquote>
+<p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
+
+<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
+<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java面试！通过问题来串联知识</title>
+    <url>/post/5d81f735.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
+<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
+<li>final、finally、finalize的区别</li>
+<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
+<li>重载（Overload）与重写（Override）的区别  </li>
+<li>接口与抽象类的核心区别  </li>
+<li>ArrayList与LinkedList的底层实现及性能差异  </li>
+<li>HashMap与HashTable的线程安全性对比  </li>
+<li>&#x3D;&#x3D;与equals()的区别  </li>
+<li>进程与线程的区别  </li>
+<li>线程的创建方式（Thread、Runnable、Callable）  </li>
+<li>sleep()与wait()的区别  </li>
+<li>集合框架中Set如何判断元素重复？  </li>
+<li>Java的四种引用类型（强、软、弱、虚）  </li>
+<li>泛型擦除原理及作用  </li>
+<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
+<li>静态内部类与非静态内部类的区别  </li>
+<li>单例模式的饿汉式与懒汉式实现  </li>
+<li>Java8新特性（Lambda、Stream API）  </li>
+<li>序列化与反序列化的作用及实现  </li>
+<li>反射机制的应用场景与性能问题  </li>
+<li>Java基本数据类型与包装类的自动拆装箱  </li>
+<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
+<li>Java的跨平台原理（JVM作用）  </li>
+<li>深拷贝与浅拷贝的实现方式  </li>
+<li>数组与链表的优缺点对比  </li>
+<li>多态的实现原理（方法重写、动态绑定）  </li>
+<li>Java内存模型（堆、栈、方法区）  </li>
+<li>线程的六种状态及转换  </li>
+<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
+<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
+<li>如何避免死锁？</li>
+</ol>
+<hr>
+<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
+<li><strong>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</strong>  </li>
+<li>ConcurrentHashMap的分段锁原理  </li>
+<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
+<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
+<li>CAS原理及ABA问题解决方案  </li>
+<li>JVM内存区域划分（堆、栈、元空间）  </li>
+<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
+<li>G1垃圾回收器的Region分区策略  </li>
+<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
+<li>ANR的产生原因及排查方法  </li>
+<li>Android中Handler机制（Looper、MessageQueue）  </li>
+<li>Binder跨进程通信原理  </li>
+<li>View的绘制流程（measure→layout→draw）  </li>
+<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
+<li>RecyclerView与ListView的缓存机制对比  </li>
+<li>Glide的四级缓存策略  </li>
+<li>OkHttp的拦截器链设计  </li>
+<li>Retrofit的动态代理实现原理  </li>
+<li>MVC、MVP、MVVM架构模式的优缺点  </li>
+<li>LiveData与RxJava的区别及使用场景  </li>
+<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
+<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
+<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
+<li>内存抖动检测与优化（MAT工具分析）  </li>
+<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
+<li>设计模式：Builder模式在AlertDialog中的实践  </li>
+<li>设计模式：适配器模式在RecyclerView中的应用  </li>
+<li>设计模式：代理模式实现AOP编程  </li>
+<li>动态代理与静态代理的区别  </li>
+<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
+<li>Dagger2依赖注入的实现原理  </li>
+<li>模块化开发中ARouter的路由实现  </li>
+<li>APK打包流程（aapt→dex→签名→对齐）  </li>
+<li>热修复原理（类替换、资源替换）  </li>
+<li>插件化框架实现原理（Hook ClassLoader）  </li>
+<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
+<li>TCP三次握手与四次挥手过程  </li>
+<li>WebSocket长连接的心跳机制设计  </li>
+<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
+<li>SQLite数据库的事务特性及优化方案</li>
+</ol>
+<hr>
+<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
+<li><strong>JVM调优实战（G1参数配置、Full GC触发条件）</strong>  </li>
+<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
+<li>微服务架构中的服务熔断与降级策略  </li>
+<li>如何设计高并发下的红包系统？  </li>
+<li>如何实现APK的差分更新（bsdiff算法）？  </li>
+<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
+<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
+<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
+<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
+<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
+<li>如何实现Android应用的灰度发布？  </li>
+<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
+<li>如何实现数据埋点的全量采集与无痕打点？  </li>
+<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
+<li>如何实现安全的HTTPS双向认证？  </li>
+<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
+<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
+<li>如何优化冷启动速度至500ms以内？  </li>
+<li>如何通过Gradle插件实现编译期的代码检查？  </li>
+<li>如何设计一个支持千万级用户的IM系统？  </li>
+<li>如何实现Android Native与WebView的双向通信？  </li>
+<li>如何设计一个支持动态替换的主题引擎？  </li>
+<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
+<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
+<li>如何实现跨进程的ViewModel数据共享？  </li>
+<li>如何设计支持AB实验的配置中心？  </li>
+<li>如何实现基于Walle的多渠道打包方案？  </li>
+<li>如何通过RenderScript实现图片的高斯模糊？  </li>
+<li>如何设计一个支持离线优先的本地缓存策略？  </li>
+<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
+</ol>
+<hr>
+<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
+<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
+<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
+<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
+<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
+</ul>
+<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Java</tag>
+        <tag>面试</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git Flow：高效团队协作的分支管理艺术（附实战图解）</title>
@@ -1206,7 +1225,7 @@
 <li><strong>快速响应</strong>：hotfix分支实现生产环境分钟级修复</li>
 </ol>
 <hr>
-<h4 id="二、五大核心分支详解"><a href="#二、五大核心分支详解" class="headerlink" title="二、五大核心分支详解"></a>二、五大核心分支详解</h4><img src="/post/undefined/git-model.png" class="" title="Git Flow分支模型">
+<h4 id="二、五大核心分支详解"><a href="#二、五大核心分支详解" class="headerlink" title="二、五大核心分支详解"></a>二、五大核心分支详解</h4><img src="/post/dc3e26d8/git-model.png" class="" title="Git Flow分支模型">
 <p>（示意图说明：蓝色箭头为常规开发路径，红色箭头为紧急修复路径)</p>
 <table>
 <thead>
@@ -1268,7 +1287,7 @@
 </li>
 <li><p><strong>开发新功能</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git flow feature start points-system</span><br><span class="line"><span class="comment"># 开发完成后</span></span><br><span class="line">git flow feature finish points-system</span><br></pre></td></tr></table></figure>
-<img src="/post/undefined/git-feature-branch.png" class="" title="Feature分支操作">
+<img src="/post/dc3e26d8/git-feature-branch.png" class="" title="Feature分支操作">
 </li>
 <li><p><strong>预发布测试</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git flow release start v2.1.0</span><br><span class="line"><span class="comment"># 执行自动化测试</span></span><br><span class="line">git flow release finish v2.1.0</span><br></pre></td></tr></table></figure>
@@ -1325,30 +1344,11 @@
 <h4 id="六、延伸思考：Git-Flow的现代演化"><a href="#六、延伸思考：Git-Flow的现代演化" class="headerlink" title="六、延伸思考：Git Flow的现代演化"></a>六、延伸思考：Git Flow的现代演化</h4><p>随着DevOps的普及，衍生出两种改进模式：</p>
 <ol>
 <li><strong>GitHub Flow</strong>：简化版工作流，适合持续部署</li>
-<li><strong>GitLab Flow</strong>：引入环境分支（staging&#x2F;production）<img src="/post/undefined/The-GitLab-Flow-2023-mr-pushing-code-portion.png" class="" title="分支模型对比"></li>
+<li><strong>GitLab Flow</strong>：引入环境分支（staging&#x2F;production）<img src="/post/dc3e26d8/The-GitLab-Flow-2023-mr-pushing-code-portion.png" class="" title="分支模型对比"></li>
 </ol>
 <hr>
 <p><strong>参考资料</strong>：<br><a href="https://nvie.com/posts/a-successful-git-branching-model/">Git Flow官方文档</a> | <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Gitlab Flow实践指南</a><br>（本文部分图示参考网页的核心流程设计）</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>学Android？这里有一本秘籍！</title>
-    <url>/post/android-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
-<li>学Android？在了解一下布局</li>
-<li>学Android？自定义View了解一下</li>
-<li>学Android？Handler了解一下</li>
-<li>学Android？事件分发了解一下</li>
-<li>开源库</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Android</tag>
-      </tags>
   </entry>
   <entry>
     <title>Git 命令入门指南：从零掌握代码版本管理</title>
