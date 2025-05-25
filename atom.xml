@@ -6,7 +6,7 @@
   <link href="https://fulinju.github.io/atom.xml" rel="self"/>
   
   <link href="https://fulinju.github.io/"/>
-  <updated>2025-05-25T14:49:56.569Z</updated>
+  <updated>2025-05-25T14:55:37.625Z</updated>
   <id>https://fulinju.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>无需下载，一键永久在线激活Windows10&amp;11及Office！</title>
+    <title>无需下载，一键永久在线激活Windows10/11及Office！</title>
     <link href="https://fulinju.github.io/post/b2e34fdd.html"/>
     <id>https://fulinju.github.io/post/b2e34fdd.html</id>
     <published>2025-05-25T14:47:24.000Z</published>
-    <updated>2025-05-25T14:49:56.569Z</updated>
+    <updated>2025-05-25T14:55:37.625Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="无需下载，一键永久在线激活Windows10-11及Office！"><a href="#无需下载，一键永久在线激活Windows10-11及Office！" class="headerlink" title="无需下载，一键永久在线激活Windows10&#x2F;11及Office！"></a>无需下载，一键永久在线激活Windows10&#x2F;11及Office！</h1><p><strong>导语</strong><br>你是否还在为Windows系统或Office的激活问题烦恼？本文将分享一种通过PowerShell脚本快速激活Windows 10&#x2F;11和Office的方法，操作简单且支持永久激活，无需复杂工具。文末附注意事项，建议仔细阅读！</p><hr><h3 id="一、激活原理简介"><a href="#一、激活原理简介" class="headerlink" title="一、激活原理简介"></a><strong>一、激活原理简介</strong></h3><p>通过开源脚本工具（如HWID和Ohook），可以绕过系统激活验证，实现Windows或Office的永久激活：  </p><ul><li><strong>HWID（数字许可证激活）</strong>：适用于Windows系统，需联网验证，绑定硬件ID实现永久激活。  </li><li><strong>Ohook（离线激活）</strong>：适用于Office软件，无需联网，直接修改本地验证机制。</li></ul><hr><h3 id="二、激活前准备"><a href="#二、激活前准备" class="headerlink" title="二、激活前准备"></a><strong>二、激活前准备</strong></h3><ol><li><strong>系统要求</strong>：Windows 8及以上版本（支持Win10&#x2F;Win11）。  </li><li><strong>权限要求</strong>：以<strong>管理员身份</strong>运行PowerShell（否则可能失败）。  </li><li><strong>关闭安全软件</strong>：部分杀毒软件可能拦截脚本，建议临时禁用。</li></ol><hr><h3 id="三、激活步骤详解"><a href="#三、激活步骤详解" class="headerlink" title="三、激活步骤详解"></a><strong>三、激活步骤详解</strong></h3><h4 id="步骤1：以管理员身份运行PowerShell"><a href="#步骤1：以管理员身份运行PowerShell" class="headerlink" title="步骤1：以管理员身份运行PowerShell"></a><strong>步骤1：以管理员身份运行PowerShell</strong></h4><ul><li>点击任务栏搜索框，输入“PowerShell”，右键选择“以管理员身份运行”。  </li><li>若弹出权限提示，选择“是”允许操作。</li></ul><p><img src="https://example.com/powershell-admin.png" alt="以管理员身份打开PowerShell">  </p><h4 id="步骤2：输入激活脚本"><a href="#步骤2：输入激活脚本" class="headerlink" title="步骤2：输入激活脚本"></a><strong>步骤2：输入激活脚本</strong></h4><p>复制以下命令，粘贴到PowerShell窗口，按回车执行：  </p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">irm</span> https://get.activated.win | <span class="built_in">iex</span></span><br><span class="line">```  </span><br><span class="line">脚本会自动下载并启动激活工具。  </span><br><span class="line"></span><br><span class="line"><span class="comment">#### **步骤3：选择激活模式**  </span></span><br><span class="line">脚本运行后，会显示以下选项：  </span><br></pre></td></tr></table></figure><p>[1] HWID - 激活Windows（需联网）<br>[2] Ohook - 激活Office（离线可用）  </p><pre><code>- **激活Windows系统**：输入数字`1`，等待自动联网验证（约1-3分钟）。  - **激活Office软件**：输入数字`2`，直接离线激活。  #### **步骤4：确认激活成功**  - Windows激活成功后，会显示“Permanently Activated”字样。  - 打开“设置” → “系统” → “激活”，确认状态为“已激活”。  ---### **四、注意事项**  1. **网络要求**：激活Windows时需保持网络畅通，否则可能失败。  2. **系统兼容性**：Office激活仅支持2016及以上版本（如Office 2021、365）。  3. **安全风险**：第三方脚本存在潜在风险，建议在虚拟机或备用设备操作。  4. **正版支持**：本文仅供技术研究，长期使用请支持正版授权。  ---### **五、常见问题**  **Q1：激活后系统更新会失效吗？**  HWID激活为永久数字许可证，重装系统或更新均不影响。  **Q2：脚本报错“无法执行”怎么办？**  - 检查是否以管理员身份运行PowerShell。  - 输入命令`Set-ExecutionPolicy RemoteSigned`启用脚本权限。  ---**结语**  通过PowerShell脚本激活Windows和Office，省去了寻找KMS工具的繁琐流程。但需注意，任何非官方激活方式均存在不确定性，建议优先通过正规渠道获取授权。如果你觉得本文有用，欢迎转发分享！  </code></pre>]]></content>
     
     
       
@@ -33,6 +33,14 @@
     
     
     
+    <category term="Windows激活" scheme="https://fulinju.github.io/categories/Windows%E6%BF%80%E6%B4%BB/"/>
+    
+    <category term="Office激活" scheme="https://fulinju.github.io/categories/Windows%E6%BF%80%E6%B4%BB/Office%E6%BF%80%E6%B4%BB/"/>
+    
+    
+    <category term="Windows激活" scheme="https://fulinju.github.io/tags/Windows%E6%BF%80%E6%B4%BB/"/>
+    
+    <category term="Office激活" scheme="https://fulinju.github.io/tags/Office%E6%BF%80%E6%B4%BB/"/>
     
   </entry>
   
