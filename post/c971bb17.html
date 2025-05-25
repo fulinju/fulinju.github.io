@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>跨平台 GitHub SSH 配置指南（macOS &amp; Windows） | 抚鳞居</title><meta name="author" content="抚鳞居士"><meta name="copyright" content="抚鳞居士"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="跨平台 GitHub SSH 配置指南（macOS &amp; Windows） 一、准备工作 安装 Git 客户端   macOS：通过 Homebrew 或 Git 官网 下载安装包   Windows：从 Git 官网 下载安装程序，安装时勾选“Add Git to PATH”   注册 GitHub 账号   访问 GitHub 官网 完成注册。     二、SSH 密钥生成与配置1. m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨平台 GitHub SSH 配置指南（macOS &amp; Windows）">
+<meta property="og:url" content="https://fulinju.github.io/post/c971bb17.html">
+<meta property="og:site_name" content="抚鳞居">
+<meta property="og:description" content="跨平台 GitHub SSH 配置指南（macOS &amp; Windows） 一、准备工作 安装 Git 客户端   macOS：通过 Homebrew 或 Git 官网 下载安装包   Windows：从 Git 官网 下载安装程序，安装时勾选“Add Git to PATH”   注册 GitHub 账号   访问 GitHub 官网 完成注册。     二、SSH 密钥生成与配置1. m">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fulinju.github.io/img/favicon.png">
+<meta property="article:published_time" content="2025-05-25T02:42:58.000Z">
+<meta property="article:modified_time" content="2025-05-25T14:49:56.573Z">
+<meta property="article:author" content="抚鳞居士">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fulinju.github.io/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fulinju.github.io/post/c971bb17.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '跨平台 GitHub SSH 配置指南（macOS & Windows）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-05-25 22:49:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><meta name="google-site-verification" content="440xp3zbVtfJjRjD0w9KBkNn4eJq6WTerLMopoEuHrA" /><meta name="baidu-site-verification" content="codeva-uJ4uVDu5Ia" /><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="抚鳞居" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="抚鳞居"><span class="site-name">抚鳞居</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">跨平台 GitHub SSH 配置指南（macOS &amp; Windows）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-05-25T02:42:58.000Z" title="发表于 2025-05-25 10:42:58">2025-05-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-05-25T14:49:56.573Z" title="更新于 2025-05-25 22:49:56">2025-05-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/git/">git</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">698</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="跨平台 GitHub SSH 配置指南（macOS &amp; Windows）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="跨平台-GitHub-SSH-配置指南（macOS-Windows）"><a href="#跨平台-GitHub-SSH-配置指南（macOS-Windows）" class="headerlink" title="跨平台 GitHub SSH 配置指南（macOS &amp; Windows）"></a>跨平台 GitHub SSH 配置指南（macOS &amp; Windows）</h1><hr>
+<h2 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h2><ol>
+<li><strong>安装 Git 客户端</strong>  <ul>
+<li>macOS：通过 <a target="_blank" rel="noopener" href="https://brew.sh/">Homebrew</a> 或 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git 官网</a> 下载安装包  </li>
+<li>Windows：从 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git 官网</a> 下载安装程序，安装时勾选“Add Git to PATH”</li>
+</ul>
+</li>
+<li><strong>注册 GitHub 账号</strong>  <ul>
+<li>访问 <a target="_blank" rel="noopener" href="https://github.com/">GitHub 官网</a> 完成注册。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二、SSH-密钥生成与配置"><a href="#二、SSH-密钥生成与配置" class="headerlink" title="二、SSH 密钥生成与配置"></a>二、SSH 密钥生成与配置</h2><h3 id="1-macOS-配置步骤"><a href="#1-macOS-配置步骤" class="headerlink" title="1. macOS 配置步骤"></a>1. macOS 配置步骤</h3><h4 id="1-生成-SSH-密钥"><a href="#1-生成-SSH-密钥" class="headerlink" title="(1) 生成 SSH 密钥"></a>(1) 生成 SSH 密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开终端，输入以下命令（推荐使用 ed25519 算法）</span></span><br><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="comment"># 若系统不支持 ed25519，改用 RSA：</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>按回车使用默认路径 <code>~/.ssh/id_ed25519</code> 或自定义文件名  </li>
+<li>设置密钥密码（可选，建议增强安全性）</li>
+</ul>
+<h4 id="2-配置-SSH-代理"><a href="#2-配置-SSH-代理" class="headerlink" title="(2) 配置 SSH 代理"></a>(2) 配置 SSH 代理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 ssh-agent</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(ssh-agent -s)</span>&quot;</span></span><br><span class="line"><span class="comment"># 添加私钥到代理（永久生效）</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Host github.com\n  AddKeysToAgent yes\n  UseKeychain yes\n  IdentityFile ~/.ssh/id_ed25519&quot;</span> &gt;&gt; ~/.ssh/config</span><br><span class="line">ssh-add --apple-use-keychain ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-复制公钥"><a href="#3-复制公钥" class="headerlink" title="(3) 复制公钥"></a>(3) 复制公钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbcopy &lt; ~/.ssh/id_ed25519.pub  <span class="comment"># 自动复制到剪贴板</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-Windows-配置步骤"><a href="#2-Windows-配置步骤" class="headerlink" title="2. Windows 配置步骤"></a>2. Windows 配置步骤</h3><h4 id="1-生成-SSH-密钥-1"><a href="#1-生成-SSH-密钥-1" class="headerlink" title="(1) 生成 SSH 密钥"></a>(1) 生成 SSH 密钥</h4><ol>
+<li>打开 <strong>Git Bash</strong>  </li>
+<li>执行命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="comment"># 或使用 RSA：</span></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>按回车使用默认路径 <code>C:\Users\用户名\.ssh\id_ed25519</code>  </li>
+<li>设置密码（可选）</li>
+</ul>
+<h4 id="2-添加密钥到代理"><a href="#2-添加密钥到代理" class="headerlink" title="(2) 添加密钥到代理"></a>(2) 添加密钥到代理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span> <span class="string">&quot;<span class="subst">$(ssh-agent -s)</span>&quot;</span></span><br><span class="line">ssh-add ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-复制公钥-1"><a href="#3-复制公钥-1" class="headerlink" title="(3) 复制公钥"></a>(3) 复制公钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_ed25519.pub  <span class="comment"># 自动复制到剪贴板（仅限 Git Bash）</span></span><br><span class="line"><span class="comment"># 若未安装 clip，手动打开文件复制内容</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、添加公钥到-GitHub"><a href="#三、添加公钥到-GitHub" class="headerlink" title="三、添加公钥到 GitHub"></a>三、添加公钥到 GitHub</h2><ol>
+<li>登录 GitHub → 点击右上角头像 → <strong>Settings</strong> → <strong>SSH and GPG Keys</strong>  </li>
+<li>点击 <strong>New SSH Key</strong> → 输入标题（如“My MacBook”）  </li>
+<li>粘贴复制的公钥内容 → <strong>Add SSH Key</strong></li>
+</ol>
+<hr>
+<h2 id="四、测试-SSH-连接"><a href="#四、测试-SSH-连接" class="headerlink" title="四、测试 SSH 连接"></a>四、测试 SSH 连接</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<ul>
+<li>首次连接输入 <code>yes</code>  </li>
+<li>成功提示：<code>Hi username! You&#39;ve successfully authenticated...</code></li>
+</ul>
+<hr>
+<h2 id="五、配置-Git-使用-SSH"><a href="#五、配置-Git-使用-SSH" class="headerlink" title="五、配置 Git 使用 SSH"></a>五、配置 Git 使用 SSH</h2><h3 id="1-全局设置用户名和邮箱"><a href="#1-全局设置用户名和邮箱" class="headerlink" title="1. 全局设置用户名和邮箱"></a>1. 全局设置用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-克隆仓库使用-SSH-URL"><a href="#2-克隆仓库使用-SSH-URL" class="headerlink" title="2. 克隆仓库使用 SSH URL"></a>2. 克隆仓库使用 SSH URL</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:username/repo.git</span><br><span class="line"><span class="comment"># 若已有 HTTPS 仓库，切换远程地址：</span></span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="六、多账户管理（可选）"><a href="#六、多账户管理（可选）" class="headerlink" title="六、多账户管理（可选）"></a>六、多账户管理（可选）</h2><p>创建 <code>~/.ssh/config</code> 文件（macOS&#x2F;Windows 通用）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Host github-personal</span><br><span class="line">  HostName github.com</span><br><span class="line">  User git</span><br><span class="line">  IdentityFile ~/.ssh/id_ed25519_personal</span><br><span class="line"></span><br><span class="line">Host github-work</span><br><span class="line">  HostName github.com</span><br><span class="line">  User git</span><br><span class="line">  IdentityFile ~/.ssh/id_ed25519_work</span><br></pre></td></tr></table></figure>
+<ul>
+<li>克隆时使用别名：<code>git clone github-work:username/repo.git</code></li>
+</ul>
+<hr>
+<h2 id="七、常见问题"><a href="#七、常见问题" class="headerlink" title="七、常见问题"></a>七、常见问题</h2><ol>
+<li><p><strong>Permission denied (publickey)</strong>  </p>
+<ul>
+<li>检查公钥是否完整粘贴到 GitHub  </li>
+<li>重启 ssh-agent：<code>eval &quot;$(ssh-agent -s)&quot; &amp;&amp; ssh-add ~/.ssh/id_ed25519</code></li>
+</ul>
+</li>
+<li><p><strong>旧系统兼容性问题</strong>  </p>
+<ul>
+<li>使用 RSA 算法替代 ed25519</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="八、跨平台工具推荐"><a href="#八、跨平台工具推荐" class="headerlink" title="八、跨平台工具推荐"></a>八、跨平台工具推荐</h2><ul>
+<li><strong>Tabby</strong>：支持 Windows&#x2F;macOS 的 SSH 客户端，可管理多连接  </li>
+<li><strong>VS Code</strong>：内置终端与 Git 可视化工具</li>
+</ul>
+<hr>
+<blockquote>
+<p>通过以上步骤，您已实现 GitHub SSH 的跨平台安全连接。如需图文详细演示，可参考 <a target="_blank" rel="noopener" href="https://docs.github.com/authentication/connecting-to-github-with-ssh">GitHub 官方文档</a>。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://fulinju.github.io">抚鳞居士</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fulinju.github.io/post/c971bb17.html">https://fulinju.github.io/post/c971bb17.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fulinju.github.io" target="_blank">抚鳞居</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>佛系打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/b2e34fdd.html" title="无需下载，一键永久在线激活Windows10&amp;11及Office！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">无需下载，一键永久在线激活Windows10&amp;11及Office！</div></div></a></div><div class="next-post pull-right"><a href="/post/ef2b76b.html" title="Git 命令入门指南：从零掌握代码版本管理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git 命令入门指南：从零掌握代码版本管理</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">抚鳞居士</div><div class="author-info__description">安卓/Framework/经验分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fulinju"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">没有公告！再强调一遍，没有公告！（实在要有的话，请帮忙推广一下～）</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%A8%E5%B9%B3%E5%8F%B0-GitHub-SSH-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97%EF%BC%88macOS-Windows%EF%BC%89"><span class="toc-text">跨平台 GitHub SSH 配置指南（macOS &amp; Windows）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">一、准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81SSH-%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-text">二、SSH 密钥生成与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-macOS-%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-text">1. macOS 配置步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%94%9F%E6%88%90-SSH-%E5%AF%86%E9%92%A5"><span class="toc-text">(1) 生成 SSH 密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-SSH-%E4%BB%A3%E7%90%86"><span class="toc-text">(2) 配置 SSH 代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5"><span class="toc-text">(3) 复制公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Windows-%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-text">2. Windows 配置步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%94%9F%E6%88%90-SSH-%E5%AF%86%E9%92%A5-1"><span class="toc-text">(1) 生成 SSH 密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E5%AF%86%E9%92%A5%E5%88%B0%E4%BB%A3%E7%90%86"><span class="toc-text">(2) 添加密钥到代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A4%8D%E5%88%B6%E5%85%AC%E9%92%A5-1"><span class="toc-text">(3) 复制公钥</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5%E5%88%B0-GitHub"><span class="toc-text">三、添加公钥到 GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B5%8B%E8%AF%95-SSH-%E8%BF%9E%E6%8E%A5"><span class="toc-text">四、测试 SSH 连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%85%8D%E7%BD%AE-Git-%E4%BD%BF%E7%94%A8-SSH"><span class="toc-text">五、配置 Git 使用 SSH</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="toc-text">1. 全局设置用户名和邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E4%BD%BF%E7%94%A8-SSH-URL"><span class="toc-text">2. 克隆仓库使用 SSH URL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%A4%9A%E8%B4%A6%E6%88%B7%E7%AE%A1%E7%90%86%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">六、多账户管理（可选）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">七、常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90"><span class="toc-text">八、跨平台工具推荐</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b2e34fdd.html" title="无需下载，一键永久在线激活Windows10&amp;11及Office！">无需下载，一键永久在线激活Windows10&amp;11及Office！</a><time datetime="2025-05-25T14:47:24.000Z" title="发表于 2025-05-25 22:47:24">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/c971bb17.html" title="跨平台 GitHub SSH 配置指南（macOS &amp; Windows）">跨平台 GitHub SSH 配置指南（macOS &amp; Windows）</a><time datetime="2025-05-25T02:42:58.000Z" title="发表于 2025-05-25 10:42:58">2025-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/ef2b76b.html" title="Git 命令入门指南：从零掌握代码版本管理">Git 命令入门指南：从零掌握代码版本管理</a><time datetime="2025-03-23T12:27:48.000Z" title="发表于 2025-03-23 20:27:48">2025-03-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/d0bfb046.html" title="Android面试必备：Java核心100题深度拆解（附高频考点）">Android面试必备：Java核心100题深度拆解（附高频考点）</a><time datetime="2025-03-19T01:21:58.000Z" title="发表于 2025-03-19 09:21:58">2025-03-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/8ab4a728.html" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）">面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</a><time datetime="2025-03-13T07:59:05.000Z" title="发表于 2025-03-13 15:59:05">2025-03-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 抚鳞居士</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '0ran7gmbEqS9EFbBsaFpXl1U-gzGzoHsz',
+      appKey: 'X0BnHa3VAPv8vJvg3TSNRjUJ',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="/js/ip_content.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>
