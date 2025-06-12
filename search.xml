@@ -418,6 +418,204 @@ nvm use latest
       </tags>
   </entry>
   <entry>
+    <title>Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</title>
+    <url>/post/cfff3223.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Windows平台Hexo部署终极解决方案：彻底解决“Error-Spawn-failed”与代理冲突问题"><a href="#Windows平台Hexo部署终极解决方案：彻底解决“Error-Spawn-failed”与代理冲突问题" class="headerlink" title="Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题"></a>Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</h1><blockquote>
+<p>当技术热情遇上部署报错，这份避坑指南为你点亮绿灯</p>
+</blockquote>
+<h2 id="一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？"><a href="#一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？" class="headerlink" title="一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？"></a>一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？</h2><p><strong><code>Error: Spawn failed</code></strong> 是Hexo开发者最常见的噩梦之一，尤其在Windows平台开启Clash代理后更为频发。结合报错信息<code>fatal: in unpopulated submodule &#39;.deploy_git&#39;</code>，根本原因可归结为三点：</p>
+<ol>
+<li><strong>Git子模块状态异常</strong><br><code>.deploy_git</code>目录作为Hexo的本地Git仓库，<strong>状态与远程仓库不同步</strong>或<strong>被代理中断操作</strong>导致损坏。</li>
+<li><strong>代理配置冲突</strong><br>Clash等代理工具若未正确配置，会<strong>阻断Git的SSH&#x2F;HTTPS连接</strong>，引发认证失败或数据传输中断。</li>
+<li><strong>环境配置陷阱</strong>  <ul>
+<li>行尾符转换冲突（<code>CRLF/LF</code>）</li>
+<li>Node.js或Git路径未加入系统环境变量</li>
+<li>部署协议错误（使用HTTPS而非SSH）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二、Windows专属解决方案：分步操作指南"><a href="#二、Windows专属解决方案：分步操作指南" class="headerlink" title="二、Windows专属解决方案：分步操作指南"></a>二、Windows专属解决方案：分步操作指南</h2><h3 id="✅-第一步：紧急修复Git子模块状态"><a href="#✅-第一步：紧急修复Git子模块状态" class="headerlink" title="✅ 第一步：紧急修复Git子模块状态"></a>✅ 第一步：紧急修复Git子模块状态</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入Hexo项目根目录</span></span><br><span class="line"><span class="built_in">cd</span> C:\your\hexo\path</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除损坏的部署目录</span></span><br><span class="line"><span class="built_in">Remove-Item</span> <span class="literal">-Recurse</span> <span class="literal">-Force</span> .deploy_git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭行尾符自动转换（关键！）</span></span><br><span class="line">git config <span class="literal">--global</span> core.autocrlf false</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置Git缓存</span></span><br><span class="line">git <span class="built_in">rm</span> <span class="literal">--cached</span> <span class="literal">-r</span> .</span><br><span class="line">git reset <span class="literal">--hard</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>原理</strong>：Windows的CRLF换行符与Linux的LF冲突，<code>core.autocrlf false</code>彻底避免此问题。</p>
+</blockquote>
+<h3 id="⚡-第二步：解决Clash代理冲突（关键配置）"><a href="#⚡-第二步：解决Clash代理冲突（关键配置）" class="headerlink" title="⚡ 第二步：解决Clash代理冲突（关键配置）"></a>⚡ 第二步：解决Clash代理冲突（关键配置）</h3><ol>
+<li><p><strong>修改Clash监听范围</strong>  </p>
+<ul>
+<li>打开Clash → 设置 → <strong>开启<code>Allow LAN</code></strong> → 监听地址改为 **<code>0.0.0.0</code>**（默认为127.0.0.1）  </li>
+<li>重启Clash并验证：<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">netstat -ano | <span class="built_in">findstr</span> &quot;<span class="number">7890</span>&quot;</span><br><span class="line"># 应返回 <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>:<span class="number">7890</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>为Git配置代理环境变量</strong><br>在Hexo目录执行：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> http_proxy=http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">7890</span></span><br><span class="line"><span class="built_in">set</span> https_proxy=http://<span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">7890</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>若需永久生效，添加至系统环境变量。</p>
+</blockquote>
+</li>
+<li><p><strong>强制Git走SSH协议（绕过代理限制）</strong><br>修改<code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:yourname/repo.git</span>  <span class="comment"># 必须SSH格式！</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>SSH比HTTPS更稳定</strong>，尤其在高延迟网络环境下。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="🔧-第三步：环境验证与修复"><a href="#🔧-第三步：环境验证与修复" class="headerlink" title="🔧 第三步：环境验证与修复"></a>🔧 第三步：环境验证与修复</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A[检查Node.js] --&gt; B[验证 node -v ≥12.x]</span><br><span class="line">    A --&gt; C[检查 where node 路径正确]</span><br><span class="line">    D[检查Git] --&gt; E[验证 git --version]</span><br><span class="line">    D --&gt; F[确认 where git 包含系统PATH]</span><br><span class="line">    G[依赖重置] --&gt; H[npm cache clean --force]</span><br><span class="line">    G --&gt; I[删除 node_modules 重装]</span><br></pre></td></tr></table></figure>
+
+<h3 id="🛠️-第四步：终极暴力解法"><a href="#🛠️-第四步：终极暴力解法" class="headerlink" title="🛠️ 第四步：终极暴力解法"></a>🛠️ 第四步：终极暴力解法</h3><p>若上述步骤无效：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除所有生成文件</span></span><br><span class="line"><span class="built_in">Remove-Item</span> <span class="literal">-Recurse</span> <span class="literal">-Force</span> .deploy_git, public</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制推送（慎用！）</span></span><br><span class="line"><span class="built_in">cd</span> .deploy_git</span><br><span class="line">git push <span class="operator">-f</span> origin main</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="三、避坑指南：Windows环境特殊注意事项"><a href="#三、避坑指南：Windows环境特殊注意事项" class="headerlink" title="三、避坑指南：Windows环境特殊注意事项"></a>三、避坑指南：Windows环境特殊注意事项</h2><h3 id="⚠️-代理配置三大陷阱"><a href="#⚠️-代理配置三大陷阱" class="headerlink" title="⚠️ 代理配置三大陷阱"></a>⚠️ 代理配置三大陷阱</h3><table>
+<thead>
+<tr>
+<th>陷阱现象</th>
+<th>解决方案</th>
+<th>引用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Permission denied (publickey)</code></td>
+<td>重新生成SSH密钥并添加到GitHub</td>
+<td></td>
+</tr>
+<tr>
+<td><code>Could not resolve host</code></td>
+<td>在Clash中开启<code>TUN Mode</code>或<code>System Proxy</code></td>
+<td></td>
+</tr>
+<tr>
+<td>代理生效但速度极慢</td>
+<td>更换Socks5协议：<code>git config --global http.proxy socks5://127.0.0.1:7890</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="🛡️-系统权限修复命令"><a href="#🛡️-系统权限修复命令" class="headerlink" title="🛡️ 系统权限修复命令"></a>🛡️ 系统权限修复命令</h3><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">:: 修复文件所有权</span><br><span class="line">takeown /f C:\your\hexo\<span class="built_in">path</span> /r /d y</span><br><span class="line"></span><br><span class="line">:: 重置目录权限</span><br><span class="line">icacls C:\your\hexo\<span class="built_in">path</span> /reset /t</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="四、预防措施：打造稳定的Windows部署环境"><a href="#四、预防措施：打造稳定的Windows部署环境" class="headerlink" title="四、预防措施：打造稳定的Windows部署环境"></a>四、预防措施：打造稳定的Windows部署环境</h2><h3 id="🔒-环境加固配置表"><a href="#🔒-环境加固配置表" class="headerlink" title="🔒 环境加固配置表"></a>🔒 环境加固配置表</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>推荐值</th>
+<th>生效命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Node.js安装</strong></td>
+<td>勾选<code>Add to PATH</code></td>
+<td>安装时必选</td>
+</tr>
+<tr>
+<td><strong>Git换行符</strong></td>
+<td><code>core.autocrlf=false</code></td>
+<td><code>git config --global core.autocrlf false</code></td>
+</tr>
+<tr>
+<td><strong>部署协议</strong></td>
+<td>SSH优先</td>
+<td><code>repo: git@github.com:xxx</code></td>
+</tr>
+<tr>
+<td><strong>代理监听</strong></td>
+<td>0.0.0.0</td>
+<td>Clash设置中修改</td>
+</tr>
+</tbody></table>
+<h3 id="🔄-自动化部署脚本（deploy-ps1）"><a href="#🔄-自动化部署脚本（deploy-ps1）" class="headerlink" title="🔄 自动化部署脚本（deploy.ps1）"></a>🔄 自动化部署脚本（<code>deploy.ps1</code>）</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 预检代理状态</span></span><br><span class="line"><span class="keyword">if</span> (<span class="operator">-not</span> (<span class="built_in">Test-NetConnection</span> github.com <span class="literal">-Port</span> <span class="number">22</span>).TcpTestSucceeded) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;❌ SSH端口被阻断，正在启用代理...&quot;</span></span><br><span class="line">    <span class="variable">$env:http_proxy</span>=<span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行部署</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果验证</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$LASTEXITCODE</span> <span class="operator">-eq</span> <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;✅ 部署成功！&quot;</span> <span class="literal">-ForegroundColor</span> Green</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;❌ 部署失败！检查 .deploy_git 状态&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="五、总结：Windows部署黄金法则"><a href="#五、总结：Windows部署黄金法则" class="headerlink" title="五、总结：Windows部署黄金法则"></a>五、总结：Windows部署黄金法则</h2><ol>
+<li><strong>环境隔离原则</strong><br>开发环境路径避免中文和空格（如<code>C:\Dev\hexo</code>优于<code>C:\用户\桌面\博客</code>）</li>
+<li><strong>代理透明化</strong><br>Clash需开<code>Allow LAN</code> + <strong>监听0.0.0.0</strong> + <strong>Git显式声明代理</strong></li>
+<li><strong>协议优选级</strong><br><strong>SSH &gt; HTTPS</strong>，GitHub已全面支持SSH免密推送</li>
+<li><strong>子模块监控</strong><br>每次部署前检查<code>.deploy_git/.git/logs/HEAD</code>日志是否异常</li>
+</ol>
+<blockquote>
+<p>“在Windows上玩转Hexo，不是与系统对抗，而是学会与它共舞”——一位修复了37次Spawn failed的开发者的觉悟</p>
+</blockquote>
+<p>通过以上方案，**&gt;99%的Spawn failed错误可被根治**。如仍遇问题，建议在WSL2中运行Hexo获得Linux原生兼容性。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>Clash</category>
+      </categories>
+      <tags>
+        <tag>Hexo部署故障</tag>
+        <tag>Clash代理配置</tag>
+        <tag>Spawn failed</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你的Git还在显示xxx吗？这份避坑指南快收好</title>
+    <url>/post/af22aac6.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="你的Git还在显示“-347-27-217”吗？这份避坑指南快收好"><a href="#你的Git还在显示“-347-27-217”吗？这份避坑指南快收好" class="headerlink" title="你的Git还在显示“\347\27\217”吗？这份避坑指南快收好"></a>你的Git还在显示“\347\27\217”吗？这份避坑指南快收好</h1><h3 id="🔧-一、核心配置修复（优先操作）"><a href="#🔧-一、核心配置修复（优先操作）" class="headerlink" title="🔧 一、核心配置修复（优先操作）"></a>🔧 <strong>一、核心配置修复（优先操作）</strong></h3><ol>
+<li><strong>禁用 Git 路径转义</strong><br>执行以下命令关闭 Git 对非 ASCII 字符的自动转义：  <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">   git config --global core.quotepath false</span><br><span class="line">   ```  </span><br><span class="line">   ✅ **效果**：`git status` 中的中文路径将直接显示原始字符而非八进制编码。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. **设置环境变量强制 UTF-<span class="number">8</span> 编码**  </span><br><span class="line">   临时生效方案（当前 <span class="built_in">CMD</span> 窗口）：  </span><br><span class="line">   ```<span class="built_in">cmd</span></span><br><span class="line">   <span class="built_in">set</span> LESSCHARSET=utf-<span class="number">8</span></span><br><span class="line">   ```  </span><br><span class="line">   永久生效方案（需管理员权限）：  </span><br><span class="line">   ```powershell</span><br><span class="line">   [Environment]::SetEnvironmentVariable(&quot;LESSCHARSET&quot;, &quot;utf-<span class="number">8</span>&quot;, &quot;Machine&quot;)</span><br><span class="line">   ```  </span><br><span class="line">   ✅ **效果**：解决 `git log`、`git status` 等命令的输出乱码。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### ⚙️ **二、系统级调整（解决深层兼容问题）**</span><br><span class="line">#### **<span class="number">1</span>. 修改 <span class="built_in">CMD</span> 控制台编码为 UTF-<span class="number">8</span>**</span><br><span class="line">- **临时生效**：  </span><br><span class="line">  ```<span class="built_in">cmd</span></span><br><span class="line">  <span class="built_in">chcp</span> <span class="number">65001</span>  # 切换当前会话编码为 UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><strong>永久生效</strong>（需修改注册表）：  <ol>
+<li>按 <code>Win+R</code> 输入 <code>regedit</code> 打开注册表；  </li>
+<li>定位路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor</code>；  </li>
+<li>新建字符串值 <code>Autorun</code>，数据设为 <code>@chcp 65001&gt;nul</code>。</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-启用系统全局-UTF-8-支持"><a href="#2-启用系统全局-UTF-8-支持" class="headerlink" title="2. 启用系统全局 UTF-8 支持"></a><strong>2. 启用系统全局 UTF-8 支持</strong></h4><ol>
+<li>控制面板 → 时钟和区域 → 区域 → 管理 → 更改系统区域设置；  </li>
+<li>勾选 <strong>Beta 版：使用 Unicode UTF-8 提供全球语言支持</strong>；  </li>
+<li>重启电脑生效。<br>  ⚠️ <strong>注意</strong>：此操作可能影响部分老旧程序，建议评估后使用。</li>
+</ol>
+<hr>
+<h3 id="🔍-三、辅助排查与优化"><a href="#🔍-三、辅助排查与优化" class="headerlink" title="🔍 三、辅助排查与优化"></a>🔍 <strong>三、辅助排查与优化</strong></h3><ol>
+<li><strong>检查字体兼容性</strong>  <ul>
+<li>右键 CMD 标题栏 → 属性 → 字体 → 选择支持中文的字体（如 <strong>微软雅黑</strong> 或 <strong>Consolas</strong>）。</li>
+</ul>
+</li>
+<li><strong>验证 Git 全局编码设置</strong><br>执行以下命令确保输出均为 <code>utf-8</code>：  <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git config --global --get i18n.commitencoding  # 应为 utf-<span class="number">8</span></span><br><span class="line">git config --global --get i18n.logoutputencoding  # 应为 utf-<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>改用 Git Bash 替代 CMD</strong><br>Git Bash 原生支持 UTF-8，操作步骤：  <ul>
+<li>右键 Git Bash 标题栏 → Options → Text → Locale 选 <code>zh_CN</code>，Character set 选 <code>UTF-8</code>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="💎-四、效果验证与总结"><a href="#💎-四、效果验证与总结" class="headerlink" title="💎 四、效果验证与总结"></a>💎 <strong>四、效果验证与总结</strong></h3><table>
+<thead>
+<tr>
+<th><strong>操作步骤</strong></th>
+<th><strong>验证命令</strong></th>
+<th><strong>预期效果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>禁用 <code>core.quotepath</code></td>
+<td><code>git status</code></td>
+<td>中文路径正常显示</td>
+</tr>
+<tr>
+<td>设置 <code>LESSCHARSET=utf-8</code></td>
+<td><code>git log</code></td>
+<td>中文提交信息无乱码</td>
+</tr>
+<tr>
+<td>切换 CMD 编码 (<code>chcp 65001</code>)</td>
+<td><code>dir</code></td>
+<td>中文文件名正常显示</td>
+</tr>
+</tbody></table>
+<p>✅ <strong>总结</strong>：  </p>
+<blockquote>
+<p>90% 的乱码问题通过 <strong>核心配置修复</strong> 即可解决。若仍存在异常，按顺序执行 <strong>系统级调整</strong> 和 <strong>辅助排查</strong> 步骤。优先推荐永久生效方案，避免重复操作。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>技术指南</category>
+      </categories>
+      <tags>
+        <tag>Git故障修复</tag>
+        <tag>开发环境配置</tag>
+        <tag>中文编码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用hexo的常见姿势</title>
     <url>/post/exp-hexo-base.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
@@ -729,6 +927,153 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
       </tags>
   </entry>
   <entry>
+    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
+    <url>/post/a2a378f1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
+<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
+<li><p><strong>数据结构与基础算法</strong>  </p>
+<ul>
+<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
+<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
+<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
+</ul>
+</li>
+<li><p><strong>Android专项算法融合</strong>  </p>
+<ul>
+<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
+<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
+<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计与工程思维</strong>  </p>
+<ul>
+<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
+<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
+<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
+<li><strong>每日核心任务</strong>  <ul>
+<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
+<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
+<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
+<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
+<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
+<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
+</ul>
+</li>
+<li><strong>Android结合练习</strong>：  <ul>
+<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>重点突破</strong>  <ul>
+<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
+<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
+<li><strong>动态规划五步法</strong>  <ul>
+<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
+<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
+<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
+</ul>
+</li>
+<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
+</ul>
+</li>
+<li><strong>高频题型分类</strong>  <ul>
+<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
+<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
+<li><p><strong>Android特色算法题</strong>  </p>
+<ul>
+<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
+<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
+</ul>
+</li>
+<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
+<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计实战</strong>  </p>
+<ul>
+<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
+<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
+<li><p><strong>全真模拟（每日2轮）</strong>  </p>
+<ul>
+<li><strong>Google式面试流程</strong>：  <ul>
+<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
+<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
+<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>错题本与专项突破</strong>  </p>
+<ul>
+<li><strong>错误类型处理</strong>：  <ul>
+<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
+<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
+<li><strong>刷题平台</strong>：  <ul>
+<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
+<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
+<li><p><strong>常见误区</strong>：  </p>
+<ul>
+<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
+<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
+</ul>
+</li>
+<li><p><strong>加分技巧</strong>：  </p>
+<ul>
+<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
+<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
+</ul>
+</li>
+<li><p><strong>补充说明</strong></p>
+<ul>
+<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
+<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</title>
     <url>/post/8ab4a728.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><a href="#面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）" class="headerlink" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"></a>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h2><h3 id="引言：为什么需要Handler？"><a href="#引言：为什么需要Handler？" class="headerlink" title="引言：为什么需要Handler？"></a>引言：为什么需要Handler？</h3><p>在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。</p>
@@ -890,151 +1235,9 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
       </tags>
   </entry>
   <entry>
-    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
-    <url>/post/a2a378f1.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
-<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
-<li><p><strong>数据结构与基础算法</strong>  </p>
-<ul>
-<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
-<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
-<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
-</ul>
-</li>
-<li><p><strong>Android专项算法融合</strong>  </p>
-<ul>
-<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
-<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
-<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计与工程思维</strong>  </p>
-<ul>
-<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
-<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
-<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
-<li><strong>每日核心任务</strong>  <ul>
-<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
-<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
-<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
-<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
-<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
-<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
-</ul>
-</li>
-<li><strong>Android结合练习</strong>：  <ul>
-<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>重点突破</strong>  <ul>
-<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
-<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
-<li><strong>动态规划五步法</strong>  <ul>
-<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
-<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
-<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
-</ul>
-</li>
-<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
-</ul>
-</li>
-<li><strong>高频题型分类</strong>  <ul>
-<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
-<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
-<li><p><strong>Android特色算法题</strong>  </p>
-<ul>
-<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
-<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
-</ul>
-</li>
-<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
-<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计实战</strong>  </p>
-<ul>
-<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
-<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
-<li><p><strong>全真模拟（每日2轮）</strong>  </p>
-<ul>
-<li><strong>Google式面试流程</strong>：  <ul>
-<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
-<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
-<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>错题本与专项突破</strong>  </p>
-<ul>
-<li><strong>错误类型处理</strong>：  <ul>
-<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
-<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
-<li><strong>刷题平台</strong>：  <ul>
-<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
-<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
-<li><p><strong>常见误区</strong>：  </p>
-<ul>
-<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
-<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
-</ul>
-</li>
-<li><p><strong>加分技巧</strong>：  </p>
-<ul>
-<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
-<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
-</ul>
-</li>
-<li><p><strong>补充说明</strong></p>
-<ul>
-<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
-<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
+    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
+    <url>/post/752ec13d.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>Android开发全指南：了解如何确保应用安全，增强用户信任与满意度！</title>
@@ -1104,11 +1307,6 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
   <entry>
     <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
     <url>/post/5d715b31.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
-    <url>/post/752ec13d.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
@@ -1192,16 +1390,6 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
 ]]></content>
   </entry>
   <entry>
-    <title>Android开发全指南：探索Jetpack和Compose等现代技术，紧跟开发潮流！</title>
-    <url>/post/4c5eb723.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Android开发全指南：探索优化应用性能的最佳实践，让你的应用表现更加出色！</title>
-    <url>/post/a2d9c915.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
     <title>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</title>
     <url>/post/79a8e3a5.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Android开发全指南：探索如何掌握Java与Kotlin，成为Android开发的高手！</strong></p>
@@ -1233,6 +1421,16 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
 <p><strong>四、结语</strong></p>
 <p>掌握Java与Kotlin，就如同手握Android开发的双剑。通过深入学习和实践这两种语言，你将能够在Android开发的道路上披荆斩棘、勇往直前。无论你是初学者还是资深开发者，都不要错过这场探索之旅！让我们一起成为Android开发的高手吧！</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：探索Jetpack和Compose等现代技术，紧跟开发潮流！</title>
+    <url>/post/4c5eb723.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：探索优化应用性能的最佳实践，让你的应用表现更加出色！</title>
+    <url>/post/a2d9c915.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>Android开发全指南：深入了解Android架构组件，提升应用稳定性与用户体验！</title>

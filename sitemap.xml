@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html</loc>
+    <loc>https://fulinju.github.io/%E6%96%B9%E6%B3%95%E8%AE%BA/index.html</loc>
     
     <lastmod>2025-06-10</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/%E6%96%B9%E6%B3%95%E8%AE%BA/index.html</loc>
+    <loc>https://fulinju.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.html</loc>
     
     <lastmod>2025-06-10</lastmod>
     
@@ -272,6 +272,48 @@
   </url>
   
   <url>
+    <loc>https://fulinju.github.io/tags/Hexo%E9%83%A8%E7%BD%B2%E6%95%85%E9%9A%9C/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/Clash%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/Spawn-failed/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/Git%E6%95%85%E9%9A%9C%E4%BF%AE%E5%A4%8D/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/tags/%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://fulinju.github.io/tags/%E6%8A%80%E5%B7%A7/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -293,14 +335,14 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/tags/android/</loc>
+    <loc>https://fulinju.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://fulinju.github.io/tags/android/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -358,6 +400,20 @@
   </url>
   
   <url>
+    <loc>https://fulinju.github.io/categories/Hexo/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/categories/%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://fulinju.github.io/categories/%E7%BB%8F%E9%AA%8C/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -365,14 +421,14 @@
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/categories/git/</loc>
+    <loc>https://fulinju.github.io/categories/powershell/node/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fulinju.github.io/categories/powershell/node/</loc>
+    <loc>https://fulinju.github.io/categories/git/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -387,6 +443,13 @@
   
   <url>
     <loc>https://fulinju.github.io/categories/PowerShell/CMD/</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://fulinju.github.io/categories/Hexo/Clash/</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
