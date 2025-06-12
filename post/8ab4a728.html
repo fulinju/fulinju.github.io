@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图） | 抚鳞居</title><meta name="author" content="抚鳞居士"><meta name="copyright" content="抚鳞居士"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）引言：为什么需要Handler？在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。  一、Handler四重奏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）">
+<meta property="og:url" content="https://fulinju.github.io/post/8ab4a728.html">
+<meta property="og:site_name" content="抚鳞居">
+<meta property="og:description" content="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）引言：为什么需要Handler？在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。  一、Handler四重奏">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fulinju.github.io/img/favicon.png">
+<meta property="article:published_time" content="2025-03-13T07:59:05.000Z">
+<meta property="article:modified_time" content="2025-06-10T12:00:29.781Z">
+<meta property="article:author" content="抚鳞居士">
+<meta property="article:tag" content="android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fulinju.github.io/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fulinju.github.io/post/8ab4a728.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-06-10 20:00:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><meta name="google-site-verification" content="440xp3zbVtfJjRjD0w9KBkNn4eJq6WTerLMopoEuHrA" /><meta name="baidu-site-verification" content="codeva-uJ4uVDu5Ia" /><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="抚鳞居" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="抚鳞居"><span class="site-name">抚鳞居</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-13T07:59:05.000Z" title="发表于 2025-03-13 15:59:05">2025-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-06-10T12:00:29.781Z" title="更新于 2025-06-10 20:00:29">2025-06-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><a href="#面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）" class="headerlink" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"></a>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h2><h3 id="引言：为什么需要Handler？"><a href="#引言：为什么需要Handler？" class="headerlink" title="引言：为什么需要Handler？"></a>引言：为什么需要Handler？</h3><p>在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。</p>
+<hr>
+<h3 id="一、Handler四重奏：核心组件全景图"><a href="#一、Handler四重奏：核心组件全景图" class="headerlink" title="一、Handler四重奏：核心组件全景图"></a>一、Handler四重奏：核心组件全景图</h3><h4 id="1-Handler（信使）"><a href="#1-Handler（信使）" class="headerlink" title="1. Handler（信使）"></a>1. Handler（信使）</h4><ul>
+<li>消息发送者与处理者</li>
+<li>持有一个指向创建线程的Looper和MessageQueue</li>
+<li>示例代码：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Handler</span> <span class="variable">handler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>(Looper.getMainLooper()) &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 在这里处理消息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-Message（信件）"><a href="#2-Message（信件）" class="headerlink" title="2. Message（信件）"></a>2. Message（信件）</h4><ul>
+<li>包含what、arg1、arg2、obj等字段</li>
+<li>推荐使用<code>obtainMessage()</code>复用对象</li>
+</ul>
+<h4 id="3-MessageQueue（邮局）"><a href="#3-MessageQueue（邮局）" class="headerlink" title="3. MessageQueue（邮局）"></a>3. MessageQueue（邮局）</h4><ul>
+<li>优先级消息队列（when属性决定顺序）</li>
+<li>使用单链表数据结构</li>
+</ul>
+<h4 id="4-Looper（邮差）"><a href="#4-Looper（邮差）" class="headerlink" title="4. Looper（邮差）"></a>4. Looper（邮差）</h4><ul>
+<li>核心死循环：<code>Looper.loop()</code></li>
+<li>ThreadLocal保证线程隔离性</li>
+<li>准备Looper的正确姿势：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WorkerThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Handler handler;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        Looper.prepare();  <span class="comment">// 创建Looper</span></span><br><span class="line">        handler = <span class="keyword">new</span> <span class="title class_">Handler</span>();</span><br><span class="line">        Looper.loop();     <span class="comment">// 启动循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="二、工作原理全景图"><a href="#二、工作原理全景图" class="headerlink" title="二、工作原理全景图"></a>二、工作原理全景图</h3><div style="float: left; margin-right: 15px;"> 
+  <img src="/post/8ab4a728/Handler%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class="" width="400" height="170" title="Handler工作原理">
+</div>  
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<ol>
+<li>Handler发送Message到MessageQueue</li>
+<li>Looper不断轮询取出Message</li>
+<li>回调Handler的handleMessage()</li>
+<li>Message进入回收池复用</li>
+</ol>
+<hr>
+<h3 id="三、经典使用场景"><a href="#三、经典使用场景" class="headerlink" title="三、经典使用场景"></a>三、经典使用场景</h3><h4 id="1-跨线程更新UI"><a href="#1-跨线程更新UI" class="headerlink" title="1. 跨线程更新UI"></a>1. 跨线程更新UI</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 耗时操作</span></span><br><span class="line">    <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">    msg.what = UPDATE_UI;</span><br><span class="line">    handler.sendMessage(msg);</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-定时任务"><a href="#2-定时任务" class="headerlink" title="2. 定时任务"></a>2. 定时任务</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 立即执行</span></span><br><span class="line">handler.sendMessageDelayed(msg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1秒后执行</span></span><br><span class="line">handler.postDelayed(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 定时任务逻辑</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-线程切换利器"><a href="#3-线程切换利器" class="headerlink" title="3. 线程切换利器"></a>3. 线程切换利器</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CoroutineScope(Dispatchers.IO).launch &#123;</span><br><span class="line">    <span class="keyword">val</span> <span class="keyword">data</span> = fetchData()</span><br><span class="line">    withContext(Dispatchers.Main) &#123; <span class="comment">// 内部实际使用Handler</span></span><br><span class="line">        updateUI(<span class="keyword">data</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、避坑指南"><a href="#四、避坑指南" class="headerlink" title="四、避坑指南"></a>四、避坑指南</h3><h4 id="1-内存泄漏预防"><a href="#1-内存泄漏预防" class="headerlink" title="1. 内存泄漏预防"></a>1. 内存泄漏预防</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误示范：匿名内部类隐式持有Activity引用</span></span><br><span class="line"><span class="type">Handler</span> <span class="variable">leakHandler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 访问Activity成员</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确方案</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Activity&gt; weakActivity;</span><br><span class="line"></span><br><span class="line">    SafeHandler(Activity activity) &#123;</span><br><span class="line">        weakActivity = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">Activity</span> <span class="variable">activity</span> <span class="operator">=</span> weakActivity.get();</span><br><span class="line">        <span class="keyword">if</span> (activity != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 安全操作</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-ANR预防原则"><a href="#2-ANR预防原则" class="headerlink" title="2. ANR预防原则"></a>2. ANR预防原则</h4><ul>
+<li>单个消息处理不超过5ms</li>
+<li>避免同步屏障滥用</li>
+<li>及时移除不需要的Callback</li>
+</ul>
+<p><strong>3. Handler避坑手册</strong></p>
+<table>
+<thead>
+<tr>
+<th>危险模式</th>
+<th>安全方案</th>
+<th>原理阐释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>匿名Handler持有Activity引用</td>
+<td>静态内部类+WeakReference</td>
+<td>切断GC引用链</td>
+</tr>
+<tr>
+<td>postDelayed未及时移除消息</td>
+<td>onDestroy调用removeMessages()</td>
+<td>防止僵尸消息唤醒</td>
+</tr>
+<tr>
+<td>子线程未调用Looper.quitSafely()</td>
+<td>try-finally中执行Looper退出</td>
+<td>避免FD泄漏</td>
+</tr>
+<tr>
+<td>跨线程更新UI未检查isAttached</td>
+<td>View.post()+attachState监听</td>
+<td>规避无效View操作</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="五、进阶技巧"><a href="#五、进阶技巧" class="headerlink" title="五、进阶技巧"></a>五、进阶技巧</h3><h4 id="1-同步屏障（Sync-Barrier）"><a href="#1-同步屏障（Sync-Barrier）" class="headerlink" title="1. 同步屏障（Sync Barrier）"></a>1. 同步屏障（Sync Barrier）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 插入屏障</span></span><br><span class="line"><span class="type">MessageQueue</span> <span class="variable">queue</span> <span class="operator">=</span> Looper.getMainLooper().mQueue;</span><br><span class="line"><span class="type">int</span> <span class="variable">token</span> <span class="operator">=</span> queue.postSyncBarrier();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送异步消息</span></span><br><span class="line"><span class="type">Message</span> <span class="variable">asyncMsg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">asyncMsg.setAsynchronous(<span class="literal">true</span>);</span><br><span class="line">handler.sendMessageAtTime(asyncMsg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除屏障</span></span><br><span class="line">queue.removeSyncBarrier(token);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-IdleHandler妙用"><a href="#2-IdleHandler妙用" class="headerlink" title="2. IdleHandler妙用"></a>2. IdleHandler妙用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Looper.myQueue().addIdleHandler(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 在消息队列空闲时执行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// true保持持续监听</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、现代替代方案对比"><a href="#六、现代替代方案对比" class="headerlink" title="六、现代替代方案对比"></a>六、现代替代方案对比</h3><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Handler优势</th>
+<th>Coroutine优势</th>
+<th>选型建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内存开销</td>
+<td>无额外对象创建（Message复用）</td>
+<td>协程挂起节约线程资源</td>
+<td>高频轻量任务选Handler</td>
+</tr>
+<tr>
+<td>生命周期管理</td>
+<td>需手动释放</td>
+<td>结构化并发自动取消</td>
+<td>复杂异步流选Coroutine</td>
+</tr>
+<tr>
+<td>可读性</td>
+<td>回调嵌套较深</td>
+<td>线性异步代码</td>
+<td>业务逻辑复杂时选Coroutine</td>
+</tr>
+<tr>
+<td>系统兼容性</td>
+<td>全版本支持</td>
+<td>需Kotlin及协程库</td>
+<td>老项目维护必选Handler</td>
+</tr>
+</tbody></table>
+<h3 id="七、面试高压问答模拟"><a href="#七、面试高压问答模拟" class="headerlink" title="七、面试高压问答模拟"></a><strong>七、面试高压问答模拟</strong></h3><p><strong>场景1：初级工程师必答题</strong><br><strong>Q1：Handler四大核心组件如何协作？</strong>  </p>
+<ul>
+<li><p><strong>死亡陷阱</strong>：仅回答”Handler发送消息-Looper循环处理”表层流程  </p>
+</li>
+<li><p><strong>满分答案</strong>：结合MessageQueue链表结构图，说明<code>Handler.sendMessage()</code>→<code>MessageQueue.enqueueMessage()</code>→<code>Looper.loop()</code>→<code>Message.recycle()</code>闭环</p>
+</li>
+</ul>
+<p><strong>场景2：中级工程师进阶题</strong><br><strong>Q2：主线程Looper死循环为何不导致ANR？</strong>  </p>
+<ul>
+<li><strong>技术本质</strong>：<br>① 通过epoll机制实现空闲阻塞<br>② Choreographer垂直同步协调UI刷新（补充VSYNC信号机制）  </li>
+<li><strong>反常识论证</strong>：对比普通死循环与消息队列阻塞差异</li>
+</ul>
+<p><strong>场景3：高级工程师灵魂拷问</strong><br><strong>Q3：如何设计永不泄漏的Handler？</strong>  </p>
+<ul>
+<li><p><strong>防御方案</strong>：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安全Handler模板</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Context&gt; weakContext;</span><br><span class="line">    </span><br><span class="line">    SafeHandler(Context context, Looper looper) &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        weakContext = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(context);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (weakContext.get() == <span class="literal">null</span>) removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        <span class="comment">// 业务逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>极端场景防护</strong>：后台强杀时WeakReference失效检测</p>
+</li>
+</ul>
+<p><strong>【Handler面试脑图】</strong>  </p>
+<img src="/post/8ab4a728/Handler%E7%9F%A5%E8%AF%86%E7%82%B9%E8%84%91%E5%9B%BE.png" class="" width="716" height="300" title="Handler知识点脑图">
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<hr>
+<h3 id="结语：Handler的设计哲学"><a href="#结语：Handler的设计哲学" class="headerlink" title="结语：Handler的设计哲学"></a>结语：Handler的设计哲学</h3><p>Handler机制体现了Android系统两大设计智慧：</p>
+<ol>
+<li><strong>单线程模型</strong>：通过消息队列实现线程安全</li>
+<li><strong>对象池模式</strong>：Message的回收复用提升性能</li>
+</ol>
+<p>理解Handler不仅是为了应对面试，更是打开Android系统设计思想的一把钥匙。当你下次看到<code>ActivityThread.main()</code>方法里的<code>Looper.loop()</code>时，应该会心一笑——这就是Android世界永不停歇的心跳。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://fulinju.github.io">抚鳞居士</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fulinju.github.io/post/8ab4a728.html">https://fulinju.github.io/post/8ab4a728.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fulinju.github.io" target="_blank">抚鳞居</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/android/">android</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>佛系打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/d0bfb046.html" title="Android面试必备：Java核心100题深度拆解（附高频考点）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Android面试必备：Java核心100题深度拆解（附高频考点）</div></div></a></div><div class="next-post pull-right"><a href="/post/a2a378f1.html" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">抚鳞居士</div><div class="author-info__description">安卓/Framework/经验分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fulinju"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">没有公告！再强调一遍，没有公告！（实在要有的话，请帮忙推广一下～）</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%AE%98%E8%BF%9E%E7%8E%AF%E8%BF%BD%E9%97%AE%E7%9A%84Handler%E8%80%83%E7%82%B9%EF%BC%8C%E8%BF%99%E4%BB%BD%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97%E5%85%A8%E8%AF%B4%E9%80%8F%E4%BA%86%EF%BC%88%E9%99%84%E8%84%91%E5%9B%BE%EF%BC%89"><span class="toc-text">面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%A8%80%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81Handler%EF%BC%9F"><span class="toc-text">引言：为什么需要Handler？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Handler%E5%9B%9B%E9%87%8D%E5%A5%8F%EF%BC%9A%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6%E5%85%A8%E6%99%AF%E5%9B%BE"><span class="toc-text">一、Handler四重奏：核心组件全景图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Handler%EF%BC%88%E4%BF%A1%E4%BD%BF%EF%BC%89"><span class="toc-text">1. Handler（信使）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Message%EF%BC%88%E4%BF%A1%E4%BB%B6%EF%BC%89"><span class="toc-text">2. Message（信件）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MessageQueue%EF%BC%88%E9%82%AE%E5%B1%80%EF%BC%89"><span class="toc-text">3. MessageQueue（邮局）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Looper%EF%BC%88%E9%82%AE%E5%B7%AE%EF%BC%89"><span class="toc-text">4. Looper（邮差）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%85%A8%E6%99%AF%E5%9B%BE"><span class="toc-text">二、工作原理全景图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%8F%E5%85%B8%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">三、经典使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%B7%A8%E7%BA%BF%E7%A8%8B%E6%9B%B4%E6%96%B0UI"><span class="toc-text">1. 跨线程更新UI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">2. 定时任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E5%88%87%E6%8D%A2%E5%88%A9%E5%99%A8"><span class="toc-text">3. 线程切换利器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97"><span class="toc-text">四、避坑指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E9%A2%84%E9%98%B2"><span class="toc-text">1. 内存泄漏预防</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-ANR%E9%A2%84%E9%98%B2%E5%8E%9F%E5%88%99"><span class="toc-text">2. ANR预防原则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7"><span class="toc-text">五、进阶技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%90%8C%E6%AD%A5%E5%B1%8F%E9%9A%9C%EF%BC%88Sync-Barrier%EF%BC%89"><span class="toc-text">1. 同步屏障（Sync Barrier）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-IdleHandler%E5%A6%99%E7%94%A8"><span class="toc-text">2. IdleHandler妙用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E7%8E%B0%E4%BB%A3%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94"><span class="toc-text">六、现代替代方案对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E9%9D%A2%E8%AF%95%E9%AB%98%E5%8E%8B%E9%97%AE%E7%AD%94%E6%A8%A1%E6%8B%9F"><span class="toc-text">七、面试高压问答模拟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD%EF%BC%9AHandler%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6"><span class="toc-text">结语：Handler的设计哲学</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b558d475.html" title="PowerShell无法识别node命令">PowerShell无法识别node命令</a><time datetime="2025-06-12T10:46:27.000Z" title="发表于 2025-06-12 18:46:27">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/3ecea523.html" title="Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异">Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异</a><time datetime="2025-06-12T10:41:34.000Z" title="发表于 2025-06-12 18:41:34">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/d07e4f89.html" title="跨平台 GitHub SSH 配置指南">跨平台 GitHub SSH 配置指南</a><time datetime="2025-06-12T10:34:36.000Z" title="发表于 2025-06-12 18:34:36">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b2e34fdd.html" title="无需下载，一键永久在线激活Windows10&amp;11及Office！">无需下载，一键永久在线激活Windows10&amp;11及Office！</a><time datetime="2025-06-12T06:34:00.000Z" title="发表于 2025-06-12 14:34:00">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/ef2b76b.html" title="Git 命令入门指南：从零掌握代码版本管理">Git 命令入门指南：从零掌握代码版本管理</a><time datetime="2025-03-23T12:27:48.000Z" title="发表于 2025-03-23 20:27:48">2025-03-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 抚鳞居士</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '0ran7gmbEqS9EFbBsaFpXl1U-gzGzoHsz',
+      appKey: 'X0BnHa3VAPv8vJvg3TSNRjUJ',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="/js/ip_content.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>
