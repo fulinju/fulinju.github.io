@@ -85,9 +85,9 @@
       </tags>
   </entry>
   <entry>
-    <title>PowerShell无法识别node命令</title>
+    <title>PowerShell无法识别node命令，如何配置？</title>
     <url>/post/b558d475.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PowerShell无法识别node命令，如何配置？"><a href="#PowerShell无法识别node命令，如何配置？" class="headerlink" title="PowerShell无法识别node命令，如何配置？"></a>PowerShell无法识别node命令，如何配置？</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>问题背景：VSCode的默认终端（Terminal）是PowerShell，安装了node后，输入node报错：</p>
 </blockquote>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Users\xuzhijian&gt; npm</span><br><span class="line">npm : 无法加载文件 C:\Program Files\nodejs\npm.ps1，因为在此系统上禁止运行脚本。有关详细信息，请参阅 https:/go.microsof</span><br><span class="line">t.com/fwlink/?LinkID=<span class="number">135170</span> 中的 about_Execution_Policies。</span><br><span class="line">所在位置 行:<span class="number">1</span> 字符: <span class="number">1</span></span><br><span class="line">+ npm</span><br><span class="line">+ ~~~</span><br><span class="line">    + CategoryInfo          : SecurityError: (:) []，PSSecurityException</span><br><span class="line">    + FullyQualifiedErrorId : UnauthorizedAccess</span><br></pre></td></tr></table></figure>
@@ -248,7 +248,7 @@ nvm use latest
   <entry>
     <title>Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异</title>
     <url>/post/3ecea523.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异"><a href="#Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异" class="headerlink" title="Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异"></a>Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>一场跨越40年的命令行进化史</p>
 </blockquote>
 <p>在Windows系统中，<strong>命令行界面</strong>始终是系统管理员和开发者的核心工具。当我们打开Windows的命令行工具时，实际上面对着两个截然不同的世界：<strong>传统的CMD（命令提示符）</strong>和<strong>现代的PowerShell</strong>。它们看似相似，实则有着天壤之别。今天，我们将深入探索这对“命令行双生子”的差异与奥秘。</p>
@@ -420,7 +420,7 @@ nvm use latest
   <entry>
     <title>Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</title>
     <url>/post/cfff3223.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Windows平台Hexo部署终极解决方案：彻底解决“Error-Spawn-failed”与代理冲突问题"><a href="#Windows平台Hexo部署终极解决方案：彻底解决“Error-Spawn-failed”与代理冲突问题" class="headerlink" title="Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题"></a>Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</h1><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>当技术热情遇上部署报错，这份避坑指南为你点亮绿灯</p>
 </blockquote>
 <h2 id="一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？"><a href="#一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？" class="headerlink" title="一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？"></a>一、问题根源：为什么Windows上开启Clash后Hexo部署崩溃？</h2><p><strong><code>Error: Spawn failed</code></strong> 是Hexo开发者最常见的噩梦之一，尤其在Windows平台开启Clash代理后更为频发。结合报错信息<code>fatal: in unpopulated submodule &#39;.deploy_git&#39;</code>，根本原因可归结为三点：</p>
@@ -546,12 +546,25 @@ nvm use latest
       </tags>
   </entry>
   <entry>
-    <title>你的Git还在显示xxx吗？这份避坑指南快收好</title>
+    <title>你的Git还在显示“&#92;347&#92;27&#92;217”吗？这份避坑指南快收好！</title>
     <url>/post/af22aac6.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="你的Git还在显示“-347-27-217”吗？这份避坑指南快收好！"><a href="#你的Git还在显示“-347-27-217”吗？这份避坑指南快收好！" class="headerlink" title="你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！"></a>你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！</h1><h3 id="🔧-一、核心配置修复（优先操作）"><a href="#🔧-一、核心配置修复（优先操作）" class="headerlink" title="🔧 一、核心配置修复（优先操作）"></a>🔧 <strong>一、核心配置修复（优先操作）</strong></h3><ol>
-<li><strong>禁用 Git 路径转义</strong><br>执行以下命令关闭 Git 对非 ASCII 字符的自动转义：  <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">   git config --global core.quotepath false</span><br><span class="line">   ```  </span><br><span class="line">   ✅ **效果**：`git status` 中的中文路径将直接显示原始字符而非八进制编码。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. **设置环境变量强制 UTF-<span class="number">8</span> 编码**  </span><br><span class="line">   临时生效方案（当前 <span class="built_in">CMD</span> 窗口）：  </span><br><span class="line">   ```<span class="built_in">cmd</span></span><br><span class="line">   <span class="built_in">set</span> LESSCHARSET=utf-<span class="number">8</span></span><br><span class="line">   ```  </span><br><span class="line">   永久生效方案（需管理员权限）：  </span><br><span class="line">   ```powershell</span><br><span class="line">   [Environment]::SetEnvironmentVariable(&quot;LESSCHARSET&quot;, &quot;utf-<span class="number">8</span>&quot;, &quot;Machine&quot;)</span><br><span class="line">   ```  </span><br><span class="line">   ✅ **效果**：解决 `git log`、`git status` 等命令的输出乱码。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### ⚙️ **二、系统级调整（解决深层兼容问题）**</span><br><span class="line">#### **<span class="number">1</span>. 修改 <span class="built_in">CMD</span> 控制台编码为 UTF-<span class="number">8</span>**</span><br><span class="line">- **临时生效**：  </span><br><span class="line">  ```<span class="built_in">cmd</span></span><br><span class="line">  <span class="built_in">chcp</span> <span class="number">65001</span>  # 切换当前会话编码为 UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="🔧-一、核心配置修复（优先操作）"><a href="#🔧-一、核心配置修复（优先操作）" class="headerlink" title="🔧 一、核心配置修复（优先操作）"></a>🔧 <strong>一、核心配置修复（优先操作）</strong></h3><ol>
+<li><p><strong>禁用 Git 路径转义</strong><br>执行以下命令关闭 Git 对非 ASCII 字符的自动转义：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath false # 大部分情况配置这个就好了</span><br></pre></td></tr></table></figure>
+
+<p>✅ <strong>效果</strong>：<code>git status</code> 中的中文路径将直接显示原始字符而非八进制编码。</p>
+</li>
+<li><p><strong>设置环境变量强制 UTF-8 编码</strong><br>临时生效方案（当前 CMD 窗口）：  </p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> LESSCHARSET=utf-<span class="number">8</span> # 配置UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>永久生效方案（需管理员权限）：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&quot;LESSCHARSET&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;Machine&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>✅ <strong>效果</strong>：解决 <code>git log</code>、<code>git status</code> 等命令的输出乱码。</p>
+</li>
 </ol>
-<ul>
+<hr>
+<h3 id="⚙️-二、系统级调整（解决深层兼容问题）"><a href="#⚙️-二、系统级调整（解决深层兼容问题）" class="headerlink" title="⚙️ 二、系统级调整（解决深层兼容问题）"></a>⚙️ <strong>二、系统级调整（解决深层兼容问题）</strong></h3><h4 id="1-修改-CMD-控制台编码为-UTF-8"><a href="#1-修改-CMD-控制台编码为-UTF-8" class="headerlink" title="1. 修改 CMD 控制台编码为 UTF-8"></a><strong>1. 修改 CMD 控制台编码为 UTF-8</strong></h4><ul>
+<li><strong>临时生效</strong>：  <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chcp</span> <span class="number">65001</span>  # 切换当前会话编码为 UTF-<span class="number">8</span></span><br></pre></td></tr></table></figure></li>
 <li><strong>永久生效</strong>（需修改注册表）：  <ol>
 <li>按 <code>Win+R</code> 输入 <code>regedit</code> 打开注册表；  </li>
 <li>定位路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor</code>；  </li>
@@ -705,9 +718,9 @@ nvm use latest
       </tags>
   </entry>
   <entry>
-    <title>无需下载，一键永久在线激活Windows10&amp;11及Office！</title>
+    <title>一键永久激活Windows 10/11及Office！PowerShell脚本激活指南</title>
     <url>/post/b2e34fdd.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一键永久激活Windows-10-11及Office！PowerShell脚本激活指南"><a href="#一键永久激活Windows-10-11及Office！PowerShell脚本激活指南" class="headerlink" title="一键永久激活Windows 10&#x2F;11及Office！PowerShell脚本激活指南"></a>一键永久激活Windows 10&#x2F;11及Office！PowerShell脚本激活指南</h1><p><strong>导语</strong><br>你是否还在为Windows系统或Office的激活问题烦恼？本文将分享一种通过PowerShell脚本快速激活Windows 10&#x2F;11和Office的方法，操作简单且支持永久激活，无需复杂工具。文末附注意事项，建议仔细阅读！</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>导语</strong><br>你是否还在为Windows系统或Office的激活问题烦恼？本文将分享一种通过PowerShell脚本快速激活Windows 10&#x2F;11和Office的方法，操作简单且支持永久激活，无需复杂工具。文末附注意事项，建议仔细阅读！</p>
 <hr>
 <h3 id="一、激活原理简介"><a href="#一、激活原理简介" class="headerlink" title="一、激活原理简介"></a><strong>一、激活原理简介</strong></h3><p>通过开源脚本工具（如HWID和Ohook），可以绕过系统激活验证，实现Windows或Office的永久激活：  </p>
 <ul>
