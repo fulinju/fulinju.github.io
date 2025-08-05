@@ -63,167 +63,6 @@
       </tags>
   </entry>
   <entry>
-    <title>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</title>
-    <url>/post/8ab4a728.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><a href="#面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）" class="headerlink" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"></a>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h2><h3 id="引言：为什么需要Handler？"><a href="#引言：为什么需要Handler？" class="headerlink" title="引言：为什么需要Handler？"></a>引言：为什么需要Handler？</h3><p>在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。</p>
-<hr>
-<h3 id="一、Handler四重奏：核心组件全景图"><a href="#一、Handler四重奏：核心组件全景图" class="headerlink" title="一、Handler四重奏：核心组件全景图"></a>一、Handler四重奏：核心组件全景图</h3><h4 id="1-Handler（信使）"><a href="#1-Handler（信使）" class="headerlink" title="1. Handler（信使）"></a>1. Handler（信使）</h4><ul>
-<li>消息发送者与处理者</li>
-<li>持有一个指向创建线程的Looper和MessageQueue</li>
-<li>示例代码：<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Handler</span> <span class="variable">handler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>(Looper.getMainLooper()) &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 在这里处理消息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="2-Message（信件）"><a href="#2-Message（信件）" class="headerlink" title="2. Message（信件）"></a>2. Message（信件）</h4><ul>
-<li>包含what、arg1、arg2、obj等字段</li>
-<li>推荐使用<code>obtainMessage()</code>复用对象</li>
-</ul>
-<h4 id="3-MessageQueue（邮局）"><a href="#3-MessageQueue（邮局）" class="headerlink" title="3. MessageQueue（邮局）"></a>3. MessageQueue（邮局）</h4><ul>
-<li>优先级消息队列（when属性决定顺序）</li>
-<li>使用单链表数据结构</li>
-</ul>
-<h4 id="4-Looper（邮差）"><a href="#4-Looper（邮差）" class="headerlink" title="4. Looper（邮差）"></a>4. Looper（邮差）</h4><ul>
-<li>核心死循环：<code>Looper.loop()</code></li>
-<li>ThreadLocal保证线程隔离性</li>
-<li>准备Looper的正确姿势：<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WorkerThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Handler handler;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        Looper.prepare();  <span class="comment">// 创建Looper</span></span><br><span class="line">        handler = <span class="keyword">new</span> <span class="title class_">Handler</span>();</span><br><span class="line">        Looper.loop();     <span class="comment">// 启动循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="二、工作原理全景图"><a href="#二、工作原理全景图" class="headerlink" title="二、工作原理全景图"></a>二、工作原理全景图</h3><div style="float: left; margin-right: 15px;"> 
-  <img src="/post/8ab4a728/Handler%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class="" width="400" height="170" title="Handler工作原理">
-</div>  
-<!-- 清除浮动 -->
-<div style="clear: both;"></div>
-
-<ol>
-<li>Handler发送Message到MessageQueue</li>
-<li>Looper不断轮询取出Message</li>
-<li>回调Handler的handleMessage()</li>
-<li>Message进入回收池复用</li>
-</ol>
-<hr>
-<h3 id="三、经典使用场景"><a href="#三、经典使用场景" class="headerlink" title="三、经典使用场景"></a>三、经典使用场景</h3><h4 id="1-跨线程更新UI"><a href="#1-跨线程更新UI" class="headerlink" title="1. 跨线程更新UI"></a>1. 跨线程更新UI</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 耗时操作</span></span><br><span class="line">    <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">    msg.what = UPDATE_UI;</span><br><span class="line">    handler.sendMessage(msg);</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-定时任务"><a href="#2-定时任务" class="headerlink" title="2. 定时任务"></a>2. 定时任务</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 立即执行</span></span><br><span class="line">handler.sendMessageDelayed(msg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1秒后执行</span></span><br><span class="line">handler.postDelayed(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 定时任务逻辑</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-线程切换利器"><a href="#3-线程切换利器" class="headerlink" title="3. 线程切换利器"></a>3. 线程切换利器</h4><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">CoroutineScope(Dispatchers.IO).launch &#123;</span><br><span class="line">    <span class="keyword">val</span> <span class="keyword">data</span> = fetchData()</span><br><span class="line">    withContext(Dispatchers.Main) &#123; <span class="comment">// 内部实际使用Handler</span></span><br><span class="line">        updateUI(<span class="keyword">data</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="四、避坑指南"><a href="#四、避坑指南" class="headerlink" title="四、避坑指南"></a>四、避坑指南</h3><h4 id="1-内存泄漏预防"><a href="#1-内存泄漏预防" class="headerlink" title="1. 内存泄漏预防"></a>1. 内存泄漏预防</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 错误示范：匿名内部类隐式持有Activity引用</span></span><br><span class="line"><span class="type">Handler</span> <span class="variable">leakHandler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 访问Activity成员</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确方案</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Activity&gt; weakActivity;</span><br><span class="line"></span><br><span class="line">    SafeHandler(Activity activity) &#123;</span><br><span class="line">        weakActivity = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">Activity</span> <span class="variable">activity</span> <span class="operator">=</span> weakActivity.get();</span><br><span class="line">        <span class="keyword">if</span> (activity != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 安全操作</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-ANR预防原则"><a href="#2-ANR预防原则" class="headerlink" title="2. ANR预防原则"></a>2. ANR预防原则</h4><ul>
-<li>单个消息处理不超过5ms</li>
-<li>避免同步屏障滥用</li>
-<li>及时移除不需要的Callback</li>
-</ul>
-<p><strong>3. Handler避坑手册</strong></p>
-<table>
-<thead>
-<tr>
-<th>危险模式</th>
-<th>安全方案</th>
-<th>原理阐释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>匿名Handler持有Activity引用</td>
-<td>静态内部类+WeakReference</td>
-<td>切断GC引用链</td>
-</tr>
-<tr>
-<td>postDelayed未及时移除消息</td>
-<td>onDestroy调用removeMessages()</td>
-<td>防止僵尸消息唤醒</td>
-</tr>
-<tr>
-<td>子线程未调用Looper.quitSafely()</td>
-<td>try-finally中执行Looper退出</td>
-<td>避免FD泄漏</td>
-</tr>
-<tr>
-<td>跨线程更新UI未检查isAttached</td>
-<td>View.post()+attachState监听</td>
-<td>规避无效View操作</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="五、进阶技巧"><a href="#五、进阶技巧" class="headerlink" title="五、进阶技巧"></a>五、进阶技巧</h3><h4 id="1-同步屏障（Sync-Barrier）"><a href="#1-同步屏障（Sync-Barrier）" class="headerlink" title="1. 同步屏障（Sync Barrier）"></a>1. 同步屏障（Sync Barrier）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 插入屏障</span></span><br><span class="line"><span class="type">MessageQueue</span> <span class="variable">queue</span> <span class="operator">=</span> Looper.getMainLooper().mQueue;</span><br><span class="line"><span class="type">int</span> <span class="variable">token</span> <span class="operator">=</span> queue.postSyncBarrier();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送异步消息</span></span><br><span class="line"><span class="type">Message</span> <span class="variable">asyncMsg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">asyncMsg.setAsynchronous(<span class="literal">true</span>);</span><br><span class="line">handler.sendMessageAtTime(asyncMsg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除屏障</span></span><br><span class="line">queue.removeSyncBarrier(token);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-IdleHandler妙用"><a href="#2-IdleHandler妙用" class="headerlink" title="2. IdleHandler妙用"></a>2. IdleHandler妙用</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Looper.myQueue().addIdleHandler(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 在消息队列空闲时执行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// true保持持续监听</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="六、现代替代方案对比"><a href="#六、现代替代方案对比" class="headerlink" title="六、现代替代方案对比"></a>六、现代替代方案对比</h3><table>
-<thead>
-<tr>
-<th>维度</th>
-<th>Handler优势</th>
-<th>Coroutine优势</th>
-<th>选型建议</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内存开销</td>
-<td>无额外对象创建（Message复用）</td>
-<td>协程挂起节约线程资源</td>
-<td>高频轻量任务选Handler</td>
-</tr>
-<tr>
-<td>生命周期管理</td>
-<td>需手动释放</td>
-<td>结构化并发自动取消</td>
-<td>复杂异步流选Coroutine</td>
-</tr>
-<tr>
-<td>可读性</td>
-<td>回调嵌套较深</td>
-<td>线性异步代码</td>
-<td>业务逻辑复杂时选Coroutine</td>
-</tr>
-<tr>
-<td>系统兼容性</td>
-<td>全版本支持</td>
-<td>需Kotlin及协程库</td>
-<td>老项目维护必选Handler</td>
-</tr>
-</tbody></table>
-<h3 id="七、面试高压问答模拟"><a href="#七、面试高压问答模拟" class="headerlink" title="七、面试高压问答模拟"></a><strong>七、面试高压问答模拟</strong></h3><p><strong>场景1：初级工程师必答题</strong><br><strong>Q1：Handler四大核心组件如何协作？</strong>  </p>
-<ul>
-<li><p><strong>死亡陷阱</strong>：仅回答”Handler发送消息-Looper循环处理”表层流程  </p>
-</li>
-<li><p><strong>满分答案</strong>：结合MessageQueue链表结构图，说明<code>Handler.sendMessage()</code>→<code>MessageQueue.enqueueMessage()</code>→<code>Looper.loop()</code>→<code>Message.recycle()</code>闭环</p>
-</li>
-</ul>
-<p><strong>场景2：中级工程师进阶题</strong><br><strong>Q2：主线程Looper死循环为何不导致ANR？</strong>  </p>
-<ul>
-<li><strong>技术本质</strong>：<br>① 通过epoll机制实现空闲阻塞<br>② Choreographer垂直同步协调UI刷新（补充VSYNC信号机制）  </li>
-<li><strong>反常识论证</strong>：对比普通死循环与消息队列阻塞差异</li>
-</ul>
-<p><strong>场景3：高级工程师灵魂拷问</strong><br><strong>Q3：如何设计永不泄漏的Handler？</strong>  </p>
-<ul>
-<li><p><strong>防御方案</strong>：  </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安全Handler模板</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Context&gt; weakContext;</span><br><span class="line">    </span><br><span class="line">    SafeHandler(Context context, Looper looper) &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        weakContext = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(context);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (weakContext.get() == <span class="literal">null</span>) removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        <span class="comment">// 业务逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>极端场景防护</strong>：后台强杀时WeakReference失效检测</p>
-</li>
-</ul>
-<p><strong>【Handler面试脑图】</strong>  </p>
-<img src="/post/8ab4a728/Handler%E7%9F%A5%E8%AF%86%E7%82%B9%E8%84%91%E5%9B%BE.png" class="" width="716" height="300" title="Handler知识点脑图">
-
-<!-- 清除浮动 -->
-<div style="clear: both;"></div>
-
-<hr>
-<h3 id="结语：Handler的设计哲学"><a href="#结语：Handler的设计哲学" class="headerlink" title="结语：Handler的设计哲学"></a>结语：Handler的设计哲学</h3><p>Handler机制体现了Android系统两大设计智慧：</p>
-<ol>
-<li><strong>单线程模型</strong>：通过消息队列实现线程安全</li>
-<li><strong>对象池模式</strong>：Message的回收复用提升性能</li>
-</ol>
-<p>理解Handler不仅是为了应对面试，更是打开Android系统设计思想的一把钥匙。当你下次看到<code>ActivityThread.main()</code>方法里的<code>Looper.loop()</code>时，应该会心一笑——这就是Android世界永不停歇的心跳。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>口袋改版工具盒实操-究极绿宝石5.5</title>
     <url>/post/c36dcexp67b.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
@@ -232,164 +71,6 @@
       </categories>
       <tags>
         <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
-    <url>/post/4a1b603.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      <categories>
-        <category>技巧分享</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
-    <url>/post/a2a378f1.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
-<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
-<li><p><strong>数据结构与基础算法</strong>  </p>
-<ul>
-<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
-<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
-<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
-</ul>
-</li>
-<li><p><strong>Android专项算法融合</strong>  </p>
-<ul>
-<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
-<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
-<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计与工程思维</strong>  </p>
-<ul>
-<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
-<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
-<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
-<li><strong>每日核心任务</strong>  <ul>
-<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
-<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
-<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
-<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
-<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
-<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
-</ul>
-</li>
-<li><strong>Android结合练习</strong>：  <ul>
-<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>重点突破</strong>  <ul>
-<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
-<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
-<li><strong>动态规划五步法</strong>  <ul>
-<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
-<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
-<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
-</ul>
-</li>
-<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
-</ul>
-</li>
-<li><strong>高频题型分类</strong>  <ul>
-<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
-<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
-<li><p><strong>Android特色算法题</strong>  </p>
-<ul>
-<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
-<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
-</ul>
-</li>
-<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
-<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
-</ul>
-</li>
-<li><p><strong>系统设计实战</strong>  </p>
-<ul>
-<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
-<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
-<li><p><strong>全真模拟（每日2轮）</strong>  </p>
-<ul>
-<li><strong>Google式面试流程</strong>：  <ul>
-<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
-<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
-<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>错题本与专项突破</strong>  </p>
-<ul>
-<li><strong>错误类型处理</strong>：  <ul>
-<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
-<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
-<li><strong>刷题平台</strong>：  <ul>
-<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
-<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
-<li><p><strong>常见误区</strong>：  </p>
-<ul>
-<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
-<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
-</ul>
-</li>
-<li><p><strong>加分技巧</strong>：  </p>
-<ul>
-<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
-<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
-</ul>
-</li>
-<li><p><strong>补充说明</strong></p>
-<ul>
-<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
-<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -726,6 +407,17 @@ nvm use latest
       </tags>
   </entry>
   <entry>
+    <title>自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</title>
+    <url>/post/4a1b603.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>技巧分享</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</title>
     <url>/post/cfff3223.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
@@ -854,95 +546,6 @@ nvm use latest
       </tags>
   </entry>
   <entry>
-    <title>使用hexo的常见姿势</title>
-    <url>/post/exp-hexo-base.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
-<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
-<li><p>建立文章草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>本地预览草稿</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>草稿转发布</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
-</li>
-<li><p>发布转草稿</p>
-<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
-</li>
-</ul>
-<hr>
-<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>文字引用</p>
-</blockquote>
-<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
-<p><code>行内代码</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
-<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
-
-<p><a href="test.png" title="图片引用方法二">test</a></p>
-]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
-    <url>/post/exp-hexo-butterfly.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
-<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
-</blockquote>
-<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
-<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
-<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
-<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
-<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
-</blockquote>
-<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
-<blockquote>
-<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
-<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
-</blockquote>
-<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码通过ChatGPT就可以生成 😕</p>
-<p>询问方式：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
-<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
-<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
-<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
-<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
-]]></content>
-      <categories>
-        <category>经验</category>
-      </categories>
-      <tags>
-        <tag>经验</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>你的Git还在显示“&#92;347&#92;27&#92;217”吗？这份避坑指南快收好！</title>
     <url>/post/af22aac6.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="🔧-一、核心配置修复（优先操作）"><a href="#🔧-一、核心配置修复（优先操作）" class="headerlink" title="🔧 一、核心配置修复（优先操作）"></a>🔧 <strong>一、核心配置修复（优先操作）</strong></h3><ol>
@@ -1023,6 +626,161 @@ nvm use latest
         <tag>Git故障修复</tag>
         <tag>开发环境配置</tag>
         <tag>中文编码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于【hexo+butterfly】搭建博客的改造计划</title>
+    <url>/post/exp-hexo-butterfly.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>为什么我要用butterfly作为hexo的主题？而不是程序员搭博客普遍采用的Next？</p>
+<p>因为，butterfly是数码宝贝第1部的主题曲啊！</p>
+</blockquote>
+<p>一开始搭建博客的时候有些本末倒置了，过度关心怎么搭的更好，及怎么改造主题，怎么做SEO等等等等。刹那间幡然醒悟，我只是为了搭个博客做记录，要用什么功能，可以边搭边补充。</p>
+<p>不过也难免，尝试新东西的时候总会迷路一阵子的。</p>
+<p>此篇博客记录我搭建博客时，遇到的或者花了一定时间的问题或者说需求。</p>
+<h2 id="butterfly主题添加当前访客信息"><a href="#butterfly主题添加当前访客信息" class="headerlink" title="butterfly主题添加当前访客信息"></a>butterfly主题添加当前访客信息</h2><blockquote>
+<p>阅读并跟着操作：<a href="https://cloud.tencent.com/developer/article/1945527">Hexo添加当前访客信息</a></p>
+</blockquote>
+<p>问题：<a href="https://pv.sohu.com/cityjson?ie=utf-8">https://pv.sohu.com/cityjson?ie=utf-8</a> 此链接失效了</p>
+<blockquote>
+<p>借用：<a href="https://www.oldboard.tech/2023/02/18/%E8%8E%B7%E5%8F%96ip%E5%9C%B0%E5%9D%80.html">获取IP地址及归属地的免费接口</a> &#x2F; 截止2024.7.13可用，失效了请找新的</p>
+<p>我以：<a href="https://myip.ipip.net/json">https://myip.ipip.net/json</a> 这个接口为例</p>
+</blockquote>
+<p>其实只改造：<code>themes/butterfly/source/js/ip_content.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取当前IP地址和浏览器标识</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getBrowserInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> agent = navigator.<span class="property">userAgent</span>.<span class="title function_">toLowerCase</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> regStr_ie = <span class="regexp">/msie [\d.]+;/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_ff = <span class="regexp">/firefox\/[\d.]+/gi</span></span><br><span class="line">    <span class="keyword">var</span> regStr_chrome = <span class="regexp">/chrome\/[\d.]+/gi</span>;</span><br><span class="line">    <span class="keyword">var</span> regStr_saf = <span class="regexp">/safari\/[\d.]+/gi</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//IE</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;msie&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ie);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//firefox</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;firefox&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_ff);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Chrome</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_chrome);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Safari</span></span><br><span class="line">    <span class="keyword">if</span> (agent.<span class="title function_">indexOf</span>(<span class="string">&quot;safari&quot;</span>) &gt; <span class="number">0</span> &amp;&amp; agent.<span class="title function_">indexOf</span>(<span class="string">&quot;chrome&quot;</span>) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> agent.<span class="title function_">match</span>(regStr_saf);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ip_content.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 确保代码在页面加载时可以直接执行，但需要确保 ip_content 元素在这段代码执行时已经存在于 DOM 中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">fetchIPInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;https://myip.ipip.net/json&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">fetch</span>(url);</span><br><span class="line">        <span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (data.<span class="property">ret</span> === <span class="string">&#x27;ok&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">const</span> ip = data.<span class="property">data</span>.<span class="property">ip</span>;</span><br><span class="line">            <span class="keyword">const</span> locationArray = data.<span class="property">data</span>.<span class="property">location</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 过滤空值并去掉最后一个值和最后一个逗号</span></span><br><span class="line">            <span class="keyword">const</span> filteredLocation = locationArray.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>);</span><br><span class="line">            <span class="keyword">const</span> location = filteredLocation.<span class="property">length</span> &gt; <span class="number">1</span> ? filteredLocation.<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">1</span>).<span class="title function_">join</span>(<span class="string">&#x27;-&#x27;</span>) : filteredLocation[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 打印 IP 和位置信息到控制台</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`IP: <span class="subst">$&#123;ip&#125;</span>`</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`位置: <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 插入到指定的 HTML 元素中</span></span><br><span class="line">            <span class="keyword">const</span> ipContentElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.ip_content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (ipContentElement) &#123;</span><br><span class="line">                ipContentElement.<span class="property">innerHTML</span> = <span class="string">`欢迎来自 &lt;span class=&quot;p&quot;&gt;<span class="subst">$&#123;location&#125;</span>&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;ip&#125;</span>&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;<span class="subst">$&#123;navigator.userAgent&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;找不到类名为 ip_content 的元素&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;请求失败或返回数据格式错误&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;发生网络错误:&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用函数获取 IP 信息</span></span><br><span class="line"><span class="title function_">fetchIPInfo</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// var ip_content = document.querySelector(&quot;.ip_content&quot;);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (ip_content != null &amp;&amp; typeof (returnCitySN) != undefined) &#123;</span></span><br><span class="line"><span class="comment">//     ip_content.innerHTML = &#x27;欢迎来自 &lt;span class=&quot;p&quot;&gt;&#x27; </span></span><br><span class="line"><span class="comment">//     + returnCitySN[&quot;cname&quot;] + &quot;&lt;/span&gt; 的小伙伴&lt;br&gt;&quot; </span></span><br><span class="line"><span class="comment">//     + &quot;访问IP为： &lt;span class=&#x27;p&#x27;&gt;&quot; + returnCitySN[&quot;cip&quot;] </span></span><br><span class="line"><span class="comment">//     + &quot;&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&#x27;p&#x27;&gt;&quot; + getBrowserInfo() + &#x27;&lt;/span&gt;&#x27;;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码通过ChatGPT就可以生成 😕</p>
+<p>询问方式：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">帮我写一段js代码，发起http请求并解析，请求地址是 https://myip.ipip.net/json，请求结果是：</span><br><span class="line">&#123;&quot;ret&quot;:&quot;ok&quot;,&quot;data&quot;:&#123;&quot;ip&quot;:&quot;112.10.247.224&quot;,&quot;location&quot;:[&quot;中国&quot;,&quot;浙江&quot;,&quot;杭州&quot;,&quot;&quot;,&quot;移动&quot;]&#125;&#125;</span><br><span class="line">要求1:该段代码可以以 &lt;script src=&quot;/js/ip_content.js&quot;&gt;&lt;/script&gt; 的格式插入；</span><br><span class="line">要求2:将请求结果插入到html布局中，布局代码是：</span><br><span class="line">&lt;div class=&quot;ip_content&quot;&gt;欢迎来自 &lt;span class=&quot;p&quot;&gt;未知区域&lt;/span&gt; 的小伙伴&lt;br&gt;访问IP为： &lt;span class=&quot;p&quot;&gt;未知IP&lt;/span&gt;&lt;br&gt;浏览器版本：&lt;span class=&quot;p&quot;&gt;未知浏览器&lt;/span&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="butterfly的打赏图片和微信、支付宝大小不兼容"><a href="#butterfly的打赏图片和微信、支付宝大小不兼容" class="headerlink" title="butterfly的打赏图片和微信、支付宝大小不兼容"></a>butterfly的打赏图片和微信、支付宝大小不兼容</h2><p>改动：<code>themes/butterfly/source/css/_layout/reward.styl</code> 下<code>.post-reward.reward-main.reward-all.reward-item.img</code> 的 width 为120px，height为180px</p>
+<p>思路：全局搜索 <code>reward</code> ，扫一眼就觉得该改这里；</p>
+<h2 id="有序列表和无序列表为什么不显示标号？"><a href="#有序列表和无序列表为什么不显示标号？" class="headerlink" title="有序列表和无序列表为什么不显示标号？"></a>有序列表和无序列表为什么不显示标号？</h2><p>bufferfly主题导致</p>
+<p>证明：<code>_config.yml</code> 的 <code>theme</code> 不填，可以显示；</p>
+<h2 id="不要butterfly首页的图片"><a href="#不要butterfly首页的图片" class="headerlink" title="不要butterfly首页的图片"></a>不要butterfly首页的图片</h2><p>太花哨了，把 <code>_config.butterfly.yml</code> 下的 <code>disable_top_img</code>设置为true</p>
+]]></content>
+      <categories>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo的常见姿势</title>
+    <url>/post/exp-hexo-base.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><hr>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h4 id="如何直接在-posts-的目录下直接新建文章？（不是分类和标签）"><a href="#如何直接在-posts-的目录下直接新建文章？（不是分类和标签）" class="headerlink" title="如何直接在 _posts 的目录下直接新建文章？（不是分类和标签）"></a>如何直接在 <strong>_posts</strong> 的目录下直接新建文章？（不是分类和标签）</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new -p 经验/&quot;使用hexo的常见姿势&quot;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>为什么hexo下的markdown使用<strong>有序列表</strong>和<strong>无序列表</strong>都不显示前面的数字或标记？<br>答：不是hexo的锅，去掉theme配置是可以显示的，很可能是主题的markdown引擎的，例如在butterfly主题的时候，F12调试发现被转成了&lt;p&gt;标签</p>
+<h4 id="草稿相关"><a href="#草稿相关" class="headerlink" title="草稿相关"></a>草稿相关</h4><ul>
+<li><p>建立文章草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>本地预览草稿</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo S --draft</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>草稿转发布</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo P &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称</p>
+</li>
+<li><p>发布转草稿</p>
+<p>只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可</p>
+</li>
+</ul>
+<hr>
+<h2 id="基础的hexo命令"><a href="#基础的hexo命令" class="headerlink" title="基础的hexo命令"></a>基础的hexo命令</h2><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">hexo g (生成)</span><br><span class="line">hexo s/server (开始本地预览服务)</span><br><span class="line">hexo d/deploy (发布上传)</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d (组合生成发布命令)</span><br><span class="line">hexo n/new &quot;postName&quot; (新建文章)</span><br><span class="line">hexo new page &quot;pageName&quot; (新建页面)</span><br><span class="line">hexo g/generate （生成静态页面至public目录）</span><br><span class="line">hexo help (查看帮助)</span><br><span class="line">hexo version (查看Hexo版本)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>文字引用</p>
+</blockquote>
+<p><em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del></p>
+<p><code>行内代码</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">多行代码</span><br><span class="line">多行代码</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">数学公式</span><br><span class="line">$$</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法一：---</span><br><span class="line"></span><br><span class="line">方法二：+++</span><br><span class="line"></span><br><span class="line">方法三：***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">无序列表使用 * 或 + 或 - 标识</span><br><span class="line">有序列表使用数字加 . 标识，例如：1.</span><br><span class="line">注意：标识和文字之间要有一个空格</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">hexo文章不显示序号？设置：post_asset_folder为false</span><br><span class="line"></span><br><span class="line">- 无序列表1</span><br><span class="line">- 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line"></span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">3. 有序列表3</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## 插入图片</span><br><span class="line">引用图片: </span><br><span class="line">``` markdown</span><br><span class="line">&#123;% asset_img xxx.png 图片描述 %&#125;</span><br></pre></td></tr></table></figure>
+<img src="/post/exp-hexo-base/test.png" class="" title="图片引用方法一">
+
+<p><a href="test.png" title="图片引用方法二">test</a></p>
+]]></content>
+      <categories>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一键永久激活Windows 10/11及Office！PowerShell脚本激活指南</title>
+    <url>/post/b2e34fdd.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>导语</strong><br>你是否还在为Windows系统或Office的激活问题烦恼？本文将分享一种通过PowerShell脚本快速激活Windows 10&#x2F;11和Office的方法，操作简单且支持永久激活，无需复杂工具。文末附注意事项，建议仔细阅读！</p>
+<hr>
+<h3 id="一、激活原理简介"><a href="#一、激活原理简介" class="headerlink" title="一、激活原理简介"></a><strong>一、激活原理简介</strong></h3><p>通过开源脚本工具（如HWID和Ohook），可以绕过系统激活验证，实现Windows或Office的永久激活：  </p>
+<ul>
+<li><strong>HWID（数字许可证激活）</strong>：适用于Windows系统，需联网验证，绑定硬件ID实现永久激活。  </li>
+<li><strong>Ohook（离线激活）</strong>：适用于Office软件，无需联网，直接修改本地验证机制。</li>
+</ul>
+<hr>
+<h3 id="二、激活前准备"><a href="#二、激活前准备" class="headerlink" title="二、激活前准备"></a><strong>二、激活前准备</strong></h3><ol>
+<li><strong>系统要求</strong>：Windows 8及以上版本（支持Win10&#x2F;Win11）。  </li>
+<li><strong>权限要求</strong>：以<strong>管理员身份</strong>运行PowerShell（否则可能失败）。  </li>
+<li><strong>关闭安全软件</strong>：部分杀毒软件可能拦截脚本，建议临时禁用。</li>
+</ol>
+<hr>
+<h3 id="三、激活步骤详解"><a href="#三、激活步骤详解" class="headerlink" title="三、激活步骤详解"></a><strong>三、激活步骤详解</strong></h3><h4 id="步骤1：以管理员身份运行PowerShell"><a href="#步骤1：以管理员身份运行PowerShell" class="headerlink" title="步骤1：以管理员身份运行PowerShell"></a><strong>步骤1：以管理员身份运行PowerShell</strong></h4><ul>
+<li>点击任务栏搜索框，输入“PowerShell”，右键选择“以管理员身份运行”。  </li>
+<li>若弹出权限提示，选择“是”允许操作。</li>
+</ul>
+<img src="/post/b2e34fdd/%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F%E6%89%93%E5%BC%80powershell.png" class="" title="管理员模式打开powershell">
+
+<h4 id="步骤2：输入激活脚本"><a href="#步骤2：输入激活脚本" class="headerlink" title="步骤2：输入激活脚本"></a><strong>步骤2：输入激活脚本</strong></h4><p>复制以下命令，粘贴到PowerShell窗口，按回车执行：  </p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">irm</span> https://get.activated.win | <span class="built_in">iex</span></span><br><span class="line">```  </span><br><span class="line">脚本会自动下载并启动激活工具。  </span><br><span class="line"></span><br><span class="line"><span class="comment">#### **步骤3：选择激活模式**  </span></span><br><span class="line">脚本运行后，会显示以下选项：  </span><br></pre></td></tr></table></figure>
+<p>[1] HWID - 激活Windows（需联网）<br>[2] Ohook - 激活Office（离线可用）  </p>
+<pre><code>- **激活Windows系统**：输入数字`1`，等待自动联网验证（约1-3分钟）。  
+- **激活Office软件**：输入数字`2`，直接离线激活。  
+
+#### **步骤4：确认激活成功**  
+- Windows激活成功后，会显示“Permanently Activated”字样。  
+- 打开“设置” → “系统” → “激活”，确认状态为“已激活”。  
+
+---
+
+### **四、注意事项**  
+1. **网络要求**：激活Windows时需保持网络畅通，否则可能失败。  
+2. **系统兼容性**：Office激活仅支持2016及以上版本（如Office 2021、365）。  
+3. **安全风险**：第三方脚本存在潜在风险，建议在虚拟机或备用设备操作。  
+4. **正版支持**：本文仅供技术研究，长期使用请支持正版授权。  
+
+---
+
+### **五、常见问题**  
+**Q1：激活后系统更新会失效吗？**  
+HWID激活为永久数字许可证，重装系统或更新均不影响。  
+
+**Q2：脚本报错“无法执行”怎么办？**  
+- 检查是否以管理员身份运行PowerShell。  
+- 输入命令`Set-ExecutionPolicy RemoteSigned`启用脚本权限。  
+
+---
+
+**结语**  
+通过PowerShell脚本激活Windows和Office，省去了寻找KMS工具的繁琐流程。但需注意，任何非官方激活方式均存在不确定性，建议优先通过正规渠道获取授权。如果你觉得本文有用，欢迎转发分享！  
+
+**标签**：`Windows激活` `Office激活` `PowerShell脚本` `系统优化`
+</code></pre>
+]]></content>
+      <categories>
+        <category>经验</category>
+      </categories>
+      <tags>
+        <tag>Windows激活</tag>
       </tags>
   </entry>
   <entry>
@@ -1182,69 +940,311 @@ Host github.com-work      <span class="token comment" spellcheck="true"># 工作
       </tags>
   </entry>
   <entry>
-    <title>一键永久激活Windows 10/11及Office！PowerShell脚本激活指南</title>
-    <url>/post/b2e34fdd.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>导语</strong><br>你是否还在为Windows系统或Office的激活问题烦恼？本文将分享一种通过PowerShell脚本快速激活Windows 10&#x2F;11和Office的方法，操作简单且支持永久激活，无需复杂工具。文末附注意事项，建议仔细阅读！</p>
-<hr>
-<h3 id="一、激活原理简介"><a href="#一、激活原理简介" class="headerlink" title="一、激活原理简介"></a><strong>一、激活原理简介</strong></h3><p>通过开源脚本工具（如HWID和Ohook），可以绕过系统激活验证，实现Windows或Office的永久激活：  </p>
+    <title>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</title>
+    <url>/post/a2a378f1.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典"><a href="#🔥-Android算法突击：30天速成指南——从零到Offer的进阶宝典" class="headerlink" title="🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典"></a>🔥 Android算法突击：30天速成指南——从零到Offer的进阶宝典</h2><hr>
+<h3 id="一、核心面试要求（结合Android开发特性）"><a href="#一、核心面试要求（结合Android开发特性）" class="headerlink" title="一、核心面试要求（结合Android开发特性）"></a>一、核心面试要求（结合Android开发特性）</h3><ol>
+<li><p><strong>数据结构与基础算法</strong>  </p>
 <ul>
-<li><strong>HWID（数字许可证激活）</strong>：适用于Windows系统，需联网验证，绑定硬件ID实现永久激活。  </li>
-<li><strong>Ohook（离线激活）</strong>：适用于Office软件，无需联网，直接修改本地验证机制。</li>
+<li><strong>高频数据结构</strong>：链表、二叉树、栈与队列。  </li>
+<li><strong>排序与查找</strong>：快速排序、归并排序、二分查找（需掌握边界条件处理）。  </li>
+<li><strong>动态规划</strong>：背包问题、路径问题，需结合Android场景（如资源优化）。</li>
 </ul>
-<hr>
-<h3 id="二、激活前准备"><a href="#二、激活前准备" class="headerlink" title="二、激活前准备"></a><strong>二、激活前准备</strong></h3><ol>
-<li><strong>系统要求</strong>：Windows 8及以上版本（支持Win10&#x2F;Win11）。  </li>
-<li><strong>权限要求</strong>：以<strong>管理员身份</strong>运行PowerShell（否则可能失败）。  </li>
-<li><strong>关闭安全软件</strong>：部分杀毒软件可能拦截脚本，建议临时禁用。</li>
+</li>
+<li><p><strong>Android专项算法融合</strong>  </p>
+<ul>
+<li><strong>UI与性能优化</strong>：View树遍历、嵌套层级计算、卡顿检测中的滑动窗口算法 。  </li>
+<li><strong>缓存设计</strong>：LRU缓存实现，类似Glide的Bitmap缓存策略。  </li>
+<li><strong>多线程与同步</strong>： <a href="https://leetcode.cn/problems/design-bounded-blocking-queue/">生产者-消费者模型</a> 、线程池任务调度（如<code>AsyncTask</code>优化）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计与工程思维</strong>  </p>
+<ul>
+<li><strong>复杂问题拆解</strong>：如实现图片加载库的缓存淘汰策略（需综合LRU和尺寸限制）。  </li>
+<li><strong>设计模式应用</strong>：观察者模式（LiveData）、工厂模式（模块化解耦）。<mark class="hl-label default">更新中</mark> </li>
+</ul>
+</li>
 </ol>
 <hr>
-<h3 id="三、激活步骤详解"><a href="#三、激活步骤详解" class="headerlink" title="三、激活步骤详解"></a><strong>三、激活步骤详解</strong></h3><h4 id="步骤1：以管理员身份运行PowerShell"><a href="#步骤1：以管理员身份运行PowerShell" class="headerlink" title="步骤1：以管理员身份运行PowerShell"></a><strong>步骤1：以管理员身份运行PowerShell</strong></h4><ul>
-<li>点击任务栏搜索框，输入“PowerShell”，右键选择“以管理员身份运行”。  </li>
-<li>若弹出权限提示，选择“是”允许操作。</li>
+<h3 id="二、1个月高效复习路线"><a href="#二、1个月高效复习路线" class="headerlink" title="二、1个月高效复习路线"></a>二、1个月高效复习路线</h3><hr>
+<h4 id="第1周：夯实基础（数据结构与经典算法）"><a href="#第1周：夯实基础（数据结构与经典算法）" class="headerlink" title="第1周：夯实基础（数据结构与经典算法）"></a><strong>第1周：夯实基础（数据结构与经典算法）</strong></h4><ol>
+<li><strong>每日核心任务</strong>  <ul>
+<li><strong>必刷题（3道&#x2F;天）</strong>：  <ul>
+<li>链表：<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>、<a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21.合并有序列表</a>、<a href="https://leetcode.cn/problems/linked-list-cycle/">141.环形链表检测</a>。  </li>
+<li>二叉树：<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102.层序遍历</a>、<a href="https://leetcode.cn/problems/symmetric-tree/">101.对称判断</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/">104.最大深度</a>。  </li>
+<li>双指针：<a href="https://leetcode.cn/problems/3sum/">15.三数之和</a>、<a href="https://leetcode.cn/problems/sliding-window-maximum/">239.滑动窗口最大值</a>（模拟页面停留统计）。  </li>
+<li>栈与队列：<a href="https://leetcode.cn/problems/implement-queue-using-stacks/">232.双栈实现队列</a>。</li>
+<li>排序与查找：<a href="https://leetcode.cn/problems/sort-an-array/">912.快速排序、堆排序</a>、<a href="https://leetcode.cn/problems/sort-list/">归并排序</a>、<a href="https://leetcode.cn/problems/binary-search/">二分查找</a>。</li>
 </ul>
-<img src="/post/b2e34fdd/%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F%E6%89%93%E5%BC%80powershell.png" class="" title="管理员模式打开powershell">
-
-<h4 id="步骤2：输入激活脚本"><a href="#步骤2：输入激活脚本" class="headerlink" title="步骤2：输入激活脚本"></a><strong>步骤2：输入激活脚本</strong></h4><p>复制以下命令，粘贴到PowerShell窗口，按回车执行：  </p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">irm</span> https://get.activated.win | <span class="built_in">iex</span></span><br><span class="line">```  </span><br><span class="line">脚本会自动下载并启动激活工具。  </span><br><span class="line"></span><br><span class="line"><span class="comment">#### **步骤3：选择激活模式**  </span></span><br><span class="line">脚本运行后，会显示以下选项：  </span><br></pre></td></tr></table></figure>
-<p>[1] HWID - 激活Windows（需联网）<br>[2] Ohook - 激活Office（离线可用）  </p>
-<pre><code>- **激活Windows系统**：输入数字`1`，等待自动联网验证（约1-3分钟）。  
-- **激活Office软件**：输入数字`2`，直接离线激活。  
-
-#### **步骤4：确认激活成功**  
-- Windows激活成功后，会显示“Permanently Activated”字样。  
-- 打开“设置” → “系统” → “激活”，确认状态为“已激活”。  
-
----
-
-### **四、注意事项**  
-1. **网络要求**：激活Windows时需保持网络畅通，否则可能失败。  
-2. **系统兼容性**：Office激活仅支持2016及以上版本（如Office 2021、365）。  
-3. **安全风险**：第三方脚本存在潜在风险，建议在虚拟机或备用设备操作。  
-4. **正版支持**：本文仅供技术研究，长期使用请支持正版授权。  
-
----
-
-### **五、常见问题**  
-**Q1：激活后系统更新会失效吗？**  
-HWID激活为永久数字许可证，重装系统或更新均不影响。  
-
-**Q2：脚本报错“无法执行”怎么办？**  
-- 检查是否以管理员身份运行PowerShell。  
-- 输入命令`Set-ExecutionPolicy RemoteSigned`启用脚本权限。  
-
----
-
-**结语**  
-通过PowerShell脚本激活Windows和Office，省去了寻找KMS工具的繁琐流程。但需注意，任何非官方激活方式均存在不确定性，建议优先通过正规渠道获取授权。如果你觉得本文有用，欢迎转发分享！  
-
-**标签**：`Windows激活` `Office激活` `PowerShell脚本` `系统优化`
-</code></pre>
+</li>
+<li><strong>Android结合练习</strong>：  <ul>
+<li>用链表实现<code>Handler</code>消息队列的入队&#x2F;出队逻辑。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>重点突破</strong>  <ul>
+<li><strong>时间复杂度分析</strong>：掌握大O表示法，对比不同排序算法性能（如快排 vs 归并）。  </li>
+<li><strong>递归与分治</strong>：二叉树遍历的递归实现，分治思想在合并排序中的应用。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第2周：进阶实战（动态规划与高频题型）"><a href="#第2周：进阶实战（动态规划与高频题型）" class="headerlink" title="第2周：进阶实战（动态规划与高频题型）"></a><strong>第2周：进阶实战（动态规划与高频题型）</strong></h4><ol>
+<li><strong>动态规划五步法</strong>  <ul>
+<li><strong>状态定义 → 转移方程 → 初始化 → 遍历顺序 → 实战验证</strong>：  <ul>
+<li>背包问题（如 <a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416.分割等和子集</a>、<a href="https://leetcode.cn/problems/target-sum/description/">494.目标和</a>） → APK体积优化（资源限制场景）。  </li>
+<li>路径问题（如 <a href="https://leetcode.cn/problems/climbing-stairs/">70.爬楼梯</a>、<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock">121.买卖股票的最佳时机</a>、<a href="https://leetcode.cn/problems/maximum-subarray">53.最大子数组和</a>）→ View层级穿透检测（如点击事件传递）。</li>
+</ul>
+</li>
+<li><strong>经典题目</strong>：<a href="https://leetcode.cn/problems/coin-change/">322.零钱兑换</a>（缓存策略）、<a href="https://leetcode.cn/problems/longest-increasing-subsequence/">300.最长递增子序列</a>（RecyclerView数据更新优化）。</li>
+</ul>
+</li>
+<li><strong>高频题型分类</strong>  <ul>
+<li><strong>TOP K问题</strong>：堆排序（崩溃日志统计）、快排变形（如<a href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/">数组第K大元素</a>）。  </li>
+<li><strong>子数组问题</strong>：<a href="https://leetcode.cn/problems/longest-common-prefix/">前缀和</a>（如连续帧率低于阈值时段检测）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第3周：Android场景融合与系统设计"><a href="#第3周：Android场景融合与系统设计" class="headerlink" title="第3周：Android场景融合与系统设计"></a><strong>第3周：Android场景融合与系统设计</strong></h4><ol>
+<li><p><strong>Android特色算法题</strong>  </p>
+<ul>
+<li><strong>UI渲染优化</strong>：减少布局层级的算法设计（结合<code>ConstraintLayout</code>原理）。  <ul>
+<li><a href="(https://blog.csdn.net/zhonglixiaobin/article/details/85700055)">View树遍历</a>（DFS&#x2F;BFS）</li>
+</ul>
+</li>
+<li><strong>性能调优</strong>：内存泄漏检测中的引用链分析（如LeakCanary底层实现）。  </li>
+<li><strong>网络与缓存</strong>：设计支持断点续传的多线程下载器（结合线程池与文件分块）。</li>
+</ul>
+</li>
+<li><p><strong>系统设计实战</strong>  </p>
+<ul>
+<li><a href="https://leetcode.cn/problems/lru-cache/description/"><strong>手写LRU缓存</strong></a>：要求支持O(1)时间复杂度，结合<code>LinkedHashMap</code>或双向链表+哈希表。  </li>
+<li><strong>消息机制模拟</strong>：用队列实现<code>Handler</code>的消息延迟处理逻辑。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="第4周：模拟面试与错题冲刺"><a href="#第4周：模拟面试与错题冲刺" class="headerlink" title="第4周：模拟面试与错题冲刺"></a><strong>第4周：模拟面试与错题冲刺</strong></h4><ol>
+<li><p><strong>全真模拟（每日2轮）</strong>  </p>
+<ul>
+<li><strong>Google式面试流程</strong>：  <ul>
+<li><strong>5分钟需求分析</strong>：明确输入输出边界（如ANR场景下的性能要求）。  </li>
+<li><strong>30分钟编码</strong>：手写算法（如合并有序Cursor查询结果）。  </li>
+<li><strong>10分钟优化</strong>：复杂度分析+Android场景扩展（如Bitmap加载优化）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>错题本与专项突破</strong>  </p>
+<ul>
+<li><strong>错误类型处理</strong>：  <ul>
+<li><strong>思路错误</strong>：同类题狂刷（如5道二叉树遍历变种题）。  </li>
+<li><strong>边界条件错误</strong>：单元测试验证（如空数组、极值输入）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、关键学习资源与工具"><a href="#三、关键学习资源与工具" class="headerlink" title="三、关键学习资源与工具"></a>三、关键学习资源与工具</h3><ol>
+<li><strong>刷题平台</strong>：  <ul>
+<li><strong>LeetCode高频题标签</strong>：<br><a href="https://leetcode.cn/tag/linked-list/">链表</a> | <a href="https://leetcode.cn/tag/tree/">树</a> | <a href="https://leetcode.cn/tag/dynamic-programming/">动态规划</a>  </li>
+<li><strong>CodeTop高频题单</strong>：<br><a href="https://codetop.cc/home">Android面试高频题</a></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、避坑指南与面试技巧"><a href="#四、避坑指南与面试技巧" class="headerlink" title="四、避坑指南与面试技巧"></a>四、避坑指南与面试技巧</h3><ol>
+<li><p><strong>常见误区</strong>：  </p>
+<ul>
+<li><strong>过度追求难题</strong>：面试中80%为中等题，需保证代码无BUG且逻辑清晰。  </li>
+<li><strong>忽视工程思维</strong>：在解释算法时，需关联Android实际场景（如“此算法可优化RecyclerView的diff效率”）。</li>
+</ul>
+</li>
+<li><p><strong>加分技巧</strong>：  </p>
+<ul>
+<li><strong>白板编码规范</strong>：先写伪代码框架，再填充细节，最后标注复杂度。  </li>
+<li><strong>主动提问</strong>：如“是否需要考虑多线程安全？”“数据规模是否有限制？”。</li>
+</ul>
+</li>
+<li><p><strong>补充说明</strong></p>
+<ul>
+<li><strong>CodeTop使用技巧</strong>：可按企业（如字节、腾讯）或岗位（Android开发）筛选高频题，支持模拟面试计时功能。</li>
+<li><strong>LeetCode实战建议</strong>：优先完成各分类的“精选TOP面试题”，结合《代码随想录》的<a href="https://programmercarl.com/">Android场景解析</a>强化工程思维。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>通过以上补充，所有算法题目均关联了LeetCode实战链接和CodeTop刷题入口，帮助快速定位高频考点。建议结合CodeTop的<a href="https://codetop.cc/home">企业题库</a>针对性训练，强化面试手撕代码能力。</p>
 ]]></content>
       <categories>
-        <category>经验</category>
+        <category>面试</category>
       </categories>
       <tags>
-        <tag>Windows激活</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</title>
+    <url>/post/8ab4a728.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"><a href="#面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）" class="headerlink" title="面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）"></a>面试官连环追问的Handler考点，这份避坑指南全说透了（附脑图）</h2><h3 id="引言：为什么需要Handler？"><a href="#引言：为什么需要Handler？" class="headerlink" title="引言：为什么需要Handler？"></a>引言：为什么需要Handler？</h3><p>在Android系统中，主线程（UI线程）负责处理用户交互和界面更新。如果开发者在主线程执行耗时操作（如网络请求），会导致界面卡顿甚至ANR。但当我们开启子线程处理完耗时任务后，又需要回到主线程更新UI——这就像两个平行世界需要沟通，而Handler就是架起这座桥梁的使者。</p>
+<hr>
+<h3 id="一、Handler四重奏：核心组件全景图"><a href="#一、Handler四重奏：核心组件全景图" class="headerlink" title="一、Handler四重奏：核心组件全景图"></a>一、Handler四重奏：核心组件全景图</h3><h4 id="1-Handler（信使）"><a href="#1-Handler（信使）" class="headerlink" title="1. Handler（信使）"></a>1. Handler（信使）</h4><ul>
+<li>消息发送者与处理者</li>
+<li>持有一个指向创建线程的Looper和MessageQueue</li>
+<li>示例代码：<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Handler</span> <span class="variable">handler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>(Looper.getMainLooper()) &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 在这里处理消息</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-Message（信件）"><a href="#2-Message（信件）" class="headerlink" title="2. Message（信件）"></a>2. Message（信件）</h4><ul>
+<li>包含what、arg1、arg2、obj等字段</li>
+<li>推荐使用<code>obtainMessage()</code>复用对象</li>
+</ul>
+<h4 id="3-MessageQueue（邮局）"><a href="#3-MessageQueue（邮局）" class="headerlink" title="3. MessageQueue（邮局）"></a>3. MessageQueue（邮局）</h4><ul>
+<li>优先级消息队列（when属性决定顺序）</li>
+<li>使用单链表数据结构</li>
+</ul>
+<h4 id="4-Looper（邮差）"><a href="#4-Looper（邮差）" class="headerlink" title="4. Looper（邮差）"></a>4. Looper（邮差）</h4><ul>
+<li>核心死循环：<code>Looper.loop()</code></li>
+<li>ThreadLocal保证线程隔离性</li>
+<li>准备Looper的正确姿势：<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">WorkerThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> Handler handler;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        Looper.prepare();  <span class="comment">// 创建Looper</span></span><br><span class="line">        handler = <span class="keyword">new</span> <span class="title class_">Handler</span>();</span><br><span class="line">        Looper.loop();     <span class="comment">// 启动循环</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="二、工作原理全景图"><a href="#二、工作原理全景图" class="headerlink" title="二、工作原理全景图"></a>二、工作原理全景图</h3><div style="float: left; margin-right: 15px;"> 
+  <img src="/post/8ab4a728/Handler%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" class="" width="400" height="170" title="Handler工作原理">
+</div>  
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<ol>
+<li>Handler发送Message到MessageQueue</li>
+<li>Looper不断轮询取出Message</li>
+<li>回调Handler的handleMessage()</li>
+<li>Message进入回收池复用</li>
+</ol>
+<hr>
+<h3 id="三、经典使用场景"><a href="#三、经典使用场景" class="headerlink" title="三、经典使用场景"></a>三、经典使用场景</h3><h4 id="1-跨线程更新UI"><a href="#1-跨线程更新UI" class="headerlink" title="1. 跨线程更新UI"></a>1. 跨线程更新UI</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 耗时操作</span></span><br><span class="line">    <span class="type">Message</span> <span class="variable">msg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">    msg.what = UPDATE_UI;</span><br><span class="line">    handler.sendMessage(msg);</span><br><span class="line">&#125;).start();</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-定时任务"><a href="#2-定时任务" class="headerlink" title="2. 定时任务"></a>2. 定时任务</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 立即执行</span></span><br><span class="line">handler.sendMessageDelayed(msg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1秒后执行</span></span><br><span class="line">handler.postDelayed(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 定时任务逻辑</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-线程切换利器"><a href="#3-线程切换利器" class="headerlink" title="3. 线程切换利器"></a>3. 线程切换利器</h4><figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">CoroutineScope(Dispatchers.IO).launch &#123;</span><br><span class="line">    <span class="keyword">val</span> <span class="keyword">data</span> = fetchData()</span><br><span class="line">    withContext(Dispatchers.Main) &#123; <span class="comment">// 内部实际使用Handler</span></span><br><span class="line">        updateUI(<span class="keyword">data</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、避坑指南"><a href="#四、避坑指南" class="headerlink" title="四、避坑指南"></a>四、避坑指南</h3><h4 id="1-内存泄漏预防"><a href="#1-内存泄漏预防" class="headerlink" title="1. 内存泄漏预防"></a>1. 内存泄漏预防</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 错误示范：匿名内部类隐式持有Activity引用</span></span><br><span class="line"><span class="type">Handler</span> <span class="variable">leakHandler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="comment">// 访问Activity成员</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确方案</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Activity&gt; weakActivity;</span><br><span class="line"></span><br><span class="line">    SafeHandler(Activity activity) &#123;</span><br><span class="line">        weakActivity = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(activity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> &#123;</span><br><span class="line">        <span class="type">Activity</span> <span class="variable">activity</span> <span class="operator">=</span> weakActivity.get();</span><br><span class="line">        <span class="keyword">if</span> (activity != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 安全操作</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-ANR预防原则"><a href="#2-ANR预防原则" class="headerlink" title="2. ANR预防原则"></a>2. ANR预防原则</h4><ul>
+<li>单个消息处理不超过5ms</li>
+<li>避免同步屏障滥用</li>
+<li>及时移除不需要的Callback</li>
+</ul>
+<p><strong>3. Handler避坑手册</strong></p>
+<table>
+<thead>
+<tr>
+<th>危险模式</th>
+<th>安全方案</th>
+<th>原理阐释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>匿名Handler持有Activity引用</td>
+<td>静态内部类+WeakReference</td>
+<td>切断GC引用链</td>
+</tr>
+<tr>
+<td>postDelayed未及时移除消息</td>
+<td>onDestroy调用removeMessages()</td>
+<td>防止僵尸消息唤醒</td>
+</tr>
+<tr>
+<td>子线程未调用Looper.quitSafely()</td>
+<td>try-finally中执行Looper退出</td>
+<td>避免FD泄漏</td>
+</tr>
+<tr>
+<td>跨线程更新UI未检查isAttached</td>
+<td>View.post()+attachState监听</td>
+<td>规避无效View操作</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="五、进阶技巧"><a href="#五、进阶技巧" class="headerlink" title="五、进阶技巧"></a>五、进阶技巧</h3><h4 id="1-同步屏障（Sync-Barrier）"><a href="#1-同步屏障（Sync-Barrier）" class="headerlink" title="1. 同步屏障（Sync Barrier）"></a>1. 同步屏障（Sync Barrier）</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 插入屏障</span></span><br><span class="line"><span class="type">MessageQueue</span> <span class="variable">queue</span> <span class="operator">=</span> Looper.getMainLooper().mQueue;</span><br><span class="line"><span class="type">int</span> <span class="variable">token</span> <span class="operator">=</span> queue.postSyncBarrier();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送异步消息</span></span><br><span class="line"><span class="type">Message</span> <span class="variable">asyncMsg</span> <span class="operator">=</span> Message.obtain();</span><br><span class="line">asyncMsg.setAsynchronous(<span class="literal">true</span>);</span><br><span class="line">handler.sendMessageAtTime(asyncMsg, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除屏障</span></span><br><span class="line">queue.removeSyncBarrier(token);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-IdleHandler妙用"><a href="#2-IdleHandler妙用" class="headerlink" title="2. IdleHandler妙用"></a>2. IdleHandler妙用</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Looper.myQueue().addIdleHandler(() -&gt; &#123;</span><br><span class="line">    <span class="comment">// 在消息队列空闲时执行</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// true保持持续监听</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、现代替代方案对比"><a href="#六、现代替代方案对比" class="headerlink" title="六、现代替代方案对比"></a>六、现代替代方案对比</h3><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Handler优势</th>
+<th>Coroutine优势</th>
+<th>选型建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内存开销</td>
+<td>无额外对象创建（Message复用）</td>
+<td>协程挂起节约线程资源</td>
+<td>高频轻量任务选Handler</td>
+</tr>
+<tr>
+<td>生命周期管理</td>
+<td>需手动释放</td>
+<td>结构化并发自动取消</td>
+<td>复杂异步流选Coroutine</td>
+</tr>
+<tr>
+<td>可读性</td>
+<td>回调嵌套较深</td>
+<td>线性异步代码</td>
+<td>业务逻辑复杂时选Coroutine</td>
+</tr>
+<tr>
+<td>系统兼容性</td>
+<td>全版本支持</td>
+<td>需Kotlin及协程库</td>
+<td>老项目维护必选Handler</td>
+</tr>
+</tbody></table>
+<h3 id="七、面试高压问答模拟"><a href="#七、面试高压问答模拟" class="headerlink" title="七、面试高压问答模拟"></a><strong>七、面试高压问答模拟</strong></h3><p><strong>场景1：初级工程师必答题</strong><br><strong>Q1：Handler四大核心组件如何协作？</strong>  </p>
+<ul>
+<li><p><strong>死亡陷阱</strong>：仅回答”Handler发送消息-Looper循环处理”表层流程  </p>
+</li>
+<li><p><strong>满分答案</strong>：结合MessageQueue链表结构图，说明<code>Handler.sendMessage()</code>→<code>MessageQueue.enqueueMessage()</code>→<code>Looper.loop()</code>→<code>Message.recycle()</code>闭环</p>
+</li>
+</ul>
+<p><strong>场景2：中级工程师进阶题</strong><br><strong>Q2：主线程Looper死循环为何不导致ANR？</strong>  </p>
+<ul>
+<li><strong>技术本质</strong>：<br>① 通过epoll机制实现空闲阻塞<br>② Choreographer垂直同步协调UI刷新（补充VSYNC信号机制）  </li>
+<li><strong>反常识论证</strong>：对比普通死循环与消息队列阻塞差异</li>
+</ul>
+<p><strong>场景3：高级工程师灵魂拷问</strong><br><strong>Q3：如何设计永不泄漏的Handler？</strong>  </p>
+<ul>
+<li><p><strong>防御方案</strong>：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 安全Handler模板</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">SafeHandler</span> <span class="keyword">extends</span> <span class="title class_">Handler</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;Context&gt; weakContext;</span><br><span class="line">    </span><br><span class="line">    SafeHandler(Context context, Looper looper) &#123;</span><br><span class="line">        <span class="built_in">super</span>(looper);</span><br><span class="line">        weakContext = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(context);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(<span class="meta">@NonNull</span> Message msg)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (weakContext.get() == <span class="literal">null</span>) removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">        <span class="comment">// 业务逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>极端场景防护</strong>：后台强杀时WeakReference失效检测</p>
+</li>
+</ul>
+<p><strong>【Handler面试脑图】</strong>  </p>
+<img src="/post/8ab4a728/Handler%E7%9F%A5%E8%AF%86%E7%82%B9%E8%84%91%E5%9B%BE.png" class="" width="716" height="300" title="Handler知识点脑图">
+
+<!-- 清除浮动 -->
+<div style="clear: both;"></div>
+
+<hr>
+<h3 id="结语：Handler的设计哲学"><a href="#结语：Handler的设计哲学" class="headerlink" title="结语：Handler的设计哲学"></a>结语：Handler的设计哲学</h3><p>Handler机制体现了Android系统两大设计智慧：</p>
+<ol>
+<li><strong>单线程模型</strong>：通过消息队列实现线程安全</li>
+<li><strong>对象池模式</strong>：Message的回收复用提升性能</li>
+</ol>
+<p>理解Handler不仅是为了应对面试，更是打开Android系统设计思想的一把钥匙。当你下次看到<code>ActivityThread.main()</code>方法里的<code>Looper.loop()</code>时，应该会心一笑——这就是Android世界永不停歇的心跳。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
       </tags>
   </entry>
   <entry>
@@ -1315,6 +1315,11 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
   <entry>
     <title>Android开发全指南：学习高效的测试与调试技巧，提升你的开发水平！</title>
     <url>/post/5d715b31.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
+    <url>/post/752ec13d.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
@@ -1398,11 +1403,6 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
 ]]></content>
   </entry>
   <entry>
-    <title>Android开发全指南：掌握依赖注入和模块化设计，提高项目的可维护性！</title>
-    <url>/post/752ec13d.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
     <title>Android开发全指南：探索Jetpack和Compose等现代技术，紧跟开发潮流！</title>
     <url>/post/4c5eb723.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
@@ -1444,6 +1444,77 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
 <p><strong>四、结语</strong></p>
 <p>掌握Java与Kotlin，就如同手握Android开发的双剑。通过深入学习和实践这两种语言，你将能够在Android开发的道路上披荆斩棘、勇往直前。无论你是初学者还是资深开发者，都不要错过这场探索之旅！让我们一起成为Android开发的高手吧！</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Android开发全指南：深入了解Android架构组件，提升应用稳定性与用户体验！</title>
+    <url>/post/94392a3.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在安卓开发中，了解基础架构组件是构建稳定和高效应用的基石。掌握这些组件不仅能提升应用的质量，还能增强用户体验。本文将逐一解析Android中的核心架构组件，帮助你深入理解其生命周期及作用。</p>
+<h3 id="一、Activity与Fragment"><a href="#一、Activity与Fragment" class="headerlink" title="一、Activity与Fragment"></a>一、Activity与Fragment</h3><h4 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1. Activity"></a>1. <strong>Activity</strong></h4><p>Activity是Android应用的一个基本组件，它用于展示UI界面并与用户进行交互。深入理解Activity的生命周期对于管理应用状态至关重要。</p>
+<ul>
+<li><p><strong>生命周期</strong>：了解Activity的各个状态，尤其是<code>onCreate</code>、<code>onStart</code>、<code>onResume</code>、<code>onPause</code>、<code>onStop</code>和<code>onDestroy</code>等生命周期方法，它们在不同情况下被调用。合理运用这些方法可以优化资源管理和用户体验。</p>
+<ul>
+<li><strong>状态保存与恢复</strong>：在<code>onSaveInstanceState()</code>中保存重要的UI状态，确保在Activity重新创建时能够恢复用户操作，增强应用的流畅性。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Fragment"><a href="#2-Fragment" class="headerlink" title="2. Fragment"></a>2. <strong>Fragment</strong></h4><p>Fragment是Android中用于将UI逻辑进行模块化的组件，能够实现动态的界面切换。</p>
+<ul>
+<li><p><strong>生命周期</strong>：理解Fragment的生命周期（例如<code>onAttach</code>、<code>onCreateView</code>、<code>onActivityCreated</code>、<code>onStart</code>、<code>onResume</code>等），并掌握如何在其中处理UI更新和事件监听。</p>
+</li>
+<li><p><strong>动态操作</strong>：学习如何动态添加和移除Fragment，并利用<code>FragmentTransaction</code>来事务化管理Fragment的操作。</p>
+</li>
+<li><p><strong>Fragment间通信</strong>：通过接口回调和<code>ViewModel</code>实现Fragment之间数据的传递与通信，确保数据的一致性。</p>
+</li>
+</ul>
+<h3 id="二、Service"><a href="#二、Service" class="headerlink" title="二、Service"></a>二、Service</h3><p>Service用于在后台执行长时间运行的操作，不会直接与用户界面交互。</p>
+<h4 id="1-前台服务"><a href="#1-前台服务" class="headerlink" title="1. 前台服务"></a>1. <strong>前台服务</strong></h4><p>前台服务用于执行用户可见的任务，并伴随永久的通知，确保系统不会杀死服务。</p>
+<ul>
+<li><strong>创建与管理</strong>：学习如何通过<code>startForeground()</code>方法将服务设置为前台服务，为其提供通知，减少被系统终止的可能性。</li>
+</ul>
+<h4 id="2-后台服务"><a href="#2-后台服务" class="headerlink" title="2. 后台服务"></a>2. <strong>后台服务</strong></h4><p>后台服务适用于处理不需要与用户进行直接交互的任务。</p>
+<ul>
+<li><strong>任务处理</strong>：掌握如何在后台执行如数据同步、网络请求等操作。通过<code>IntentService</code>或<code>JobIntentService</code>提供更好的任务调度及管理。</li>
+</ul>
+<h3 id="三、BroadcastReceiver"><a href="#三、BroadcastReceiver" class="headerlink" title="三、BroadcastReceiver"></a>三、BroadcastReceiver</h3><p>BroadcastReceiver用于接收和处理广播消息，是实现应用间通信的有效工具。</p>
+<h4 id="1-静态与动态注册"><a href="#1-静态与动态注册" class="headerlink" title="1. 静态与动态注册"></a>1. <strong>静态与动态注册</strong></h4><ul>
+<li><p><strong>静态注册</strong>：在AndroidManifest.xml中注册接收器，可以接收系统和应用的广播。</p>
+</li>
+<li><p><strong>动态注册</strong>：在代码中注册和注销接收器，适用于需要在特定情况下处理广播的场景。</p>
+</li>
+</ul>
+<h4 id="2-处理广播"><a href="#2-处理广播" class="headerlink" title="2. 处理广播"></a>2. <strong>处理广播</strong></h4><ul>
+<li><p><strong>系统获取</strong>：掌握如何接收和处理系统广播（如电量变化、网络连接状态等），并响应这些事件。</p>
+</li>
+<li><p><strong>自定义广播</strong>：学习如何发送和接收自定义广播，以实现应用间的数据交换和通信。</p>
+</li>
+</ul>
+<h3 id="四、ContentProvider"><a href="#四、ContentProvider" class="headerlink" title="四、ContentProvider"></a>四、ContentProvider</h3><p>ContentProvider是Android中用于数据共享与存储的组件。</p>
+<h4 id="1-数据共享"><a href="#1-数据共享" class="headerlink" title="1. 数据共享"></a>1. <strong>数据共享</strong></h4><p>通过ContentProvider，可以实现不同应用之间的数据交互与共享。了解如何定义和使用ContentProvider对促进不同应用间的协作至关重要。</p>
+<h4 id="2-CRUD操作"><a href="#2-CRUD操作" class="headerlink" title="2. CRUD操作"></a>2. <strong>CRUD操作</strong></h4><ul>
+<li><strong>增删改查</strong>：掌握如何通过ContentProvider实现数据的增、删、改、查四个基本操作，了解如何处理URI匹配以实现多种数据存取需求。</li>
+</ul>
+<h3 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h3><p>深入理解Android基础架构组件，将为你构建稳定和高效的应用奠定坚实的基础。通过掌握Activity、Fragment、Service、BroadcastReceiver和ContentProvider等关键组件的生命周期和操作，你将能更好地管理应用的行为，提高用户体验和满意度。</p>
+<p>希望这篇文章能够帮助你更好地理解Android架构组件，并为你的开发旅程保驾护航！如有疑问或想法，欢迎在评论区与我互动！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>学Android？这里有一本秘籍！</title>
+    <url>/post/android-base-guide.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
+<li>学Android？在了解一下布局</li>
+<li>学Android？自定义View了解一下</li>
+<li>学Android？Handler了解一下</li>
+<li>学Android？事件分发了解一下</li>
+<li>开源库</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Android</tag>
+      </tags>
   </entry>
   <entry>
     <title>Android开发者必学：从新手到高手的全指南</title>
@@ -1555,77 +1626,6 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
 </ul>
 <hr>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>从新手到高手的蜕变之路虽然充满挑战与艰辛，但只要我们保持对技术的热爱与追求，不断学习与实践，就一定能够在这条道路上越走越远、越飞越高。愿每一位Android开发者都能在这条充满希望的旅程中收获成长与成功！</p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Android开发全指南：深入了解Android架构组件，提升应用稳定性与用户体验！</title>
-    <url>/post/94392a3.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在安卓开发中，了解基础架构组件是构建稳定和高效应用的基石。掌握这些组件不仅能提升应用的质量，还能增强用户体验。本文将逐一解析Android中的核心架构组件，帮助你深入理解其生命周期及作用。</p>
-<h3 id="一、Activity与Fragment"><a href="#一、Activity与Fragment" class="headerlink" title="一、Activity与Fragment"></a>一、Activity与Fragment</h3><h4 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1. Activity"></a>1. <strong>Activity</strong></h4><p>Activity是Android应用的一个基本组件，它用于展示UI界面并与用户进行交互。深入理解Activity的生命周期对于管理应用状态至关重要。</p>
-<ul>
-<li><p><strong>生命周期</strong>：了解Activity的各个状态，尤其是<code>onCreate</code>、<code>onStart</code>、<code>onResume</code>、<code>onPause</code>、<code>onStop</code>和<code>onDestroy</code>等生命周期方法，它们在不同情况下被调用。合理运用这些方法可以优化资源管理和用户体验。</p>
-<ul>
-<li><strong>状态保存与恢复</strong>：在<code>onSaveInstanceState()</code>中保存重要的UI状态，确保在Activity重新创建时能够恢复用户操作，增强应用的流畅性。</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-Fragment"><a href="#2-Fragment" class="headerlink" title="2. Fragment"></a>2. <strong>Fragment</strong></h4><p>Fragment是Android中用于将UI逻辑进行模块化的组件，能够实现动态的界面切换。</p>
-<ul>
-<li><p><strong>生命周期</strong>：理解Fragment的生命周期（例如<code>onAttach</code>、<code>onCreateView</code>、<code>onActivityCreated</code>、<code>onStart</code>、<code>onResume</code>等），并掌握如何在其中处理UI更新和事件监听。</p>
-</li>
-<li><p><strong>动态操作</strong>：学习如何动态添加和移除Fragment，并利用<code>FragmentTransaction</code>来事务化管理Fragment的操作。</p>
-</li>
-<li><p><strong>Fragment间通信</strong>：通过接口回调和<code>ViewModel</code>实现Fragment之间数据的传递与通信，确保数据的一致性。</p>
-</li>
-</ul>
-<h3 id="二、Service"><a href="#二、Service" class="headerlink" title="二、Service"></a>二、Service</h3><p>Service用于在后台执行长时间运行的操作，不会直接与用户界面交互。</p>
-<h4 id="1-前台服务"><a href="#1-前台服务" class="headerlink" title="1. 前台服务"></a>1. <strong>前台服务</strong></h4><p>前台服务用于执行用户可见的任务，并伴随永久的通知，确保系统不会杀死服务。</p>
-<ul>
-<li><strong>创建与管理</strong>：学习如何通过<code>startForeground()</code>方法将服务设置为前台服务，为其提供通知，减少被系统终止的可能性。</li>
-</ul>
-<h4 id="2-后台服务"><a href="#2-后台服务" class="headerlink" title="2. 后台服务"></a>2. <strong>后台服务</strong></h4><p>后台服务适用于处理不需要与用户进行直接交互的任务。</p>
-<ul>
-<li><strong>任务处理</strong>：掌握如何在后台执行如数据同步、网络请求等操作。通过<code>IntentService</code>或<code>JobIntentService</code>提供更好的任务调度及管理。</li>
-</ul>
-<h3 id="三、BroadcastReceiver"><a href="#三、BroadcastReceiver" class="headerlink" title="三、BroadcastReceiver"></a>三、BroadcastReceiver</h3><p>BroadcastReceiver用于接收和处理广播消息，是实现应用间通信的有效工具。</p>
-<h4 id="1-静态与动态注册"><a href="#1-静态与动态注册" class="headerlink" title="1. 静态与动态注册"></a>1. <strong>静态与动态注册</strong></h4><ul>
-<li><p><strong>静态注册</strong>：在AndroidManifest.xml中注册接收器，可以接收系统和应用的广播。</p>
-</li>
-<li><p><strong>动态注册</strong>：在代码中注册和注销接收器，适用于需要在特定情况下处理广播的场景。</p>
-</li>
-</ul>
-<h4 id="2-处理广播"><a href="#2-处理广播" class="headerlink" title="2. 处理广播"></a>2. <strong>处理广播</strong></h4><ul>
-<li><p><strong>系统获取</strong>：掌握如何接收和处理系统广播（如电量变化、网络连接状态等），并响应这些事件。</p>
-</li>
-<li><p><strong>自定义广播</strong>：学习如何发送和接收自定义广播，以实现应用间的数据交换和通信。</p>
-</li>
-</ul>
-<h3 id="四、ContentProvider"><a href="#四、ContentProvider" class="headerlink" title="四、ContentProvider"></a>四、ContentProvider</h3><p>ContentProvider是Android中用于数据共享与存储的组件。</p>
-<h4 id="1-数据共享"><a href="#1-数据共享" class="headerlink" title="1. 数据共享"></a>1. <strong>数据共享</strong></h4><p>通过ContentProvider，可以实现不同应用之间的数据交互与共享。了解如何定义和使用ContentProvider对促进不同应用间的协作至关重要。</p>
-<h4 id="2-CRUD操作"><a href="#2-CRUD操作" class="headerlink" title="2. CRUD操作"></a>2. <strong>CRUD操作</strong></h4><ul>
-<li><strong>增删改查</strong>：掌握如何通过ContentProvider实现数据的增、删、改、查四个基本操作，了解如何处理URI匹配以实现多种数据存取需求。</li>
-</ul>
-<h3 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h3><p>深入理解Android基础架构组件，将为你构建稳定和高效的应用奠定坚实的基础。通过掌握Activity、Fragment、Service、BroadcastReceiver和ContentProvider等关键组件的生命周期和操作，你将能更好地管理应用的行为，提高用户体验和满意度。</p>
-<p>希望这篇文章能够帮助你更好地理解Android架构组件，并为你的开发旅程保驾护航！如有疑问或想法，欢迎在评论区与我互动！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>学Android？这里有一本秘籍！</title>
-    <url>/post/android-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol>
-<li>学Android？在了解一下布局</li>
-<li>学Android？自定义View了解一下</li>
-<li>学Android？Handler了解一下</li>
-<li>学Android？事件分发了解一下</li>
-<li>开源库</li>
-</ol>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -1786,6 +1786,100 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
       </tags>
   </entry>
   <entry>
+    <title>Git 命令入门指南：从零掌握代码版本管理</title>
+    <url>/post/ef2b76b.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Git-命令入门指南：从零掌握代码版本管理"><a href="#Git-命令入门指南：从零掌握代码版本管理" class="headerlink" title="Git 命令入门指南：从零掌握代码版本管理"></a>Git 命令入门指南：从零掌握代码版本管理</h3><p>Git 作为分布式版本控制系统，是开发者日常协作与代码管理的核心工具。本文基于多篇开发者社区及官方文档的总结，整理了 <strong>最常用且必备的 Git 命令</strong>，助你快速上手。</p>
+<hr>
+<h4 id="一、环境配置与仓库初始化"><a href="#一、环境配置与仓库初始化" class="headerlink" title="一、环境配置与仓库初始化"></a>一、环境配置与仓库初始化</h4><ol>
+<li><p><strong>用户身份标识</strong><br>每次提交代码时，Git 需要记录操作者信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;YourName&quot;</span>  <span class="comment"># 设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span>  <span class="comment"># 设置全局邮箱</span></span><br><span class="line">git config --list  <span class="comment"># 查看所有配置项</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>SSH Key 生成（远程仓库连接必备）</strong><br>用于免密推送代码到 GitHub&#x2F;GitLab 等平台：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your_email@example.com&quot;</span>  <span class="comment"># 生成密钥对</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>创建仓库</strong>  </p>
+<ul>
+<li>本地初始化：<code>git init</code>（生成隐藏的 .git 目录）  </li>
+<li>克隆远程仓库：<code>git clone https://github.com/xxx/xxx.git</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="二、日常开发核心操作"><a href="#二、日常开发核心操作" class="headerlink" title="二、日常开发核心操作"></a>二、日常开发核心操作</h4><ol start="4">
+<li><p><strong>代码提交流程</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                <span class="comment"># 添加所有修改到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;功能描述&quot;</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git status               <span class="comment"># 查看文件状态（红/绿色提示）</span></span><br><span class="line">git <span class="built_in">log</span> --oneline        <span class="comment"># 查看精简版提交历史</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>分支管理</strong>  </p>
+<ul>
+<li>创建与切换：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch dev          <span class="comment"># 创建分支</span></span><br><span class="line">git checkout dev       <span class="comment"># 切换分支（旧版）</span></span><br><span class="line">git switch -c dev      <span class="comment"># 新版推荐命令</span></span><br></pre></td></tr></table></figure></li>
+<li>合并与冲突解决：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge dev          <span class="comment"># 将 dev 分支合并到当前分支</span></span><br><span class="line"><span class="comment"># 合并冲突后，手动修改文件 → git add → git commit</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>远程仓库交互</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin URL   <span class="comment"># 关联远程仓库</span></span><br><span class="line">git push -u origin main     <span class="comment"># 首次推送并建立追踪</span></span><br><span class="line">git pull origin dev         <span class="comment"># 拉取远程分支更新</span></span><br><span class="line">git fetch                   <span class="comment"># 仅获取远程变更（不自动合并）</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h4 id="三、高阶操作与问题处理"><a href="#三、高阶操作与问题处理" class="headerlink" title="三、高阶操作与问题处理"></a>三、高阶操作与问题处理</h4><ol start="7">
+<li><p><strong>撤销与回退</strong>  </p>
+<ul>
+<li>丢弃工作区修改：<code>git checkout -- filename</code>  </li>
+<li>撤销暂存区文件：<code>git reset HEAD filename</code>  </li>
+<li>版本回退：<code>git reset --hard commit_id</code>（慎用）</li>
+</ul>
+</li>
+<li><p><strong>暂存与恢复</strong><br>临时保存未完成的修改：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash        <span class="comment"># 保存当前工作进度</span></span><br><span class="line">git stash pop    <span class="comment"># 恢复最近一次暂存内容</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>标签管理</strong>  </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0.0           <span class="comment"># 创建轻量标签</span></span><br><span class="line">git tag -a v1.0 -m <span class="string">&quot;描述&quot;</span> <span class="comment"># 含备注的标签</span></span><br><span class="line">git push origin --tags    <span class="comment"># 推送所有标签到远程</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h4 id="四、协作开发建议"><a href="#四、协作开发建议" class="headerlink" title="四、协作开发建议"></a>四、协作开发建议</h4><ol>
+<li><strong>分支策略</strong>：主分支（main&#x2F;master）仅用于发布稳定版本，新功能在 dev 或 feature 分支开发。  </li>
+<li><strong>提交规范</strong>：commit 信息需清晰描述修改内容，推荐使用 <a href="https://www.conventionalcommits.org/">Conventional Commits</a> 格式。  </li>
+<li><strong>冲突预防</strong>：频繁使用 <code>git pull --rebase</code> 保持本地与远程同步，减少合并冲突。</li>
+</ol>
+<hr>
+<h4 id="附：完整命令速查表（部分）"><a href="#附：完整命令速查表（部分）" class="headerlink" title="附：完整命令速查表（部分）"></a>附：完整命令速查表（部分）</h4><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>命令示例</th>
+<th>作用说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>配置</td>
+<td><code>git config --list</code></td>
+<td>查看所有配置项</td>
+</tr>
+<tr>
+<td>提交</td>
+<td><code>git commit -am &quot;msg&quot;</code></td>
+<td>跳过暂存区直接提交已追踪文件</td>
+</tr>
+<tr>
+<td>分支</td>
+<td><code>git branch -d dev</code></td>
+<td>删除已合并的分支</td>
+</tr>
+<tr>
+<td>远程</td>
+<td><code>git remote -v</code></td>
+<td>查看远程仓库地址</td>
+</tr>
+<tr>
+<td>日志</td>
+<td><code>git log --graph --oneline</code></td>
+<td>图形化显示分支合并历史</td>
+</tr>
+</tbody></table>
+<p>更多完整命令可参考：<a href="https://git-scm.com/doc">Git 官方文档</a> 或腾讯云开发者社区的《Git 常用命令汇总》。</p>
+<hr>
+<p><strong>学习提示</strong>：建议通过可视化工具（如 VS Code 的 Git 插件或 GitHub Desktop）辅助理解操作流程，再逐步熟悉命令行操作。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Android面试必备：Java核心100题深度拆解（附高频考点）</title>
     <url>/post/d0bfb046.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
@@ -1918,6 +2012,82 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
       </tags>
   </entry>
   <entry>
+    <title>学Java？这里有一本秘籍！</title>
+    <url>/post/java-base-guide.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
+<p>适用于没有Java基础的同学</p>
+</blockquote>
+<p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
+<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
+<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
+</blockquote>
+<p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
+
+<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
+<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java面试！通过问题来串联知识</title>
     <url>/post/5d81f735.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
@@ -2046,175 +2216,5 @@ HWID激活为永久数字许可证，重装系统或更新均不影响。
         <tag>Java</tag>
         <tag>面试</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>学Java？这里有一本秘籍！</title>
-    <url>/post/java-base-guide.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
-<p>适用于没有Java基础的同学</p>
-</blockquote>
-<p>先过一遍 <a href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
-<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
-<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>UML的前置知识回顾： <a href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
-</blockquote>
-<p>阅读：<a href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
-
-<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
-<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
-
-<p>扩展阅读：<a href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>开发</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git 命令入门指南：从零掌握代码版本管理</title>
-    <url>/post/ef2b76b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="Git-命令入门指南：从零掌握代码版本管理"><a href="#Git-命令入门指南：从零掌握代码版本管理" class="headerlink" title="Git 命令入门指南：从零掌握代码版本管理"></a>Git 命令入门指南：从零掌握代码版本管理</h3><p>Git 作为分布式版本控制系统，是开发者日常协作与代码管理的核心工具。本文基于多篇开发者社区及官方文档的总结，整理了 <strong>最常用且必备的 Git 命令</strong>，助你快速上手。</p>
-<hr>
-<h4 id="一、环境配置与仓库初始化"><a href="#一、环境配置与仓库初始化" class="headerlink" title="一、环境配置与仓库初始化"></a>一、环境配置与仓库初始化</h4><ol>
-<li><p><strong>用户身份标识</strong><br>每次提交代码时，Git 需要记录操作者信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;YourName&quot;</span>  <span class="comment"># 设置全局用户名</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span>  <span class="comment"># 设置全局邮箱</span></span><br><span class="line">git config --list  <span class="comment"># 查看所有配置项</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>SSH Key 生成（远程仓库连接必备）</strong><br>用于免密推送代码到 GitHub&#x2F;GitLab 等平台：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;your_email@example.com&quot;</span>  <span class="comment"># 生成密钥对</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>创建仓库</strong>  </p>
-<ul>
-<li>本地初始化：<code>git init</code>（生成隐藏的 .git 目录）  </li>
-<li>克隆远程仓库：<code>git clone https://github.com/xxx/xxx.git</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="二、日常开发核心操作"><a href="#二、日常开发核心操作" class="headerlink" title="二、日常开发核心操作"></a>二、日常开发核心操作</h4><ol start="4">
-<li><p><strong>代码提交流程</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .                <span class="comment"># 添加所有修改到暂存区</span></span><br><span class="line">git commit -m <span class="string">&quot;功能描述&quot;</span>  <span class="comment"># 提交到本地仓库</span></span><br><span class="line">git status               <span class="comment"># 查看文件状态（红/绿色提示）</span></span><br><span class="line">git <span class="built_in">log</span> --oneline        <span class="comment"># 查看精简版提交历史</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>分支管理</strong>  </p>
-<ul>
-<li>创建与切换：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch dev          <span class="comment"># 创建分支</span></span><br><span class="line">git checkout dev       <span class="comment"># 切换分支（旧版）</span></span><br><span class="line">git switch -c dev      <span class="comment"># 新版推荐命令</span></span><br></pre></td></tr></table></figure></li>
-<li>合并与冲突解决：  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge dev          <span class="comment"># 将 dev 分支合并到当前分支</span></span><br><span class="line"><span class="comment"># 合并冲突后，手动修改文件 → git add → git commit</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><strong>远程仓库交互</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote add origin URL   <span class="comment"># 关联远程仓库</span></span><br><span class="line">git push -u origin main     <span class="comment"># 首次推送并建立追踪</span></span><br><span class="line">git pull origin dev         <span class="comment"># 拉取远程分支更新</span></span><br><span class="line">git fetch                   <span class="comment"># 仅获取远程变更（不自动合并）</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h4 id="三、高阶操作与问题处理"><a href="#三、高阶操作与问题处理" class="headerlink" title="三、高阶操作与问题处理"></a>三、高阶操作与问题处理</h4><ol start="7">
-<li><p><strong>撤销与回退</strong>  </p>
-<ul>
-<li>丢弃工作区修改：<code>git checkout -- filename</code>  </li>
-<li>撤销暂存区文件：<code>git reset HEAD filename</code>  </li>
-<li>版本回退：<code>git reset --hard commit_id</code>（慎用）</li>
-</ul>
-</li>
-<li><p><strong>暂存与恢复</strong><br>临时保存未完成的修改：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git stash        <span class="comment"># 保存当前工作进度</span></span><br><span class="line">git stash pop    <span class="comment"># 恢复最近一次暂存内容</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>标签管理</strong>  </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0.0           <span class="comment"># 创建轻量标签</span></span><br><span class="line">git tag -a v1.0 -m <span class="string">&quot;描述&quot;</span> <span class="comment"># 含备注的标签</span></span><br><span class="line">git push origin --tags    <span class="comment"># 推送所有标签到远程</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h4 id="四、协作开发建议"><a href="#四、协作开发建议" class="headerlink" title="四、协作开发建议"></a>四、协作开发建议</h4><ol>
-<li><strong>分支策略</strong>：主分支（main&#x2F;master）仅用于发布稳定版本，新功能在 dev 或 feature 分支开发。  </li>
-<li><strong>提交规范</strong>：commit 信息需清晰描述修改内容，推荐使用 <a href="https://www.conventionalcommits.org/">Conventional Commits</a> 格式。  </li>
-<li><strong>冲突预防</strong>：频繁使用 <code>git pull --rebase</code> 保持本地与远程同步，减少合并冲突。</li>
-</ol>
-<hr>
-<h4 id="附：完整命令速查表（部分）"><a href="#附：完整命令速查表（部分）" class="headerlink" title="附：完整命令速查表（部分）"></a>附：完整命令速查表（部分）</h4><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>命令示例</th>
-<th>作用说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>配置</td>
-<td><code>git config --list</code></td>
-<td>查看所有配置项</td>
-</tr>
-<tr>
-<td>提交</td>
-<td><code>git commit -am &quot;msg&quot;</code></td>
-<td>跳过暂存区直接提交已追踪文件</td>
-</tr>
-<tr>
-<td>分支</td>
-<td><code>git branch -d dev</code></td>
-<td>删除已合并的分支</td>
-</tr>
-<tr>
-<td>远程</td>
-<td><code>git remote -v</code></td>
-<td>查看远程仓库地址</td>
-</tr>
-<tr>
-<td>日志</td>
-<td><code>git log --graph --oneline</code></td>
-<td>图形化显示分支合并历史</td>
-</tr>
-</tbody></table>
-<p>更多完整命令可参考：<a href="https://git-scm.com/doc">Git 官方文档</a> 或腾讯云开发者社区的《Git 常用命令汇总》。</p>
-<hr>
-<p><strong>学习提示</strong>：建议通过可视化工具（如 VS Code 的 Git 插件或 GitHub Desktop）辅助理解操作流程，再逐步熟悉命令行操作。</p>
-]]></content>
   </entry>
 </search>
