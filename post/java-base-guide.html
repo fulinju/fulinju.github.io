@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>学Java？这里有一本秘籍！ | 抚鳞居</title><meta name="author" content="抚鳞居士"><meta name="copyright" content="抚鳞居士"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java基础 适用于没有Java基础的同学  先过一遍 Java教程 ，示例可以在 菜鸟教程在线编辑器 边刷教程边写代码。 代码规范这是一个经常容易被忽略，却极其重要的部分，不要让自己的代码别人看了就想吐。刷一下 常见企业级代码规范，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》 基础巩固面向对象阅读：Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学Java？这里有一本秘籍！">
+<meta property="og:url" content="https://fulinju.github.io/post/java-base-guide.html">
+<meta property="og:site_name" content="抚鳞居">
+<meta property="og:description" content="Java基础 适用于没有Java基础的同学  先过一遍 Java教程 ，示例可以在 菜鸟教程在线编辑器 边刷教程边写代码。 代码规范这是一个经常容易被忽略，却极其重要的部分，不要让自己的代码别人看了就想吐。刷一下 常见企业级代码规范，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》 基础巩固面向对象阅读：Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fulinju.github.io/img/favicon.png">
+<meta property="article:published_time" content="2024-06-26T14:42:33.000Z">
+<meta property="article:modified_time" content="2025-07-31T06:45:43.628Z">
+<meta property="article:author" content="抚鳞居士">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fulinju.github.io/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fulinju.github.io/post/java-base-guide.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '学Java？这里有一本秘籍！',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-07-31 14:45:43'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><meta name="google-site-verification" content="440xp3zbVtfJjRjD0w9KBkNn4eJq6WTerLMopoEuHrA" /><meta name="baidu-site-verification" content="codeva-uJ4uVDu5Ia" /><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="抚鳞居" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="抚鳞居"><span class="site-name">抚鳞居</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">学Java？这里有一本秘籍！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-26T14:42:33.000Z" title="发表于 2024-06-26 22:42:33">2024-06-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-31T06:45:43.628Z" title="更新于 2025-07-31 14:45:43">2025-07-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="学Java？这里有一本秘籍！"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h1><blockquote>
+<p>适用于没有Java基础的同学</p>
+</blockquote>
+<p>先过一遍 <a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-tutorial.html">Java教程</a> ，示例可以在 <a target="_blank" rel="noopener" href="https://www.runoob.com/try/runcode.php?filename=HelloWorld&type=java">菜鸟教程在线编辑器</a> 边刷教程边写代码。</p>
+<h1 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h1><p>这是一个经常容易被忽略，却<strong>极其重要</strong>的部分，不要让自己的代码别人看了就想吐。刷一下 <a target="_blank" rel="noopener" href="https://pdai.tech/md/dev-spec/code-style/dev-x-overview.html">常见企业级代码规范</a>，包括《阿里巴巴 Java 开发手册》、《Google Java 编程风格指南》、《Twitter Java Style Guide》</p>
+<h1 id="基础巩固"><a href="#基础巩固" class="headerlink" title="基础巩固"></a>基础巩固</h1><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>阅读：<a target="_blank" rel="noopener" href="https://pdai.tech/md/java/basic/java-basic-oop.html">Java 基础 - 面向对象</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.Java三大特性：继承、封装、多态；</span><br><span class="line">2.编译时多态和运行时多态；</span><br><span class="line">3.UML图；</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>UML的前置知识回顾： <a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-object-classes.html">Java教程-Java 对象和类</a> </p>
+</blockquote>
+<p>阅读：<a target="_blank" rel="noopener" href="https://alexyyek.github.io/2014/12/29/wrapperClass/">JAVA基本类型和包装类</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.八大基本数据类型及其包装类；</span><br><span class="line">2.包装类的作用；</span><br><span class="line">3.装箱和拆箱，及其实现原理；</span><br><span class="line">4.==和equals的区别 - 缓存池；</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>阅读：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jojop/p/11317313.html">【Java基础】String 相关知识点总结</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.String为什么设计成不可变及其好处；</span><br><span class="line">2.字符串常量池和intern()</span><br><span class="line">3.String s = new String(&quot;abc&quot;);创建几个对象</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="异常体系"><a href="#异常体系" class="headerlink" title="异常体系"></a>异常体系</h2><p>阅读：<a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/3b36d7b4c0aa0c53bff2ae9b5">java 异常分类和处理机制</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.异常分类：Throwable=Error+Exception(编译时异常+运行时异常)；设计为RuntimeException，可不显示捕获；</span><br><span class="line">2.异常处理机制：try..catch..finally</span><br><span class="line">3.如何优雅的设计异常：有无法处理的问题的时候，需要抛出异常；不要用异常来控制业务逻辑；</span><br></pre></td></tr></table></figure>
+
+<h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><p>阅读：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yichunguo/p/11775270.html">史上最骚最全最详细的IO流教程，没有之一！</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.如何从名称一眼看出IO流的分类；</span><br><span class="line">2.File的定位，与IO流的关系</span><br><span class="line">3.createNewFile方法以及mkdir与mkdirs的区别</span><br><span class="line">4.字节流、字符流、缓冲流的继承体系</span><br><span class="line">5.FileInputStream读取数据的流程和注意事项（为什么要在while循环读length？）</span><br><span class="line">6.字节流如何借用String的解码功能读取中文字符</span><br><span class="line">7.flush()：既想写出数据，又想继续使用流（内置缓存区）</span><br><span class="line">8.快速复制：缓冲流+数组</span><br><span class="line">9.编码和解码、字符集（字符流=字节流+编码表）、转换流，转换的时候传入编码表（最高效率：BufferedReader内包装InputStreamReader）</span><br><span class="line">10.序列化</span><br><span class="line">11.打印流及其特点</span><br><span class="line">12.Properties的load(InputStream inStream)</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/258c5ce1a2bd">java try-with-resource语句使用</a></p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>阅读：<a target="_blank" rel="noopener" href="https://gityuan.com/2016/01/23/java-annotation/">Java注解(Annotation)</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.注解类型：Documented、Inherited、Retention、Target；</span><br><span class="line">2.注解生命周期；</span><br><span class="line">3.反射注解；</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>阅读：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6943770419820396580">Java 泛型最全指南</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.什么是泛型？泛型类、泛型接口、泛型方法；</span><br><span class="line">2.结合继承了解泛型的使用；</span><br><span class="line">3.泛型的上界和下界，泛型通配符；</span><br><span class="line">4.泛型擦除；</span><br><span class="line">5.使用泛型的建议：指定类型信息可结合kotlin的；</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6935322686943920159">一文读懂 Java 和 Kotlin 的泛型难点</a> ，可以学到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">逆变和协变</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>阅读：<a target="_blank" rel="noopener" href="https://juejin.cn/user/2727264149845725/posts">Java反射的深入理解以及超级详细的使用方式</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.反射的原理；</span><br><span class="line">2.反射的使用：操作构造器、操作成员变量、操作成员方法、操作注解；</span><br><span class="line">3.AccessibleObject和setAccessible()</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangzeyuaaa/article/details/42522015">Java 反射调用静态方法</a></p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>阅读：<a target="_blank" rel="noopener" href="https://tech.meituan.com/2016/06/24/java-hashmap.html">Java 8系列之重新认识HashMap</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.源码原理：确定哈希索引位置、put流程、扩容机制</span><br><span class="line">2.HashMap大小为什么是2的n次方 &amp; JDK1.8 hash算法的巧妙之处：&amp;替代%；一半索引没变；</span><br><span class="line">3.HashMap为什么会出现死循环？</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuwc/p/14044664.html">并发-HashMap在jdk1.8也会出现死循环 </a></p>
+<h1 id="JUC"><a href="#JUC" class="headerlink" title="JUC"></a>JUC</h1><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><p>阅读：<a target="_blank" rel="noopener" href="https://tech.meituan.com/2018/11/15/java-lock.html">不可不说的Java“锁”事</a> ，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.锁的分类</span><br><span class="line">2.乐观锁和悲观锁、自旋锁和自适应自旋锁</span><br><span class="line">3.CAS和三大问题（ABA、开销大、多个变量的原子性）</span><br><span class="line">4.无锁、偏向锁、轻量级锁、重量级锁：Java对象头（Mark Word、Klass Point）、Monitor</span><br><span class="line">  轻量级锁和重量级锁的区别</span><br><span class="line">5.公平锁和非公平锁</span><br><span class="line">6.可重入锁和不可重入锁</span><br><span class="line">7.独享锁和共享锁（读写锁）</span><br></pre></td></tr></table></figure>
+
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Shockang/article/details/125610298">一篇文章理解 Java 中的 Unsafe 类</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.如何获取Unsafe实例？</span><br><span class="line">2.如何通过Unsafe创建对象？</span><br><span class="line">3.如何通过Unsafe修改private？</span><br><span class="line">4.堆外内存使用；</span><br><span class="line">5.CAS的使用；</span><br><span class="line">6.park/unpark的使用；</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="线程安全的三大特性"><a href="#线程安全的三大特性" class="headerlink" title="线程安全的三大特性"></a>线程安全的三大特性</h2><p>阅读：<a target="_blank" rel="noopener" href="https://blog.csdn.net/tian830937/article/details/129602241">线程安全性详解(原子性、可见性、有序性)</a>，可以学习到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.原子性：CAS算法，ABA问题及解决；</span><br><span class="line">2.可见性：主内存和工作内存、synchronized和volatile对比</span><br><span class="line">  内存屏障和禁止重排序，count++的执行逻辑；</span><br><span class="line">3.有序性：as-if-serial语义规则、happens-before原则</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://fulinju.github.io">抚鳞居士</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fulinju.github.io/post/java-base-guide.html">https://fulinju.github.io/post/java-base-guide.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fulinju.github.io" target="_blank">抚鳞居</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%80%E5%8F%91/">开发</a><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>佛系打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">学Android？这里有一本秘籍！</div></div></a></div><div class="next-post pull-right"><a href="/post/9a1684cf.html" title="技多不压身！少年，来此学一技！这里有100本秘籍"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">技多不压身！少年，来此学一技！这里有100本秘籍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/5d81f735.html" title="Java面试！通过问题来串联知识"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-14</div><div class="title">Java面试！通过问题来串联知识</div></div></a></div><div><a href="/post/android-main-point.html" title="就在这里！每个安卓开发都要掌握的知识大纲！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-20</div><div class="title">就在这里！每个安卓开发都要掌握的知识大纲！</div></div></a></div><div><a href="/post/795293fc.html" title="Android开发者必学：从新手到高手的全指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-24</div><div class="title">Android开发者必学：从新手到高手的全指南</div></div></a></div><div><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-26</div><div class="title">学Android？这里有一本秘籍！</div></div></a></div><div><a href="/post/d0bfb046.html" title="Android面试必备：Java核心100题深度拆解（附高频考点）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-19</div><div class="title">Android面试必备：Java核心100题深度拆解（附高频考点）</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">抚鳞居士</div><div class="author-info__description">安卓/Framework/经验分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fulinju"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">没有公告！再强调一遍，没有公告！（实在要有的话，请帮忙推广一下～）</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-text">Java基础</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="toc-text">代码规范</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B7%A9%E5%9B%BA"><span class="toc-text">基础巩固</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String"><span class="toc-text">String</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E4%BD%93%E7%B3%BB"><span class="toc-text">异常体系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IO"><span class="toc-text">IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-text">注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap"><span class="toc-text">HashMap</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JUC"><span class="toc-text">JUC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81"><span class="toc-text">锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-text">线程安全的三大特性</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/eb6a07a1.html" title="深入剖析Android AccountManagerService：账户管理的核心引擎">深入剖析Android AccountManagerService：账户管理的核心引擎</a><time datetime="2025-07-31T07:53:09.000Z" title="发表于 2025-07-31 15:53:09">2025-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/af22aac6.html" title="你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！">你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！</a><time datetime="2025-06-12T12:26:26.000Z" title="发表于 2025-06-12 20:26:26">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/cfff3223.html" title="Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题">Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</a><time datetime="2025-06-12T11:26:29.000Z" title="发表于 2025-06-12 19:26:29">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b558d475.html" title="PowerShell无法识别node命令，如何配置？">PowerShell无法识别node命令，如何配置？</a><time datetime="2025-06-12T10:46:27.000Z" title="发表于 2025-06-12 18:46:27">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/3ecea523.html" title="Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异">Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异</a><time datetime="2025-06-12T10:41:34.000Z" title="发表于 2025-06-12 18:41:34">2025-06-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 抚鳞居士</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '0ran7gmbEqS9EFbBsaFpXl1U-gzGzoHsz',
+      appKey: 'X0BnHa3VAPv8vJvg3TSNRjUJ',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="/js/ip_content.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>

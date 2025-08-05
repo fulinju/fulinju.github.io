@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Java面试！通过问题来串联知识 | 抚鳞居</title><meta name="author" content="抚鳞居士"><meta name="copyright" content="抚鳞居士"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Android程序员Java面试100问（难度分级版） 一、初级问题（30问） final、finally、finalize的区别 String、StringBuffer、StringBuilder的线程安全性与使用场景   重载（Overload）与重写（Override）的区别   接口与抽象类的核心区别   ArrayList与LinkedList的底层实现及性能差异   HashMap与H">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试！通过问题来串联知识">
+<meta property="og:url" content="https://fulinju.github.io/post/5d81f735.html">
+<meta property="og:site_name" content="抚鳞居">
+<meta property="og:description" content="Android程序员Java面试100问（难度分级版） 一、初级问题（30问） final、finally、finalize的区别 String、StringBuffer、StringBuilder的线程安全性与使用场景   重载（Overload）与重写（Override）的区别   接口与抽象类的核心区别   ArrayList与LinkedList的底层实现及性能差异   HashMap与H">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fulinju.github.io/img/favicon.png">
+<meta property="article:published_time" content="2024-07-14T04:01:55.000Z">
+<meta property="article:modified_time" content="2025-07-31T06:45:43.628Z">
+<meta property="article:author" content="抚鳞居士">
+<meta property="article:tag" content="开发">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fulinju.github.io/img/favicon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://fulinju.github.io/post/5d81f735.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java面试！通过问题来串联知识',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-07-31 14:45:43'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/mouse.css"><meta name="google-site-verification" content="440xp3zbVtfJjRjD0w9KBkNn4eJq6WTerLMopoEuHrA" /><meta name="baidu-site-verification" content="codeva-uJ4uVDu5Ia" /><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="抚鳞居" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="抚鳞居"><span class="site-name">抚鳞居</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 导航</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/%E9%9D%A2%E8%AF%95/"><i class="fa-fw fas fa-street-view"></i><span> 面试</span></a></li><li><a class="site-page child" href="/Java/"><i class="fa-fw fas fa-laptop-code"></i><span> Java</span></a></li><li><a class="site-page child" href="/Android/"><i class="fa-fw fas fa-drafting-compass"></i><span> Android</span></a></li><li><a class="site-page child" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa-fw fas fa-object-group"></i><span> 设计模式</span></a></li><li><a class="site-page child" href="/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa-fw fas fa-bezier-curve"></i><span> 方法论</span></a></li><li><a class="site-page child" href="/%E4%BA%A7%E5%93%81/"><i class="fa-fw fas fa-dog"></i><span> 产品</span></a></li><li><a class="site-page child" href="/%E5%9B%A2%E9%98%9F/"><i class="fa-fw fas fa-users"></i><span> 团队</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Java面试！通过问题来串联知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-14T04:01:55.000Z" title="发表于 2024-07-14 12:01:55">2024-07-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-31T06:45:43.628Z" title="更新于 2025-07-31 14:45:43">2025-07-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java面试！通过问题来串联知识"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h3 id="Android程序员Java面试100问（难度分级版）"><a href="#Android程序员Java面试100问（难度分级版）" class="headerlink" title="Android程序员Java面试100问（难度分级版）"></a>Android程序员Java面试100问（难度分级版）</h3><hr>
+<h4 id="一、初级问题（30问）"><a href="#一、初级问题（30问）" class="headerlink" title="一、初级问题（30问）"></a><strong>一、初级问题（30问）</strong></h4><ol>
+<li>final、finally、finalize的区别</li>
+<li>String、StringBuffer、StringBuilder的线程安全性与使用场景  </li>
+<li>重载（Overload）与重写（Override）的区别  </li>
+<li>接口与抽象类的核心区别  </li>
+<li>ArrayList与LinkedList的底层实现及性能差异  </li>
+<li>HashMap与HashTable的线程安全性对比  </li>
+<li>&#x3D;&#x3D;与equals()的区别  </li>
+<li>进程与线程的区别  </li>
+<li>线程的创建方式（Thread、Runnable、Callable）  </li>
+<li>sleep()与wait()的区别  </li>
+<li>集合框架中Set如何判断元素重复？  </li>
+<li>Java的四种引用类型（强、软、弱、虚）  </li>
+<li>泛型擦除原理及作用  </li>
+<li>异常分类（Error、Checked Exception、RuntimeException）  </li>
+<li>静态内部类与非静态内部类的区别  </li>
+<li>单例模式的饿汉式与懒汉式实现  </li>
+<li>Java8新特性（Lambda、Stream API）  </li>
+<li>序列化与反序列化的作用及实现  </li>
+<li>反射机制的应用场景与性能问题  </li>
+<li>Java基本数据类型与包装类的自动拆装箱  </li>
+<li>String s &#x3D; new String(“abc”)创建了几个对象？  </li>
+<li>Java的跨平台原理（JVM作用）  </li>
+<li>深拷贝与浅拷贝的实现方式  </li>
+<li>数组与链表的优缺点对比  </li>
+<li>多态的实现原理（方法重写、动态绑定）  </li>
+<li>Java内存模型（堆、栈、方法区）  </li>
+<li>线程的六种状态及转换  </li>
+<li>volatile关键字的作用（可见性、禁止指令重排）  </li>
+<li>synchronized的锁升级过程（偏向锁→轻量级锁→重量级锁）  </li>
+<li>如何避免死锁？</li>
+</ol>
+<hr>
+<h4 id="二、中级问题（40问）"><a href="#二、中级问题（40问）" class="headerlink" title="二、中级问题（40问）"></a><strong>二、中级问题（40问）</strong></h4><ol start="31">
+<li><strong>HashMap的底层实现（数组+链表&#x2F;红黑树）及扩容机制</strong>  </li>
+<li>ConcurrentHashMap的分段锁原理  </li>
+<li>线程池参数设计（核心线程数、阻塞队列、拒绝策略）  </li>
+<li>AQS（AbstractQueuedSynchronizer）的实现原理  </li>
+<li>CAS原理及ABA问题解决方案  </li>
+<li>JVM内存区域划分（堆、栈、元空间）  </li>
+<li>垃圾回收算法（标记-清除、复制、标记-整理）  </li>
+<li>G1垃圾回收器的Region分区策略  </li>
+<li>内存泄漏常见场景（Handler、静态集合、未关闭资源）  </li>
+<li>ANR的产生原因及排查方法  </li>
+<li>Android中Handler机制（Looper、MessageQueue）  </li>
+<li>Binder跨进程通信原理  </li>
+<li>View的绘制流程（measure→layout→draw）  </li>
+<li>事件分发机制（onTouchEvent、onInterceptTouchEvent）  </li>
+<li>RecyclerView与ListView的缓存机制对比  </li>
+<li>Glide的四级缓存策略  </li>
+<li>OkHttp的拦截器链设计  </li>
+<li>Retrofit的动态代理实现原理  </li>
+<li>MVC、MVP、MVVM架构模式的优缺点  </li>
+<li>LiveData与RxJava的区别及使用场景  </li>
+<li>Jetpack组件（ViewModel、Room、WorkManager）的核心功能  </li>
+<li>启动优化方案（冷启动耗时分析、类预加载）  </li>
+<li>包体积优化策略（资源压缩、代码混淆、动态加载）  </li>
+<li>内存抖动检测与优化（MAT工具分析）  </li>
+<li>设计模式：观察者模式在Android中的应用（如LiveData）  </li>
+<li>设计模式：Builder模式在AlertDialog中的实践  </li>
+<li>设计模式：适配器模式在RecyclerView中的应用  </li>
+<li>设计模式：代理模式实现AOP编程  </li>
+<li>动态代理与静态代理的区别  </li>
+<li>Kotlin协程的挂起函数原理（Continuation状态机）  </li>
+<li>Dagger2依赖注入的实现原理  </li>
+<li>模块化开发中ARouter的路由实现  </li>
+<li>APK打包流程（aapt→dex→签名→对齐）  </li>
+<li>热修复原理（类替换、资源替换）  </li>
+<li>插件化框架实现原理（Hook ClassLoader）  </li>
+<li>HTTP与HTTPS的区别（对称加密、非对称加密）  </li>
+<li>TCP三次握手与四次挥手过程  </li>
+<li>WebSocket长连接的心跳机制设计  </li>
+<li>Retrofit如何实现网络请求的同步与异步调用？  </li>
+<li>SQLite数据库的事务特性及优化方案</li>
+</ol>
+<hr>
+<h4 id="三、高级问题（30问）"><a href="#三、高级问题（30问）" class="headerlink" title="三、高级问题（30问）"></a><strong>三、高级问题（30问）</strong></h4><ol start="71">
+<li><strong>JVM调优实战（G1参数配置、Full GC触发条件）</strong>  </li>
+<li>分布式锁的Redis实现（SETNX+过期时间）  </li>
+<li>微服务架构中的服务熔断与降级策略  </li>
+<li>如何设计高并发下的红包系统？  </li>
+<li>如何实现APK的差分更新（bsdiff算法）？  </li>
+<li>性能监控体系搭建（APM工具、线上ANR&#x2F;OOM监控）  </li>
+<li>LeakCanary检测内存泄漏的原理（KeyedWeakReference）  </li>
+<li>卡顿优化的系统性方案（Choreographer监测FPS）  </li>
+<li>大图加载的优化策略（BitmapRegionDecoder分块加载）  </li>
+<li>跨平台技术选型（Flutter线程模型、React Native桥接机制）  </li>
+<li>如何实现Android应用的灰度发布？  </li>
+<li>设计一个图片加载框架（三级缓存、线程池管理）  </li>
+<li>如何实现数据埋点的全量采集与无痕打点？  </li>
+<li>组件化架构中的通信方案（接口下沉、EventBus替代方案）  </li>
+<li>如何实现安全的HTTPS双向认证？  </li>
+<li>如何设计一个高可用的推送系统（保活、重连、消息去重）？  </li>
+<li>如何实现Android应用的线上热修复（Sophix原理）？  </li>
+<li>如何优化冷启动速度至500ms以内？  </li>
+<li>如何通过Gradle插件实现编译期的代码检查？  </li>
+<li>如何设计一个支持千万级用户的IM系统？  </li>
+<li>如何实现Android Native与WebView的双向通信？  </li>
+<li>如何设计一个支持动态替换的主题引擎？  </li>
+<li>如何通过ASM实现字节码插桩（性能监控、日志埋点）？  </li>
+<li>如何优化ProGuard混淆策略以平衡安全性与包体积？  </li>
+<li>如何实现跨进程的ViewModel数据共享？  </li>
+<li>如何设计支持AB实验的配置中心？  </li>
+<li>如何实现基于Walle的多渠道打包方案？  </li>
+<li>如何通过RenderScript实现图片的高斯模糊？  </li>
+<li>如何设计一个支持离线优先的本地缓存策略？  </li>
+<li>如何通过FFmpeg实现Android音视频的硬解码？</li>
+</ol>
+<hr>
+<h3 id="关键知识领域覆盖"><a href="#关键知识领域覆盖" class="headerlink" title="关键知识领域覆盖"></a><strong>关键知识领域覆盖</strong></h3><ul>
+<li><strong>Java核心</strong>：集合框架、多线程、JVM  </li>
+<li><strong>Android特性</strong>：组件、性能优化、架构设计  </li>
+<li><strong>系统设计</strong>：高并发、分布式、微服务  </li>
+<li><strong>前沿技术</strong>：Flutter、Kotlin协程、热修复</li>
+</ul>
+<p>（注：以上问题结合了Java通用知识与Android特性，建议根据实际项目经验针对性准备，完整答案可参考来源文档-）</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://fulinju.github.io">抚鳞居士</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://fulinju.github.io/post/5d81f735.html">https://fulinju.github.io/post/5d81f735.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://fulinju.github.io" target="_blank">抚鳞居</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%80%E5%8F%91/">开发</a><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="/img/favicon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>佛系打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/795293fc.html" title="Android开发者必学：从新手到高手的全指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Android开发者必学：从新手到高手的全指南</div></div></a></div><div class="next-post pull-right"><a href="/post/4a1b603.html" title="自媒体必备！如何用python实现下载bilibili的视频并解析为文本？"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自媒体必备！如何用python实现下载bilibili的视频并解析为文本？</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/java-base-guide.html" title="学Java？这里有一本秘籍！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-26</div><div class="title">学Java？这里有一本秘籍！</div></div></a></div><div><a href="/post/d0bfb046.html" title="Android面试必备：Java核心100题深度拆解（附高频考点）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-19</div><div class="title">Android面试必备：Java核心100题深度拆解（附高频考点）</div></div></a></div><div><a href="/post/android-main-point.html" title="就在这里！每个安卓开发都要掌握的知识大纲！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-20</div><div class="title">就在这里！每个安卓开发都要掌握的知识大纲！</div></div></a></div><div><a href="/post/795293fc.html" title="Android开发者必学：从新手到高手的全指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-24</div><div class="title">Android开发者必学：从新手到高手的全指南</div></div></a></div><div><a href="/post/android-base-guide.html" title="学Android？这里有一本秘籍！"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-26</div><div class="title">学Android？这里有一本秘籍！</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">抚鳞居士</div><div class="author-info__description">安卓/Framework/经验分享</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/fulinju"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">没有公告！再强调一遍，没有公告！（实在要有的话，请帮忙推广一下～）</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Android%E7%A8%8B%E5%BA%8F%E5%91%98Java%E9%9D%A2%E8%AF%95100%E9%97%AE%EF%BC%88%E9%9A%BE%E5%BA%A6%E5%88%86%E7%BA%A7%E7%89%88%EF%BC%89"><span class="toc-text">Android程序员Java面试100问（难度分级版）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9D%E7%BA%A7%E9%97%AE%E9%A2%98%EF%BC%8830%E9%97%AE%EF%BC%89"><span class="toc-text">一、初级问题（30问）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%AD%E7%BA%A7%E9%97%AE%E9%A2%98%EF%BC%8840%E9%97%AE%EF%BC%89"><span class="toc-text">二、中级问题（40问）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%AB%98%E7%BA%A7%E9%97%AE%E9%A2%98%EF%BC%8830%E9%97%AE%EF%BC%89"><span class="toc-text">三、高级问题（30问）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F%E8%A6%86%E7%9B%96"><span class="toc-text">关键知识领域覆盖</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/eb6a07a1.html" title="深入剖析Android AccountManagerService：账户管理的核心引擎">深入剖析Android AccountManagerService：账户管理的核心引擎</a><time datetime="2025-07-31T07:53:09.000Z" title="发表于 2025-07-31 15:53:09">2025-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/af22aac6.html" title="你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！">你的Git还在显示“\347\27\217”吗？这份避坑指南快收好！</a><time datetime="2025-06-12T12:26:26.000Z" title="发表于 2025-06-12 20:26:26">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/cfff3223.html" title="Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题">Windows平台Hexo部署终极解决方案：彻底解决“Error: Spawn failed”与代理冲突问题</a><time datetime="2025-06-12T11:26:29.000Z" title="发表于 2025-06-12 19:26:29">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/b558d475.html" title="PowerShell无法识别node命令，如何配置？">PowerShell无法识别node命令，如何配置？</a><time datetime="2025-06-12T10:46:27.000Z" title="发表于 2025-06-12 18:46:27">2025-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/3ecea523.html" title="Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异">Windows命令行双雄对决：深入解析PowerShell与CMD的终极差异</a><time datetime="2025-06-12T10:41:34.000Z" title="发表于 2025-06-12 18:41:34">2025-06-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By 抚鳞居士</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '0ran7gmbEqS9EFbBsaFpXl1U-gzGzoHsz',
+      appKey: 'X0BnHa3VAPv8vJvg3TSNRjUJ',
+      avatar: 'retro',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="/js/ip_content.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body></html>
